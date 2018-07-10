@@ -12,7 +12,8 @@
     "npm": "5.6.0"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -28,10 +29,6 @@
     "webpack": "^4.15.1"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BR1K/Mr.Hood.git"
