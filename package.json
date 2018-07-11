@@ -33,7 +33,9 @@
     "redux-thunk": "^2.3.0",
     "webpack": "^4.15.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack-cli": "^3.0.8"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BR1K/Mr.Hood.git"
