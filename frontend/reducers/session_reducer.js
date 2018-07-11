@@ -4,7 +4,7 @@ import { RECEIVE_CURRENT_USER,
 
 export default (state = {}, action) => {
 	Object.freeze(state);
-	const newState = merge({}, state);
+	const newState = Object.assign({}, state);
 	switch (action.type) {
 		case RECEIVE_CURRENT_USER:
 			Object.assign(newState, {id: action.currentUser.id});
