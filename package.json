@@ -48,7 +48,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:5000"
+      "target": "http://localhost:3000"
     }
   },
   "homepage": "https://github.com/BR1K/Mr.Hood#readme"
