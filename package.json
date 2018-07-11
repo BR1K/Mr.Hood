@@ -46,5 +46,10 @@
   "bugs": {
     "url": "https://github.com/BR1K/Mr.Hood/issues"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:5000"
+    }
+  },
   "homepage": "https://github.com/BR1K/Mr.Hood#readme"
 }
