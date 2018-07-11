@@ -1,4 +1,4 @@
-import merge from 'lodash/merge';
+import { merge }  from 'lodash';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 
