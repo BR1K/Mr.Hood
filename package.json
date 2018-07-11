@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
-    "postinstall": "webpack mode=development"
+    "postinstall": "webpack --mode=development"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
