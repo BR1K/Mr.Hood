@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
     return (
       <div className="main-login">
         <div className="image-box">
-          <img src={window.loginPic} />
+          <img className="loginPic" src={window.loginPic} />
         </div>
         <div className="center">
           <div className="login-form-box">

@@ -31,6 +31,10 @@ body {
   width: 100%;
 }
 
+.loginPic {
+  height: inherit;
+}
+
 .center {
   align-items: center;
   box-sizing: border-box;
@@ -53,7 +57,6 @@ body {
 }
 
 .image-box {
-  background-image: url(login_page_image);
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -106,85 +109,35 @@ body {
 }
 
 .login-input-field {
-  background-attachment: scroll;
-  background-clip: border-box;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
   background-color: rgb(250, 255, 189);
-  background-image: none;
-  background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
+  border-color: rgb(250, 250, 250);
+  border-radius: 4px;
   background-size: auto;
-  border-bottom-color: rgb(250, 250, 250);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-image-outset: 0px;
-  border-image-repeat: stretch;
-  border-image-slice: 100%;
-  border-image-source: none;
-  border-image-width: 1;
-  border-left-color: rgb(250, 250, 250);
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: rgb(250, 250, 250);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-top-color: rgb(250, 250, 250);
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-top-style: solid;
-  border-top-width: 1px;
+  border-style: solid;
+  border-width: 1px;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
   cursor: text;
   display: block;
-  flex-basis: auto;
   flex-grow: 1;
   flex-shrink: 1;
   font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
   font-size: 13px;
   font-stretch: 100%;
   font-style: normal;
-  font-variant-caps: normal;
-  font-variant-east-asian: normal;
-  font-variant-ligatures: normal;
-  font-variant-numeric: normal;
   font-weight: 400;
   height: 48px;
   letter-spacing: normal;
   line-height: 19.5px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
-  outline-color: rgb(0, 0, 0);
-  outline-style: none;
-  outline-width: 0px;
-  overflow-x: visible;
-  overflow-y: visible;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 15px;
-  text-align: start;
-  text-indent: 0px;
-  text-rendering: auto;
-  text-shadow: none;
-  text-size-adjust: 100%;
-  text-transform: none;
+  width: 412px;
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-property: border-color;
   transition-timing-function: ease;
-  width: 412px;
-  word-spacing: 0px;
-  writing-mode: horizontal-tb;
-  -webkit-appearance: none;
-  -webkit-box-direction: normal;
-  -webkit-box-flex: 1;
-  -webkit-rtl-ordering: logical;
-  -webkit-border-image: none;
+  outline-style: none;
 }
 
 .session-submit {
