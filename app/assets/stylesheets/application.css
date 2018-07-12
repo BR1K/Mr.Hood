@@ -13,3 +13,214 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+  min-height: 100vh;
+}
+
+.main-login {
+  /* display: flex;
+  min-height: 100vh;
+  justify-content: space-around; */
+  /* min-height: 100vh; */
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(23, 23, 24);
+  display: flex;
+  flex-direction: column;
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 794px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+  text-size-adjust: 100%;
+  width: 1036px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+}
+
+.image-box {
+  background-image: url(login_page_image);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  -webkit-logical-height: -webkit-fill-available;
+}
+
+.login-form-box {
+  margin-left: 52px;
+  width: 412px;
+  -webkit-box-direction: normal;
+
+  box-sizing: border-box;
+  display: block;
+  margin-left: 52px;
+  width: 412px;
+
+}
+
+.login-form-box-header {
+  display: block;
+  box-sizing: inherit;
+  -webkit-box-direction: normal;
+}
+
+.login-form-input-box {
+  box-sizing: inherit;
+  -webkit-box-direction: normal;
+}
+
+.login-form {
+  /* box-sizing: inherit; */
+  -webkit-box-direction: normal;
+}
+
+.login-form-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: vertical;
+  margin-bottom: 60px;
+  box-sizing: inherit;
+}
+
+.login-form-footer {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  margin-top: 24px;
+  -webkit-box-direction: normal;
+}
+
+.login-input-field {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(250, 255, 189);
+  background-image: none;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto;
+  border-bottom-color: rgb(250, 250, 250);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-outset: 0px;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(250, 250, 250);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(250, 250, 250);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(250, 250, 250);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: text;
+  display: block;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  font-stretch: 100%;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: normal;
+  line-height: 19.5px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  outline-color: rgb(0, 0, 0);
+  outline-style: none;
+  outline-width: 0px;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  text-align: start;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  text-transform: none;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-property: border-color;
+  transition-timing-function: ease;
+  width: 412px;
+  word-spacing: 0px;
+  writing-mode: horizontal-tb;
+  -webkit-appearance: none;
+  -webkit-box-direction: normal;
+  -webkit-box-flex: 1;
+  -webkit-rtl-ordering: logical;
+  -webkit-border-image: none;
+}
+
+.session-submit {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(23, 23, 24);
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+  margin-top: 24px;
+  text-size-adjust: 100%;
+  width: 175px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.session-submit:hover {
+  background-color: rgb(33, 150, 153);
+  border-color: rgb(33, 150, 153);
+}
+
+.login-field-label {
+  font-size: 13px;
+  padding: 9px 0;
+  font-weight: lighter;
+}
+
+.login-input-field:hover {
+  border-color: rgb(33, 206, 153);
+}

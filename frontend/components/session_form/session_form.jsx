@@ -37,32 +37,56 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Mr.Hood!
-          <br/>
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Email:
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+      <div className="main-login">
+        <div className="image-box">
+          <img src={window.loginPic} />
+        </div>
+        <div className="center">
+          <div className="login-form-box">
+            <header className="login-form-box-header">
+              <h2>Welcome to Mr.Hood</h2>
+            </header>
+            <div className="login-form-input-box">
+              <form onSubmit={this.handleSubmit} className="login-form">
+                <br/>
+                {this.renderErrors()}
+                <div className="login-form-vertical">
+                  <div>
+                    <div className="form-group">
+                      <label>
+                        <div className="login-field-label">Email</div>
+                        <div>
+                          <input type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="login-input-field"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                    <div className="form-group">
+                      <label>
+                        <div className="login-field-label">Password</div>
+                        <div>
+                          <input type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="login-input-field"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <footer className="login-form-footer">
+                  <div className="login-button-box">
+                    <input className="session-submit" type="submit" value="Sign In" />
+                  </div>
+                </footer>
+              </form>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     );
   }
