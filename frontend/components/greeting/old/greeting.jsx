@@ -1,10 +1,10 @@
-import React from 'react';
+import React    from 'react';
 import { Link } from 'react-router-dom';
 
 
 
 const Greeting = ({ currentUser, logout }) => {
-  const sessionLinks = () => (
+  const greetingPage = () => (
     <nav className="login-signup">
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout }) => {
     </hgroup>
   );
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return currentUser ? personalGreeting() : greetingPage();
 };
 
 
