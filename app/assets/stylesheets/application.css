@@ -14,8 +14,13 @@
  *= require_self
  */
 
+
+
 body {
   min-height: 100vh;
+  margin: 0px;
+  min-width: 1036px;
+  display: block;
 }
 
 .main-login {
@@ -31,7 +36,13 @@ body {
 }
 
 .loginPic {
-  height: inherit;
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1531346214/Mr.Hood/Login%20Page/login_page_image.png);
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  -webkit-box-flex: 1;
+  flex: 1 1 50%;
+
 }
 
 .center {
@@ -39,7 +50,6 @@ body {
   box-sizing: border-box;
   color: rgb(23, 23, 24);
   display: flex;
-  flex-direction: column;
   font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -48,7 +58,7 @@ body {
   letter-spacing: 0.25px;
   line-height: 19px;
   text-size-adjust: 100%;
-  width: 1036px;
+  width: 85%;
   -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
@@ -175,4 +185,102 @@ body {
 
 .login-input-field:hover {
   border-color: rgb(33, 206, 153);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.greeing-page-main{
+
+}
+
+
+.greeting-page-navbar-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 105px;
+}
+
+.greeting-page-navbar-left {
+
+}
+
+.greeting-page-navbar-right {
+  display: flex;
+}
+
+.greeting-page-navbar-login {
+  margin: 10px;
+  padding-right: 25px;
+}
+
+.greeting-page-navbar-signup {
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.greeting-page-content {
+  margin: 0 95px;
+}
+
+.greeting-page-content-box-1 {
+  margin-top: 15px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.greeting-page-content-box-1-image {
+  width: 500px;
+  height: 700px;
+  margin-right: 25px;
+}
+
+.greeting-page-content-box-1-left {
+  margin-left: 35px;
+  margin-top: 200px;
+  width: -webkit-fill-available;
+}
+
+.greeting-page-body {
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  max-width: 380px;
+  margin-top: 50px;
+}
+
+.greeting-page-title {
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 58px;
+}
+
+.greeting-signup {
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  display: block;
+  padding: 13px;
+  color: white;
+  float: left;
+  margin-top: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-weight: 450;
 }

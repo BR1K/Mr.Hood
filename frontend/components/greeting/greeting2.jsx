@@ -9,22 +9,16 @@ const Greeting2 = ({ currentUser, logout }) => {
 
       <nav className="greeting-page-navbar-box">
         <div className="greeting-page-navbar-left">
-          <a className="navbar-logo"></a>
+          <a className="navbar-logo">Logo</a>
         </div>
-        <ul className="greeting-page-navbar-right">
-          <li>
-            <a>Careers</a>
-          </li>
-          <li>
-            <a>Help</a>
-          </li>
-          <li>
+        <div className="greeting-page-navbar-right">
+          <div className="greeting-page-navbar-login">
             <Link to="/login">Log In</Link>
-          </li>
-          <li>
-            <a>Sign Up</a>
-          </li>
-        </ul>
+          </div>
+          <div className="greeting-page-navbar-signup">
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </div>
       </nav>
 
 
@@ -32,12 +26,19 @@ const Greeting2 = ({ currentUser, logout }) => {
 
         <div className="greeting-page-content-box-1">
           <div className="greeting-page-content-box-1-left">
-            <h1>Investing.</h1>
-            <h4>Now for the rest of us.</h4>
-            <Link to="/signup">Sign Up</Link>
+            <div className="greeting-page-title">
+              Investing.
+            </div>
+            <div className="greeting-page-title">
+              Now for the rest of us.
+            </div>
+            <div className="greeting-page-body">
+              Mr.Hood lets you learn to invest in the stock market for free.
+            </div>
+              <Link className="greeting-signup" to="/signup" >Sign Up</Link>
           </div>
           <div className="greeting-page-content-box-1-right">
-            <img className="greeting-page-content-box-1-image"></img>
+            <img className="greeting-page-content-box-1-image" src={window.loginPic}></img>
           </div>
         </div>
 
