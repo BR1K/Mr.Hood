@@ -17,6 +17,10 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -38,10 +42,10 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="main-login">
-        <div className="image-box">
-          <img className="loginPic" src={window.loginPic} />
-        </div>
         <div className="center">
+          <div className="loginPic">
+              
+          </div>
           <div className="login-form-box">
             <header className="login-form-box-header">
               <h2>Welcome to Mr.Hood</h2>
