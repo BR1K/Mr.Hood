@@ -411,3 +411,33 @@ body {
   padding-left: 15px;
   font-size: 15px;
 }
+
+
+
+
+.dashboard-page {
+  height: 100vh;
+  padding-top: 30px;
+  padding: 120px;
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532101624/Mr.Hood/Dashboard/beautiful-view-dawn-environment-1007957.jpg);
+  background-size: cover;
+}
+
+
+.dashboard-title {
+  margin-top: 0;
+}
+
+.header-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid darkgreen;
+  position: relative;
+  bottom: 60px;
+  left: 980px;
+}
+
+.sidebar-header-one {
+  margin-top: 5px;
+}

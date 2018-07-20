@@ -28,18 +28,7 @@ class StockChart extends React.Component {
   }
 
   renderRangeButtons() {
-    const ranges = ['1D', '1M', '3M', '1Y', '2Y', '5Y'];
-    return (
-      ranges.map((range, i) => (
-        <button
-          key={i}
-          className="range-buttons"
-          width={400}
-          onClick={() => this.updateRange(range)}>
-          {range}
-        </button>
-      ))
-    );
+
   }
 
   updateRange(newRange) {
@@ -57,33 +46,34 @@ class StockChart extends React.Component {
 
     let data = this.props.chart;
     let filteredData = data.filter((datum) => datum.close > 0);
-    // debugger
     if (this.state.range === "1D") {
       timeLabel = 'Latest Price'
       let priceChange = (filteredData.slice(0, 1).close - this.props.price);
-      profit = priceChange / this.props.price;
+      let profitNum = priceChange / this.props.price;
+      let profitPercent = (profitNum * 100).toFixed(2);
+      profit = `${profitPercent}%`;
     } else if (this.state.range === "1M") {
         timeLabel = "Past Month";
-        profit = this.props.stats.month1ChangePercent;
+        profit = (this.props.stats.month1ChangePercent * 100).toFixed(2);
     } else if (this.state.range === "3M") {
         timeLabel = "Past 3M";
-        profit = this.props.stats.month3ChangePercent;
+        profit = (this.props.stats.month3ChangePercent * 100).toFixed(2);
     } else if (this.state.range === "1Y") {
         timeLabel = "Past Year";
-        profit = this.props.stats.year1ChangePercent;
+        profit = (this.props.stats.year1ChangePercent * 100).toFixed(2);
     } else if (this.state.range === "2Y") {
         timeLabel = "Past 2Y";
-        profit = this.props.stats.year2ChangePercent;
+        profit = (this.props.stats.year2ChangePercent * 100).toFixed(2);
     } else if (this.state.range === "5Y") {
         timeLabel = "Past 5Y";
-        profit = this.props.stats.year5ChangePercent;
+        profit = (this.props.stats.year5ChangePercent * 100).toFixed(2);
     } else {
         timeLabel = "";
         profit = "";
     }
 
     this.setState({
-      change: profit,
+      change: `${profit}%`,
       pastRange: timeLabel
     })
   }
@@ -97,6 +87,18 @@ class StockChart extends React.Component {
 
     const max = data.reduce((a, b) => Math.max(a, b), 0)
     const min = data.reduce((a, b) => Math.min(a, b), 0)
+
+    const ranges = ['1D', '1M', '3M', '1Y', '2Y', '5Y'];
+    const rangeButtons = ranges.map((range, i) => {
+      return  <button
+          key={i}
+          className="range-buttons"
+          width={400}
+          onClick={() => this.updateRange(range)}>
+          {range}
+        </button>
+    });
+
 
     return (
       this.state.loading ?
@@ -119,7 +121,6 @@ class StockChart extends React.Component {
 
         <div className="chart">
           <LineChart data={data} margin={{top:25, bottom: 25}} width={600} height={400}>
-
             <Line
               type="linear"
               dataKey="high"
@@ -132,9 +133,10 @@ class StockChart extends React.Component {
               hide={true}
               domain={[min, max]}
             />
-
           </LineChart>
-
+          <div className="button-list">
+            <ul>{rangeButtons}</ul>
+          </div>
         </div>
 
       </div>

@@ -3,7 +3,6 @@ import Portfolio from './portfolio/portfolio_container';
 // import Watchlist from './watchlist/watchlist';
 
 const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
-  // debugger
 
 
   return(

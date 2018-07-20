@@ -35,13 +35,15 @@ const renderStocks = (holdings, stocks, history) => (
 );
 
 const Portfolio = ({ holdings, stocks, history }) => {
-  // debugger
   return(
     <aside className="sidebar-box">
       <h3 className="sidebar-header-one">Portfolio</h3>
       <div className="sidebar-info">
         {renderStocks(holdings, stocks, history)}
       </div>
+      <div>AAPL</div>
+      <div>NFLX</div>
+      <div>TRXC</div>
     </aside>
   );
 };

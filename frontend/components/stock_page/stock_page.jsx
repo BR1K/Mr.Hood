@@ -37,6 +37,8 @@ class StockPage extends React.Component {
       )
   }
 
+
+
   updatePrice() {
     const currentPrice = this.props.stock.price;
     this.props.fetchPrice(this.props.stock.symbol).then(
@@ -61,8 +63,14 @@ class StockPage extends React.Component {
     clearInterval(this.state.refresh);
   }
 
-  render() {
 
+  render() {
+    // const stockNews = this.props.news.map(article => {
+    //   return <li>
+    //             <div><Link to={article.url}>{article.headline}</Link></div>
+    //             <div>{article.summary}</div>
+    //          </li>
+    // });
     return (
       this.state.loading ?
         <div>
@@ -99,6 +107,10 @@ class StockPage extends React.Component {
                   <Link to={`/stocks/2293`}>{this.props.peers[3]}</Link>
                 </li>
 
+              </ul>
+            </div>
+            <div className='news-box'>
+              <ul>
               </ul>
             </div>
 

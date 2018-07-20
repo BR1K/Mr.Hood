@@ -17,7 +17,6 @@ class Dashboard extends React.Component {
 
 
   componentDidMount() {
-    // debugger
     // this.props.fetchStocks();
     this.props.fetchPortfolio(this.props.currentUser.id)
       .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
@@ -31,9 +30,9 @@ class Dashboard extends React.Component {
       return <div>loading...</div>
     } else {
       return (
-        <div>
+        <div className="dashboard-page">
           <div>
-            <h1>Dashboard</h1>
+            <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
             <button className="header-button" onClick={this.props.logout}>Log Out</button>
           </div>
           <div>
