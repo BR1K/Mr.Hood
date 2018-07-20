@@ -1,4 +1,4 @@
-class Api::TradesController < AppliationController
+class Api::TradesController < ApplicationController
 
   def index
     @trades = Trade.all
