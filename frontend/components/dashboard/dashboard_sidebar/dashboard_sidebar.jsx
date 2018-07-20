@@ -1,16 +1,20 @@
 import React from 'react';
-import Portfolio from './portfolio/portfolio';
-import Watchlist from './watchlist/watchlist';
+import Portfolio from './portfolio/portfolio_container';
+// import Watchlist from './watchlist/watchlist';
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
+  // debugger
 
 
-
-  return (
-    <div>
-      <Portfolio></Portfolio>
-      <Watchlist></Watchlist>
-    </div>
+  return(
+    <section className='dashboard-sidebar'>
+      <div className="scrollable">
+        <Portfolio
+          holdings={holdings}
+          stocks={stocks}
+        />
+      </div>
+    </section>
   );
 
 

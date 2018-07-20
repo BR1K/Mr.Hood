@@ -13,10 +13,10 @@ const Greeting2 = ({ currentUser, logout }) => {
         </div>
         <div className="greeting-page-navbar-right">
           <div className="greeting-page-navbar-login">
-            <Link to="/login">Log In</Link>
+            <Link to="/login" className="mrhood-button">Log In</Link>
           </div>
           <div className="greeting-page-navbar-signup">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" className="mrhood-button">Sign Up</Link>
           </div>
         </div>
       </nav>
@@ -38,7 +38,6 @@ const Greeting2 = ({ currentUser, logout }) => {
               <Link className="greeting-signup" to="/signup" >Sign Up</Link>
           </div>
           <div className="greeting-page-content-box-1-right">
-            <img className="greeting-page-content-box-1-image" src={window.loginPic}></img>
           </div>
         </div>
 

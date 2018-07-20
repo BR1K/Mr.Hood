@@ -14,9 +14,12 @@
  *= require_self
  */
 
-
+.mrhood-button {
+  text-decoration: none;
+}
 
 body {
+  font-family: "DIN Pro", "DIN Web", sans-serif;
   min-height: 100vh;
   margin: 0px;
   min-width: 1036px;
@@ -200,19 +203,21 @@ body {
 
 
 
-.greeing-page-main{
-
+.greeting-page-main{
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532033889/Mr.Hood/Welcome%20Page/fog-foggy-forest-4827.jpg);
+  height: 100vh;
+  background-size: cover;
 }
 
 
 .greeting-page-navbar-box {
   display: flex;
   justify-content: space-between;
-  margin: 0 105px;
+  margin: 0 130px;
 }
 
 .greeting-page-navbar-left {
-
+  margin-top: 10px;
 }
 
 .greeting-page-navbar-right {
@@ -232,6 +237,8 @@ body {
 
 .greeting-page-content {
   margin: 0 95px;
+  position: relative;
+  top: 60px;
 }
 
 .greeting-page-content-box-1 {
@@ -248,7 +255,6 @@ body {
 
 .greeting-page-content-box-1-left {
   margin-left: 35px;
-  margin-top: 200px;
   width: -webkit-fill-available;
 }
 
@@ -258,7 +264,7 @@ body {
   font-weight: 500;
   line-height: 24px;
   max-width: 380px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .greeting-page-title {
@@ -269,7 +275,7 @@ body {
   line-height: 58px;
 }
 
-.greeting-signup {
+/* .greeting-signup {
   font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
   display: block;
   padding: 13px;
@@ -283,4 +289,109 @@ body {
   color: rgb(255, 255, 255);
   cursor: pointer;
   font-weight: 450;
+} */
+
+/* .greeting-signup {
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  width: 76px;
+  background-color: rgb(33, 160, 153);
+  border-color: rgb(33, 160, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  padding: 13px;
+  float: left;
+  margin-top: 10px;
+  text-decoration: none;
+} */
+.greeting-signup{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.07px;
+  background-color: rgb(33, 160, 153);
+  border-color: rgb(33, 160, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  padding: 14px 16px;
+  float: left;
+  margin-top: 10px;
+  text-decoration: none;
+  opacity: 1;
+  line-height: 18px;
+  white-space: nowrap;
+
+}
+
+
+
+
+
+.signup-form-container {
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532048206/Mr.Hood/signup%20page/autumn-clouds-fall-91228.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.signup-page-bar-box {
+  margin: 0 130px;
+}
+
+.signup-content {
+  margin: 0 130px;
+  box-sizing: border-box;
+}
+
+.signup-header {
+  font-size: 55px;
+}
+
+.signup-row {
+  padding: 6px 0px;
+  display: flex;
+
+}
+
+.signup-input-left {
+
+
+}
+
+.signup-firstname-input {
+  width: 192px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 9px;
+}
+
+.signup-lastname-input {
+  width: 192px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 9px;
+}
+
+.signup-input-right {
+  padding: 0 15px 0 12px;
+
+}
+
+.signup-input-field-box {
+
+}
+
+.signup-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 18px;
 }

@@ -14,3 +14,4 @@ class Api::PortfoliosController < ApplicationController
   def portfolio_params
     params.require(:portfolio).require(:user_id)
   end
+end
