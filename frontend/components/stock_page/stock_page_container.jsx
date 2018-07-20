@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
   topStocks: state.entities.iex.topStocks,
   peers: state.entities.iex.peers,
   news: state.entities.iex.news,
+  searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]),
 });
 
 const mapDispatchToProps = (dispatch) => ({

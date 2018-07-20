@@ -9,7 +9,7 @@ class StockChart extends React.Component {
     this.updateRange = this.updateRange.bind(this);
 
     this.state = {
-      range: '1D',
+      range: '1Y',
       loading: true,
       change: 'Latest Price',
       pastRange: '',
@@ -55,6 +55,9 @@ class StockChart extends React.Component {
     let timeLabel;
     let profit;
 
+    let data = this.props.chart;
+    let filteredData = data.filter((datum) => datum.close > 0);
+    // debugger
     if (this.state.range === "1D") {
       timeLabel = 'Latest Price'
       let priceChange = (filteredData.slice(0, 1).close - this.props.price);

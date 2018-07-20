@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
 import { MoonLoader } from 'halogenium';
+import SearchBar from '../navbar/search/search_container';
 
 class StockPage extends React.Component {
 
@@ -61,6 +62,7 @@ class StockPage extends React.Component {
   }
 
   render() {
+
     return (
       this.state.loading ?
         <div>
@@ -73,13 +75,32 @@ class StockPage extends React.Component {
         </div>
       :
         <section className="stock-page-main">
+          <div>
+            <SearchBar stocks={this.props.searchStocks}></SearchBar>
+          </div>
           <div className="main-stock-section">
             <StockChart
               stock={this.props.stock}
               price={this.props.price}
               stats={this.props.stats}
             />
-            <div>Peers</div>
+            <div>Peers
+              <ul>
+                <li>
+                  <Link to={`/stocks/44`}>{this.props.peers[0]}</Link>
+                </li>
+                <li>
+                  <Link to={`/stocks/1023`}>{this.props.peers[1]}</Link>
+                </li>
+                <li>
+                  <Link to={`/stocks/8873`}>{this.props.peers[2]}</Link>
+                </li>
+                <li>
+                  <Link to={`/stocks/2293`}>{this.props.peers[3]}</Link>
+                </li>
+
+              </ul>
+            </div>
 
           </div>
           <div className="side">

@@ -395,3 +395,19 @@ body {
   border: 1px solid #b1bfc4;
   padding-left: 18px;
 }
+
+
+.stock-page-main {
+  margin: 0 120px;
+}
+
+
+.search-bar {
+  height: 40px;
+  border: 1px solid darkgreen;
+  width: -webkit-fill-available;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 15px;
+}
