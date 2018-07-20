@@ -10,7 +10,7 @@ class Api::TradesController < AppliationController
     @trade = Trade.new(trade_params)
 
     if @trade.verify_order == false
-      render json: @trade.errors[:size], status 422
+      render json: @trade.errors[:size], status: 422
       return
     end
 
@@ -18,7 +18,7 @@ class Api::TradesController < AppliationController
       change = @trade.size * @trade.price
       change *= -1 if @trade.trade_type == "buy"
       @trade.user.add_to_buying_power(amount)
-      render json: @trade
+      render 'api/trades/show'
     else
       render json: @trade.errors.full_messages, status: 422
     end
@@ -28,5 +28,5 @@ class Api::TradesController < AppliationController
     params.require(:trade).permit(:stock_id, :portfolio_id, :price, :size, :trade_type)
   end
 
-  
+
 end
