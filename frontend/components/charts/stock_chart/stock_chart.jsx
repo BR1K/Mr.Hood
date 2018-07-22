@@ -6,14 +6,15 @@ import { MoonLoader } from 'halogenium';
 class StockChart extends React.Component {
   constructor(props) {
     super(props);
-    this.updateRange = this.updateRange.bind(this);
 
     this.state = {
       range: '1Y',
       loading: true,
-      change: 'Latest Price',
-      pastRange: '',
+      // change: '',
+      // pastRange: '',
     }
+
+    this.updateRange = this.updateRange.bind(this);
   }
 
   componentDidMount() {
@@ -23,12 +24,8 @@ class StockChart extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps !== this.props) {
-      this.renderUpdate();
+      this.reRender();
     }
-  }
-
-  renderRangeButtons() {
-
   }
 
   updateRange(newRange) {
@@ -36,7 +33,7 @@ class StockChart extends React.Component {
     this.props.fetchChart(this.props.stock.symbol, newRange)
   }
 
-  renderUpdate() {
+  reRender() {
     if (this.state.loading === true) {
       return null;
     }
@@ -47,7 +44,7 @@ class StockChart extends React.Component {
     let data = this.props.chart;
     let filteredData = data.filter((datum) => datum.close > 0);
     if (this.state.range === "1D") {
-      timeLabel = 'Latest Price'
+      timeLabel = 'Latest Price';
       let priceChange = (filteredData.slice(0, 1).close - this.props.price);
       let profitNum = priceChange / this.props.price;
       let profitPercent = (profitNum * 100).toFixed(2);
@@ -74,13 +71,13 @@ class StockChart extends React.Component {
 
     this.setState({
       change: `${profit}%`,
-      pastRange: timeLabel
+      // pastRange: timeLabel
     })
   }
 
 
   render() {
-    let data = this.props.chart.filter(datum => datum.close > 0);
+    let data = this.props.chart.filter(datum => datum.close);
     let dataArray = data.map(datum => {
       return datum.close;
     });
@@ -116,7 +113,7 @@ class StockChart extends React.Component {
 
         <div className="percent-change">
             <span className="percent">{this.state.change}</span>
-            <span className="range">{this.state.pastRange}</span>
+            <span className="range"></span>
         </div>
 
         <div className="chart">
