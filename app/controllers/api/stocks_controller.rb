@@ -6,7 +6,6 @@ class Api::StocksController < ApplicationController
     # sql
     # params[:query]
     # @stocks = Stock.all
-    # debugger
     render 'api/stocks/index'
   end
 

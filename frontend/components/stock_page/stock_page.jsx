@@ -15,6 +15,7 @@ class StockPage extends React.Component {
     };
 
     this.updatePrice = this.updatePrice.bind(this);
+    // this.peerId = this.peerId.bind(this);
   }
 
 
@@ -26,6 +27,19 @@ class StockPage extends React.Component {
       .then(() => this.props.fetchPeers(this.props.stock.symbol))
       .then(() => this.props.fetchNews(this.props.stock.symbol))
       .then(() => this.props.fetchTopStocks())
+      // .then(() => this.props.fetchStocks(this.props.stock.symbol))
+      // .then(() => this.props.fetchPeerStocks(this.props.stock.symbol))
+      .then(
+        () => {
+          const peerSymbols = this.props.fetchPeers(this.props.stock.symbol);
+          for (let i = 0; i < peerSymbols.length; i++) {
+            let peerSymbol = peerSymbols[i];
+            const peerStocks = this.props.fetchStocks(peerSymbol)
+            const peerStock = peerStocks[0];
+            this.props.peerStocks[peerStock.id] = peerStock;
+          }
+        }
+      )
       .then(
         () => {
           const refresh = setInterval(this.updatePrice, 5000);
@@ -35,6 +49,7 @@ class StockPage extends React.Component {
           });
         }
       )
+      // debugger
   }
 
 
@@ -48,6 +63,7 @@ class StockPage extends React.Component {
         }
       }
     )
+    debugger
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,6 +79,10 @@ class StockPage extends React.Component {
     clearInterval(this.state.refresh);
   }
 
+  // peerId(peerSymbol) {
+  //   return this.props.fetchStocks(peerSymbol).id
+  // }
+
 
   render() {
     // const stockNews = this.props.news.map(article => {
@@ -71,17 +91,27 @@ class StockPage extends React.Component {
     //             <div>{article.summary}</div>
     //          </li>
     // });
-    return (
-      this.state.loading ?
-        <div>
+    if (this.state.loading) {
+      return (
+        <div className="loading-icon">
           <MoonLoader
-            className="loading-icon"
             color="#26A65B"
             size="20px"
             margin="5px"
-          />
+            />
         </div>
-      :
+      )
+    } else {
+
+      // const peers = this.props.peers.map((peerSymbol, i) => {
+      //   return (
+      //     <li key={i}>
+      //       <Link to={`/stocks/${this.peerId(peerSymbol)}`}>{peerSymbol}</Link>
+      //     </li>
+      //   );
+      // });
+
+      return (
         <section className="stock-page-main">
           <div>
             <SearchBar stocks={this.props.searchStocks}></SearchBar>
@@ -91,21 +121,9 @@ class StockPage extends React.Component {
               stock={this.props.stock}
               price={this.props.price}
               stats={this.props.stats}
-            />
+              />
             <div>Peers
               <ul>
-                <li>
-                  <Link to={`/stocks/44`}>{this.props.peers[0]}</Link>
-                </li>
-                <li>
-                  <Link to={`/stocks/1023`}>{this.props.peers[1]}</Link>
-                </li>
-                <li>
-                  <Link to={`/stocks/8873`}>{this.props.peers[2]}</Link>
-                </li>
-                <li>
-                  <Link to={`/stocks/2293`}>{this.props.peers[3]}</Link>
-                </li>
 
               </ul>
             </div>
@@ -119,15 +137,29 @@ class StockPage extends React.Component {
 
           </div>
         </section>
-    )
+      )
+    }
+
   }
 
 }
 
-
-
-
 export default StockPage;
+
+
+
+// <li>
+//   <Link to={`/stocks/44`}>{this.props.peers[0]}</Link>
+// </li>
+// <li>
+//   <Link to={`/stocks/1023`}>{this.props.peers[1]}</Link>
+// </li>
+// <li>
+//   <Link to={`/stocks/8873`}>{this.props.peers[2]}</Link>
+// </li>
+// <li>
+//   <Link to={`/stocks/2293`}>{this.props.peers[3]}</Link>
+// </li>
 
 // don't use fetch in component (not it's job):
 // fetchPrice() {

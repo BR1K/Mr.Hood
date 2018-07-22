@@ -8,7 +8,7 @@ import { RECEIVE_PRICE,
          RECEIVE_NEWS }    from '../actions/iex_actions';
 import { combineReducers } from 'redux';
 
-const priceReducer = (state={}, action) => {
+const priceReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -19,7 +19,7 @@ const priceReducer = (state={}, action) => {
   }
 };
 
-const statsReducer = (state={}, action) => {
+const statsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -30,7 +30,7 @@ const statsReducer = (state={}, action) => {
   }
 };
 
-const chartReducer = (state=[], action) => {
+const chartReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -41,7 +41,7 @@ const chartReducer = (state=[], action) => {
   }
 };
 
-const companyDataReducer = (state={}, action) => {
+const companyDataReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -52,7 +52,7 @@ const companyDataReducer = (state={}, action) => {
   }
 };
 
-const topStocksReducer = (state={}, action) => {
+const topStocksReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -74,7 +74,7 @@ const topStocksReducer = (state={}, action) => {
 //   }
 // };
 
-const peersReducer = (state={}, action) => {
+const peersReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -85,7 +85,7 @@ const peersReducer = (state={}, action) => {
   }
 };
 
-const newsReducer = (state={}, action) => {
+const newsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
