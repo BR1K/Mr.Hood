@@ -11,6 +11,7 @@ class Api::StocksController < ApplicationController
 
   def show
     @stock = Stock.find(params[:id])
+    # @stock = Stock.find_by_symbol(params[:symbol])
     render 'api/stocks/show'
   end
 

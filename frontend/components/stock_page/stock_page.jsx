@@ -63,7 +63,7 @@ class StockPage extends React.Component {
         }
       }
     )
-    debugger
+    // debugger
   }
 
   componentWillReceiveProps(nextProps) {
@@ -122,9 +122,15 @@ class StockPage extends React.Component {
               price={this.props.price}
               stats={this.props.stats}
               />
-            <div>Peers
+            <div className="peersBox">Peers
               <ul>
+                <li>
 
+                </li>
+                <li>
+                </li>
+                <li>
+                </li>
               </ul>
             </div>
             <div className='news-box'>

@@ -14,3 +14,7 @@ Rails.application.routes.draw do
     resources :portfolio_snapshots, only: [:create, :index]
   end
 end
+
+
+# get 'stocks/:symbol', to: 'stocks#show'
+# get 'symbol ', :to => 'stocks#show'
