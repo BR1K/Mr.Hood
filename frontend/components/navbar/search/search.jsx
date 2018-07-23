@@ -50,9 +50,9 @@ class Search extends React.Component {
 
     const results = this.props.stocks.map((result, i) => {
       return (
-        <li key={i}>
+        <div key={i}>
           <Link to={`/stocks/${result.id}`}>{result.symbol}</Link>
-        </li>
+        </div>
       );
     });
 
@@ -66,9 +66,9 @@ class Search extends React.Component {
           className="search-bar">
         </input>
 
-        <ul>
+        <section className="search-results">
           {results}
-        </ul>
+        </section>
       </div>
     );
 
