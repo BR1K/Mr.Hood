@@ -6,9 +6,9 @@ export const fetchStocks = (query) => (
   })
 );
 
-export const fetchStock = (id) => (
+export const fetchStock = (symbol) => (
   $.ajax({
-    url: `api/stocks/${id}`,
+    url: `api/stocks/${symbol}`,
     method: 'GET',
   })
 );
