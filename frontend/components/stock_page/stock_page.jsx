@@ -73,7 +73,7 @@ class StockPage extends React.Component {
   //   return this.props.fetchStocks(peerSymbol).id
   // }
 
-
+// stocks={this.props.searchStocks}
   render() {
     // const stockNews = this.props.news.map(article => {
     //   return <li>
@@ -104,7 +104,6 @@ class StockPage extends React.Component {
       return (
         <section className="stock-page-main">
           <div>
-            <SearchBar stocks={this.props.searchStocks}></SearchBar>
           </div>
           <div className="main-stock-section">
             <StockChart
