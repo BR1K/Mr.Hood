@@ -38,7 +38,7 @@ body {
   -webkit-box-align: center;
   align-items: center;
   display: flex;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 }
 
@@ -46,7 +46,7 @@ body {
   background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1531346214/Mr.Hood/Login%20Page/login_page_image.png);
   background-position: 50%;
   background-size: cover;
-  height: 100%;
+  height: 105vh;
   -webkit-box-flex: 1;
   flex: 1 1 50%;
 

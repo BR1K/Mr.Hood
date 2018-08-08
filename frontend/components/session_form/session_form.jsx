@@ -44,11 +44,11 @@ class SessionForm extends React.Component {
       <div className="main-login">
         <div className="center">
           <div className="loginPic">
-              
+
           </div>
           <div className="login-form-box">
             <header className="login-form-box-header">
-              <h2>Welcome to Mr.Hood</h2>
+              <h1>Welcome to Mr.Hood!</h1>
             </header>
             <div className="login-form-input-box">
               <form onSubmit={this.handleSubmit} className="login-form">
