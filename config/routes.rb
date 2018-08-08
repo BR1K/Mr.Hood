@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
 		resources :users, only: [:create]
 		resource :session, only: [:create, :destroy, :show]
-    resources :stocks, only: [:index, :show]
+    resources :stocks, only: [:index]
     resources :trades, only: [:index, :create, :show]
     resources :portfolios, only: [:show]
     resources :portfolio_snapshots, only: [:create, :index]
+    get '/stocks/:symbol', to: 'stocks#show'
   end
 end
 
 
-# get 'stocks/:symbol', to: 'stocks#show'
 # get 'symbol ', :to => 'stocks#show'
