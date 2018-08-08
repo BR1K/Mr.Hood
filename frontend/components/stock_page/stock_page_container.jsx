@@ -17,10 +17,11 @@ const mapStateToProps = (state, ownProps) => {
   topStocks: state.entities.iex.topStocks,
   peers: state.entities.iex.peers,
   news: state.entities.iex.news,
-  searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]), }
+  // searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]),
+  searchStocks: Object.keys(state.ui.searchedStocks).map( id => state.ui.searchedStocks[id]),
   // peerIds: this.props.peers.map( id => state.entities.stocks[id])
   // peerStocks: state.entities.stockInfo.peerStocks,
-
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({

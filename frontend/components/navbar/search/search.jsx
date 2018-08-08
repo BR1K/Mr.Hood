@@ -22,13 +22,16 @@ class Search extends React.Component {
       this.timeOut = setTimeout(() => this.props.fetchStocks(this.state.searchInput), 400)
       }
     );
-
+    // if (this.state.searchInput.length === 0) {
+    //   this.props.resetStocks();
+    // }
   }
 
 
 
   componentWillUnmount() {
-    this.setState({ searchInput: ""})
+    this.setState({ searchInput: ""});
+    // this.props.resetStocks();
   }
 
 
