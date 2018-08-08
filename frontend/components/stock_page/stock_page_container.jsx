@@ -5,9 +5,10 @@ import { fetchPrice, fetchChart, fetchCompany, fetchStats,
          fetchTopStocks, fetchPeers, fetchNews } from '../../actions/iex_actions';
 import { fetchStocks, fetchStock, fetchPeerStocks } from '../../actions/stock_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  currentUser: state.session.currentUser,
-  stock: state.entities.stocks[ownProps.match.params.stockId],
+const mapStateToProps = (state, ownProps) => {
+
+  return { currentUser: state.session.currentUser,
+  stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()],
   // stock: state.entities.iex.companyData.symbol,
   price: state.entities.iex.price,
   chart: state.entities.iex.chart,
@@ -16,10 +17,11 @@ const mapStateToProps = (state, ownProps) => ({
   topStocks: state.entities.iex.topStocks,
   peers: state.entities.iex.peers,
   news: state.entities.iex.news,
-  searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]),
+  searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]), }
   // peerIds: this.props.peers.map( id => state.entities.stocks[id])
   // peerStocks: state.entities.stockInfo.peerStocks,
-});
+
+}
 
 const mapDispatchToProps = (dispatch) => ({
   fetchStock: (id) => dispatch(fetchStock(id)),

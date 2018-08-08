@@ -20,7 +20,7 @@ class StockPage extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchStock(this.props.match.params.stockId)
+    this.props.fetchStock(this.props.match.params.symbol)
       .then(() => this.props.fetchPrice(this.props.stock.symbol))
       .then(() => this.props.fetchStats(this.props.stock.symbol))
       .then(() => this.props.fetchCompany(this.props.stock.symbol))
@@ -29,17 +29,6 @@ class StockPage extends React.Component {
       .then(() => this.props.fetchTopStocks())
       // .then(() => this.props.fetchStocks(this.props.stock.symbol))
       // .then(() => this.props.fetchPeerStocks(this.props.stock.symbol))
-      .then(
-        () => {
-          const peerSymbols = this.props.fetchPeers(this.props.stock.symbol);
-          for (let i = 0; i < peerSymbols.length; i++) {
-            let peerSymbol = peerSymbols[i];
-            const peerStocks = this.props.fetchStocks(peerSymbol)
-            const peerStock = peerStocks[0];
-            this.props.peerStocks[peerStock.id] = peerStock;
-          }
-        }
-      )
       .then(
         () => {
           const refresh = setInterval(this.updatePrice, 5000);
@@ -67,9 +56,10 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ( nextProps.stock && (nextProps.stock.id !== parseInt(this.props.match.params.stockId))) {
+    // debugger
+    if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
       this.setState({ loading: true },
-        () => this.props.fetchStock(this.props.match.params.stockId)
+        () => this.props.fetchStock(this.props.match.params.symbol)
         .then(() => this.props.fetchPrice(this.props.stock.symbol))
         .then(() => this.setState({loading: false})));
       }
@@ -128,6 +118,7 @@ class StockPage extends React.Component {
 
                 </li>
                 <li>
+
                 </li>
                 <li>
                 </li>
