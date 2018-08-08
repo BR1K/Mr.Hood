@@ -10,8 +10,8 @@ class Api::StocksController < ApplicationController
   end
 
   def show
-    @stock = Stock.find(params[:id])
-    # @stock = Stock.find_by_symbol(params[:symbol])
+    # @stock = Stock.find(params[:id])
+    @stock = Stock.find_by(symbol: params[:symbol].upcase)
     render 'api/stocks/show'
   end
 
