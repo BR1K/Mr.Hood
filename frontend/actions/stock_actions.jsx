@@ -23,8 +23,8 @@ export const fetchStocks = (query) => (dispatch) => (
   StockAPIUtil.fetchStocks(query).then((stocks) => dispatch(receiveStocks(stocks)))
 );
 
-export const fetchStock = (id) => (dispatch) => (
-  StockAPIUtil.fetchStock(id).then((stock) => dispatch(receiveStock(stock)))
+export const fetchStock = (symbol) => (dispatch) => (
+  StockAPIUtil.fetchStock(symbol).then((stock) => dispatch(receiveStock(stock)))
 );
 
 export const fetchPeerStocks = (peer) => (dispatch) => (
