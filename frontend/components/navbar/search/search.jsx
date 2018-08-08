@@ -51,7 +51,7 @@ class Search extends React.Component {
     const results = this.props.stocks.map((result, i) => {
       return (
         <div key={i}>
-          <Link to={`/stocks/${result.id}`}>{result.symbol}</Link>
+          <Link to={`/stocks/${result.symbol}`}>{result.symbol}</Link>
         </div>
       );
     });
@@ -78,4 +78,4 @@ class Search extends React.Component {
 
 }
 
-export default Search
+export default withRouter(Search);
