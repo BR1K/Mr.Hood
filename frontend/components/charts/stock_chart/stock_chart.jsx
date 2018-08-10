@@ -82,8 +82,8 @@ class StockChart extends React.Component {
       return datum.close;
     });
 
-    const max = data.reduce((a, b) => Math.max(a, b), 0)
-    const min = data.reduce((a, b) => Math.min(a, b), 0)
+    const max = data.reduce((a, b) => Math.max(a, b), 0);
+    const min = data.reduce((a, b) => Math.min(a, b), 0);
 
     const ranges = ['1D', '1M', '3M', '1Y', '2Y', '5Y'];
     const rangeButtons = ranges.map((range, i) => {
@@ -109,15 +109,17 @@ class StockChart extends React.Component {
         </div>
       :
       <div className="stock-chart">
-        <div className="stock-chart-price">{this.props.price}</div>
 
-        <div className="percent-change">
-            <span className="percent">{this.state.change}</span>
-            <span className="range"></span>
-        </div>
 
         <div className="chart">
-          <LineChart data={data} margin={{top:25, bottom: 25}} width={600} height={400}>
+          <div className="chart-data">
+            <div className="stock-chart-price">Price: {this.props.price}</div>
+            <div className="percent-change">
+              <span className="percent">Percent Change: {this.state.change}</span>
+              <span className="range"></span>
+            </div>
+          </div>
+          <LineChart data={data} margin={{top:25, bottom: 25}} width={1150} height={400}>
             <Line
               type="linear"
               dataKey="high"
