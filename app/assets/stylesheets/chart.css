@@ -1,0 +1,51 @@
+.range-buttons {
+  background-color: #fff;
+  border: none;
+  width: 50px;
+  /* height: 24px; */
+  color: rgb(33, 206, 153);
+  padding: 20px;
+  margin-right: 60px;
+  margin-top: 50px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.range-buttons:hover {
+  /* font-size: 14px; */
+  color: rgb(33, 106, 153);
+  cursor: pointer;
+}
+
+.range-buttons:active {
+  text-decoration: underline;
+}
+
+.recharts-wrapper {
+  width: 100%;
+
+}
+
+.recharts-surface {
+  background: #f9f9f9;
+  padding: 20px;
+  width: 100%;
+}
+
+.chart {
+  margin-top: 60px;
+  /* background: #f9f9f9; */
+  /* padding: 20px; */
+}
+
+.stock-chart-price, .percent-change {
+  z-index: 4;
+}
+
+.chart-data {
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 0;
+  width: 1170px;
+  color: rgb(33, 206, 153);
+}

@@ -1,5 +1,5 @@
 import React    from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
 import { MoonLoader } from 'halogenium';
@@ -16,6 +16,7 @@ class StockPage extends React.Component {
 
     this.updatePrice = this.updatePrice.bind(this);
     // this.peerId = this.peerId.bind(this);
+    this.stockNews = this.stockNews.bind(this);
   }
 
 
@@ -56,7 +57,7 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // debugger
+    debugger
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
       this.setState({ loading: true },
         () => this.props.fetchStock(this.props.match.params.symbol)
@@ -74,13 +75,23 @@ class StockPage extends React.Component {
   // }
 
 // stocks={this.props.searchStocks}
+
+  stockNews() {
+    let news = [];
+    for (let i = 0; i < this.props.news.length; i++) {
+      let article = this.props.news[i];
+      news.push(
+        <li className="article-box">
+          <div className="article-title"><a href={article.url}>{article.headline}</a></div>
+          <div className="article-body">{article.summary}</div>
+        </li>
+      )
+    }
+
+    return news;
+  }
+
   render() {
-    // const stockNews = this.props.news.map(article => {
-    //   return <li>
-    //             <div><Link to={article.url}>{article.headline}</Link></div>
-    //             <div>{article.summary}</div>
-    //          </li>
-    // });
     if (this.state.loading) {
       return (
         <div className="loading-icon">
@@ -92,39 +103,62 @@ class StockPage extends React.Component {
         </div>
       )
     } else {
-
-      // const peers = this.props.peers.map((peerSymbol, i) => {
+      // const stockNews = this.props.news.forEach(article, i => {
       //   return (
-      //     <li key={i}>
-      //       <Link to={`/stocks/${this.peerId(peerSymbol)}`}>{peerSymbol}</Link>
+      //     <li>
+      //       <div><Link to={article.url}>{article.headline}</Link></div>
+      //       <div>{article.summary}</div>
       //     </li>
       //   );
       // });
 
+
+      const peers = this.props.peers.map((peerSymbol, i) => {
+        return (
+          <li className="peer" key={i}>
+            <Link to={`/stocks/${peerSymbol}`}>{peerSymbol}</Link>
+          </li>
+        );
+      });
+
       return (
+
         <section className="stock-page-main">
-          <div>
-          </div>
+
+
+          <nav className="greeting-page-navbar-box">
+            <div className="greeting-page-navbar-left">
+              <Link to="/">
+                <img className="logo-image" src={window.logo} />
+              </Link>
+            </div>
+            <div className="greeting-page-navbar-right">
+              <SearchBar />
+              <button className="header-button" onClick={this.props.logout}>Log Out</button>
+            </div>
+          </nav>
+
+
           <div className="main-stock-section">
             <StockChart
               stock={this.props.stock}
               price={this.props.price}
               stats={this.props.stats}
               />
-            <div className="peersBox">Peers
-              <ul>
-                <li>
-
-                </li>
-                <li>
-
-                </li>
-                <li>
-                </li>
-              </ul>
+            <div id="peers-title">
+              Peers
+            </div>
+            <div className="peersBox">
+                <ul>
+                  {peers}
+                </ul>
+            </div>
+            <div id="news-title">
+              Latest News
             </div>
             <div className='news-box'>
               <ul>
+                {this.stockNews()}
               </ul>
             </div>
 
@@ -140,8 +174,8 @@ class StockPage extends React.Component {
 
 }
 
-export default StockPage;
-
+// export default StockPage;
+export default withRouter(StockPage);
 
 
 // <li>

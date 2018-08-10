@@ -9,7 +9,9 @@ const Greeting2 = ({ currentUser, logout }) => {
 
       <nav className="greeting-page-navbar-box">
         <div className="greeting-page-navbar-left">
-          <a className="navbar-logo">Logo</a>
+          <Link to="/">
+            <img className="logo-image" src={window.logo} />
+          </Link>
         </div>
         <div className="greeting-page-navbar-right">
           <div className="greeting-page-navbar-login">

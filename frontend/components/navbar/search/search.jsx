@@ -10,6 +10,7 @@ class Search extends React.Component {
       searchInput: ""
     };
     this.handleInput = this.handleInput.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   handleInput(e) {
@@ -27,41 +28,49 @@ class Search extends React.Component {
     // }
   }
 
+  clearState () {
+    this.setState({ searchInput: '' })
+  }
+
 
 
   componentWillUnmount() {
     this.setState({ searchInput: ""});
-    // this.props.resetStocks();
+    this.props.resetStocks();
   }
 
-
   render() {
+
+    const results = this.props.searchStocks.map((result, i) => {
+      return (
+        <Link to={`/stocks/${result.symbol}`}>
+          <li
+            key={i}
+            onClick={this.clearState}>{result.symbol}
+          </li>
+        </Link>
+      );
+    });
+
     if (this.state.searchInput === "") {
       return (
-        <div>
+        <div className="search-container">
           <input
             onChange={this.handleInput}
             value={this.state.searchInput}
             placeholder='Search by stock symbol'
             className="search-bar">
           </input>
-          <ul>
+          <ul className="search-results">
+
           </ul>
         </div>
       )
     }
 
-    const results = this.props.stocks.map((result, i) => {
-      return (
-        <div key={i}>
-          <Link to={`/stocks/${result.symbol}`}>{result.symbol}</Link>
-        </div>
-      );
-    });
-
 
     return(
-      <div>
+      <div className="search-container">
         <input
           onChange={this.handleInput}
           value={this.state.searchInput}
@@ -69,9 +78,9 @@ class Search extends React.Component {
           className="search-bar">
         </input>
 
-        <section className="search-results">
+        <ul className="search-results">
           {results}
-        </section>
+        </ul>
       </div>
     );
 
