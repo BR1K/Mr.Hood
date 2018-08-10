@@ -41,14 +41,9 @@ body {
 }
 
 .main-login {
-  /* display: flex;
-  min-height: 100vh;
-  justify-content: space-around; */
-  /* min-height: 100vh; */
   -webkit-box-align: center;
   align-items: center;
   display: flex;
-  /* height: 100%; */
   width: 100%;
 }
 
@@ -59,7 +54,6 @@ body {
   height: 105vh;
   -webkit-box-flex: 1;
   flex: 1 1 50%;
-
 }
 
 .center {
@@ -94,12 +88,10 @@ body {
   margin-left: 52px;
   width: 412px;
   -webkit-box-direction: normal;
-
   box-sizing: border-box;
   display: block;
   margin-left: 52px;
   width: 412px;
-
 }
 
 .login-form-box-header {
@@ -115,7 +107,6 @@ body {
 }
 
 .login-form {
-  /* box-sizing: inherit; */
   -webkit-box-direction: normal;
 }
 
@@ -206,21 +197,6 @@ body {
 }
 
 .signup-submit {
-  /* font-size: 13px;
-  font-weight: 400;
-  height: 48px;
-  width: 175px;
-  letter-spacing: 0.25px;
-  line-height: 19px;
-  margin-top: 24px;
-  text-size-adjust: 100%;
-  background-color: rgb(33, 206, 153);
-  border-color: rgb(33, 206, 153);
-  color: rgb(255, 255, 255);
-  border-radius: 4px;
-  cursor: pointer;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal; */
   align-items: center;
   box-sizing: border-box;
   color: rgb(23, 23, 24);
@@ -253,7 +229,7 @@ body {
 
 
 
-.greeting-page-main{
+.greeting-page-main {
   background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532033889/Mr.Hood/Welcome%20Page/fog-foggy-forest-4827.jpg);
   height: 100vh;
   background-size: cover;
@@ -326,39 +302,7 @@ body {
   line-height: 58px;
 }
 
-/* .greeting-signup {
-  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
-  display: block;
-  padding: 13px;
-  color: white;
-  float: left;
-  margin-top: 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  background-color: rgb(33, 206, 153);
-  border-color: rgb(33, 206, 153);
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-weight: 450;
-} */
 
-/* .greeting-signup {
-  box-sizing: border-box;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.25px;
-  width: 76px;
-  background-color: rgb(33, 160, 153);
-  border-color: rgb(33, 160, 153);
-  color: rgb(255, 255, 255);
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
-  padding: 13px;
-  float: left;
-  margin-top: 10px;
-  text-decoration: none;
-} */
 .greeting-signup {
   box-sizing: border-box;
   font-size: 16px;
@@ -378,9 +322,6 @@ body {
   line-height: 18px;
   white-space: nowrap;
   align-items: center;
-
-
-
 }
 
 .greeting-signup a {
@@ -412,6 +353,7 @@ body {
   padding-bottom: 15px;
   padding-top: 90px;
 }
+
 .signup-subheader {
   padding-bottom: 15px;
 }
@@ -419,7 +361,6 @@ body {
 .signup-row {
   padding: 6px 0px;
   display: flex;
-
 }
 
 
@@ -441,12 +382,8 @@ body {
 
 .signup-input-right {
   padding: 0 15px 0 12px;
-
 }
 
-.signup-input-field-box {
-
-}
 
 .signup-input {
   width: 400px;
@@ -455,10 +392,6 @@ body {
   border: 1px solid #b1bfc4;
   padding-left: 18px;
 }
-
-
-
-
 
 
 
@@ -483,7 +416,6 @@ body {
   height: 100vh;
   padding-top: 30px;
   padding: 120px;
-  /* background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532101624/Mr.Hood/Dashboard/beautiful-view-dawn-environment-1007957.jpg); */
   background-size: cover;
 }
 
@@ -520,8 +452,6 @@ body {
 }
 
 
-}
-
 .sidebar-header-one {
   margin-top: 5px;
 }
@@ -534,22 +464,20 @@ body {
   outline: none;
 }
 .search-results {
-  /* position: absolute; */
   margin-top: 0;
   width: 700px;
   background-color: rgb(33, 206, 153);
   z-index: 5;
   position: absolute;
   text-decoration: none;
-
 }
 
 .search-results li {
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
-
 }
+
 .search-results a {
   text-decoration: none;
 }
