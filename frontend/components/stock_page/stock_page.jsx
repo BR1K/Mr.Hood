@@ -39,7 +39,7 @@ class StockPage extends React.Component {
           });
         }
       )
-      // debugger
+      //
   }
 
 
@@ -53,11 +53,11 @@ class StockPage extends React.Component {
         }
       }
     )
-    // debugger
+    //
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
       this.setState({ loading: true },
         () => this.props.fetchStock(this.props.match.params.symbol)

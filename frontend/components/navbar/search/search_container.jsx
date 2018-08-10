@@ -3,7 +3,7 @@ import { fetchStock, fetchStocks, resetStocks } from '../../../actions/stock_act
 import Search from './search';
 
 const mSP = (state) => {
-  // debugger
+  // 
   return {
   currentUser: state.session.currentUser,
   searchStocks: Object.keys(state.ui.searchedStocks).map( id => state.ui.searchedStocks[id]),
