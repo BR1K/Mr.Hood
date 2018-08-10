@@ -14,8 +14,18 @@
  *= require_self
  */
 
+ ul {
+   width: 700px;
+ }
+
+ .search-container {
+   width: 700px;
+   margin: 0 auto;
+ }
+
 .mrhood-button {
   text-decoration: none;
+
 }
 
 .app {
@@ -96,6 +106,7 @@ body {
   display: block;
   box-sizing: inherit;
   -webkit-box-direction: normal;
+  font-size: xx-large;
 }
 
 .login-form-input-box {
@@ -129,7 +140,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
-  background-color: rgb(250, 255, 189);
+  background-color: rgb(250, 250, 250);
   border-color: rgb(250, 250, 250);
   border-radius: 4px;
   background-size: auto;
@@ -194,7 +205,42 @@ body {
   border-color: rgb(33, 206, 153);
 }
 
-
+.signup-submit {
+  /* font-size: 13px;
+  font-weight: 400;
+  height: 48px;
+  width: 175px;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+  margin-top: 24px;
+  text-size-adjust: 100%;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal; */
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(23, 23, 24);
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+  margin-top: 24px;
+  text-size-adjust: 100%;
+  width: 175px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 
 
@@ -226,10 +272,11 @@ body {
 
 .greeting-page-navbar-right {
   display: flex;
+  margin-top: 10px;
 }
 
 .greeting-page-navbar-login {
-  margin: 10px;
+  margin: auto;
   padding-right: 25px;
 }
 
@@ -312,13 +359,13 @@ body {
   margin-top: 10px;
   text-decoration: none;
 } */
-.greeting-signup{
+.greeting-signup {
   box-sizing: border-box;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.07px;
-  background-color: rgb(33, 160, 153);
-  border-color: rgb(33, 160, 153);
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
   color: rgb(255, 255, 255);
   border-radius: 4px;
   cursor: pointer;
@@ -330,7 +377,14 @@ body {
   opacity: 1;
   line-height: 18px;
   white-space: nowrap;
+  align-items: center;
 
+
+
+}
+
+.greeting-signup a {
+  color: #fff;
 }
 
 
@@ -354,6 +408,12 @@ body {
 
 .signup-header {
   font-size: 55px;
+  font-weight: lighter;
+  padding-bottom: 15px;
+  padding-top: 90px;
+}
+.signup-subheader {
+  padding-bottom: 15px;
 }
 
 .signup-row {
@@ -362,10 +422,6 @@ body {
 
 }
 
-.signup-input-left {
-
-
-}
 
 .signup-firstname-input {
   width: 192px;
@@ -423,16 +479,19 @@ body {
 
 
 .dashboard-page {
+  margin-top: -120px;
   height: 100vh;
   padding-top: 30px;
   padding: 120px;
-  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532101624/Mr.Hood/Dashboard/beautiful-view-dawn-environment-1007957.jpg);
+  /* background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532101624/Mr.Hood/Dashboard/beautiful-view-dawn-environment-1007957.jpg); */
   background-size: cover;
 }
 
 
 .dashboard-title {
-  margin-top: 0;
+  margin-top: 30px;
+  font-size: 25px;
+  color: rgb(33, 206, 153);
 }
 
 .header-button {
@@ -440,9 +499,11 @@ body {
   height: 40px;
   border-radius: 6px;
   border: 1px solid darkgreen;
-  position: relative;
-  bottom: 60px;
-  left: 980px;
+  background-color: rgb(33, 206, 153);
+  border: 1px solid rgb(33, 206, 153);
+  margin-top: 20px;
+  color: #fff;
+  margin-left: 15px;
 }
 
 
@@ -450,11 +511,15 @@ body {
 .search-bar {
   height: 40px;
   border: 1px solid darkgreen;
-  width: -webkit-fill-available;
+  width: 100%;
   margin-top: 20px;
   border-radius: 5px;
   padding-left: 15px;
   font-size: 15px;
+  box-sizing: border-box;
+}
+
+
 }
 
 .sidebar-header-one {
@@ -471,9 +536,36 @@ body {
 .search-results {
   /* position: absolute; */
   margin-top: 0;
-  width: 73.5%;
-  background: black;
+  width: 700px;
+  background-color: rgb(33, 206, 153);
   z-index: 5;
   position: absolute;
+  text-decoration: none;
 
+}
+
+.search-results li {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+.search-results a {
+  text-decoration: none;
+}
+.search-results a li {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+}
+
+.search-results a li:visited {
+  color: black;
+}
+
+/* Logo image css */
+
+.logo-image {
+  width: 70px;
+  height: 70px;
 }
