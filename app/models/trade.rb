@@ -4,24 +4,25 @@ class Trade < ApplicationRecord
 
 
   belongs_to :stock,
-    class_name: 'Stock',
     primary_key: :id,
-    foreign_key: :stock_id
+    foreign_key: :stock_id,
+    class_name: 'Stock'
 
   belongs_to :portfolio,
-    class_name: 'Portfolio',
     primary_key: :id,
-    foreign_key: :portfolio_id
+    foreign_key: :portfolio_id,
+    class_name: 'Portfolio'
 
   has_one :user,
     through: :portfolio,
-    source: :user
+    source: :user,
+    class_name: 'User'
 
 
 
   def verify_order
     if self.size <= 0
-      errors[:size].push("Cannot trade 0 Stocks")
+      errors[:size].push("Please enter a valid amount")
       return false
     end
 

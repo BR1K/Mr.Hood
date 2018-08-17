@@ -1,7 +1,7 @@
 import * as PortfolioAPIUtil from '../util/portfolio_api_util';
 
-export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO";
 export const RECEIVE_SNAPSHOTS = "RECEIVE_SNAPSHOTS";
+export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO";
 
 export const receivePortfolio = (portfolio) => ({
   type: RECEIVE_PORTFOLIO,

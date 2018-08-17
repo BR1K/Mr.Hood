@@ -1,7 +1,7 @@
-export const createFill = (fill) => (
+export const createTrade = (trade) => (
   $.ajax({
-    url: `/api/fills`,
+    url: `/api/trade`,
     method: 'POST',
-    data: { fill }
+    data: { trade }
   })
 );

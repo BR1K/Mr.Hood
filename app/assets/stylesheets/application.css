@@ -51,7 +51,7 @@ body {
   background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1531346214/Mr.Hood/Login%20Page/login_page_image.png);
   background-position: 50%;
   background-size: cover;
-  height: 105vh;
+  height: inherit;
   -webkit-box-flex: 1;
   flex: 1 1 50%;
 }
@@ -64,7 +64,7 @@ body {
   font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 400;
-  height: 794px;
+  height: -webkit-fill-available;
   justify-content: center;
   letter-spacing: 0.25px;
   line-height: 19px;

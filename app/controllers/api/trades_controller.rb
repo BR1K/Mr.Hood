@@ -17,7 +17,7 @@ class Api::TradesController < ApplicationController
     if @trade.save
       change = @trade.size * @trade.price
       change *= -1 if @trade.trade_type == "buy"
-      @trade.user.add_to_buying_power(amount)
+      @trade.user.add_to_buying_power(change)
       render 'api/trades/show'
     else
       render json: @trade.errors.full_messages, status: 422
