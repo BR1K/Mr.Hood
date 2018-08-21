@@ -3,19 +3,19 @@ class Portfolio < ApplicationRecord
   validates :user_id, presence: true
 
   belongs_to :user,
-    class_name: 'User',
     primary_key: :id,
-    foreign_key: :user_id
+    foreign_key: :user_id,
+    class_name: 'User'
 
   has_many :portfolio_snapshots,
-    class_name: 'PortfolioSnapshot',
     primary_key: :id,
-    foreign_key: :portfolio_id
+    foreign_key: :portfolio_id,
+    class_name: 'PortfolioSnapshot'
 
   has_many :trades,
-    class_name: 'Trade',
     primary_key: :id,
-    foreign_key: :portfolio_id
+    foreign_key: :portfolio_id,
+    class_name: 'Trade'
 
   has_many :stocks,
     through: :trades,

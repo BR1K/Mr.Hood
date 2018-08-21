@@ -27,9 +27,9 @@ class Trade < ApplicationRecord
     end
 
     if self.trade_type == "buy"
-      return verify_buying_power
+      verify_buying_power
     else
-      return verify_holdings
+      verify_holdings
     end
   end
 
@@ -38,7 +38,7 @@ class Trade < ApplicationRecord
     if (self.price * self.size) <= self.user.buying_power
       return true
     else
-      errors[:size].push("Buying power too low")
+      errors[:size].push("Not enough buying power")
       return false
     end
   end
