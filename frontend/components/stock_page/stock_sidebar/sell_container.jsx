@@ -1,25 +1,27 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TradeForm from './trade_form';
-import { createTrade, receiveErrors } from '../../../../actions/trade_actions';
-import { fetchPrice } from '../../../../actions/iex_actions';
+import { createTrade, receiveErrors } from '../../../actions/trade_actions';
+import { fetchPrice } from '../../../actions/iex_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  trade: {
-    stock_id: ownProps.stock.id,
-    portfolio_id: state.session.currentUser.id,
-    price: ownProps.price,
-    amount: 0,
-    type: 'buy'
-  },
-  errors: state.errors.trade,
-  user: state.session.currentUser,
-  stocks: state.entities.stocks,
-  message: `${state.session.currentUser.holdings[ownProps.asset.id]||0} Shares Available`
-});
+const mapStateToProps = (state, ownProps) => {
+
+  return {
+    trade: {
+      stock_id: ownProps.stock.id,
+      portfolio_id: state.session.id,
+      price: ownProps.price,
+      size: 0,
+      trade_type: 'sell'
+    },
+    errors: state.errors.trade,
+    user: state.session,
+    stocks: state.entities.stocks,
+  }
+};
 
 const mapDispatchToProps = (dispatch) => ({
-  createTrade: (trade) => dispatch(createFill(trade)),
+  createTrade: (trade) => dispatch(createTrade(trade)),
   clearErrors: () => dispatch(receiveErrors([]))
 });
 

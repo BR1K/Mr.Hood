@@ -14,7 +14,7 @@ export const receiveErrors = (errors) => ({
 });
 
 export const createTrade = (trade) => (dispatch) => (
-  FillAPIUtil.createFill(trade)
-    .then((newTrade) => dispatch(receiveFill(newTrade)),
+  FillAPIUtil.createTrade(trade)
+    .then((newTrade) => dispatch(receiveTrade(newTrade)),
     (errors) => dispatch(receiveErrors(errors.responseJSON)))
 );
