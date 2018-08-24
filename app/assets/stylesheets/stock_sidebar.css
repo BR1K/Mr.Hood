@@ -1,0 +1,106 @@
+.side {
+  /* background: black; */
+  display: flex;
+}
+
+.stock-sidebar {
+  width: 250px;
+  height: 500px;
+  -webkit-box-shadow: 0px 0px 13px 3px #DCDCDC;
+  -moz-box-shadow: 0px 0px 13px 3px #DCDCDC;
+  box-shadow: 0px 0px 13px 3px #DCDCDC;
+  padding: 20px;
+}
+
+.trade-buy-sell {
+  padding-bottom: 25px;
+}
+
+#trade-button {
+  width: 190px;
+  border-radius: 5px;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+  background-color: rgb(33, 206, 153);
+  color: white;
+}
+
+#quantity-input {
+  background-color: #F0F0F0;
+  border: none;
+  box-shadow: none;
+  border-radius: 3px;
+  width: 100px;
+  padding: 7px;
+  text-align: right;
+}
+
+#horizontal-breaker-trade {
+  width: 100%;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.trade-form {
+
+}
+
+.shares {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.market-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 520;
+}
+
+.estimated {
+
+}
+
+.submit-trade {
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  font-size: 13px;
+  color: black;
+  font-weight: 400;
+  transition: font-weight 0.5s;
+}
+
+.trade-errors {
+
+}
+
+
+.klass {
+
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+
+.tabs {
+
+}
+
+.tab-headers {
+
+}
+
+.tab-content {
+
+}
