@@ -1,9 +1,10 @@
 import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
+import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
 import { MoonLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
+import TradeForm from './stock_sidebar/trade_form';
 
 class StockPage extends React.Component {
 
@@ -122,10 +123,7 @@ class StockPage extends React.Component {
       });
 
       return (
-
-        <section className="stock-page-main">
-
-
+        <div className="stock-page">
           <nav className="greeting-page-navbar-box">
             <div className="greeting-page-navbar-left">
               <Link to="/">
@@ -137,36 +135,45 @@ class StockPage extends React.Component {
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
+          <section className="stock-page-main">
 
 
-          <div className="main-stock-section">
-            <StockChart
-              stock={this.props.stock}
-              price={this.props.price}
-              stats={this.props.stats}
-              />
-            <div id="peers-title">
-              Peers
-            </div>
-            <div className="peersBox">
+
+
+            <div className="main-stock-section">
+              <StockChart
+                key={this.props.stock.id}
+                stock={this.props.stock}
+                price={this.props.price}
+                stats={this.props.stats}
+                />
+              <div id="peers-title">
+                Peers
+              </div>
+              <div className="peersBox">
                 <ul>
                   {peers}
                 </ul>
-            </div>
-            <div id="news-title">
-              Latest News
-            </div>
-            <div className='news-box'>
-              <ul>
-                {this.stockNews()}
-              </ul>
-            </div>
+              </div>
+              <div id="news-title">
+                Latest News
+              </div>
+              <div className='news-box'>
+                <ul>
+                  {this.stockNews()}
+                </ul>
+              </div>
 
-          </div>
-          <div className="side">
-
-          </div>
-        </section>
+            </div>
+            <div className="side">
+              <StockSidebar
+                key={this.props.stock.id}
+                stock={this.props.stock}
+                price={this.props.price}
+                />
+            </div>
+          </section>
+        </div>
       )
     }
 
@@ -177,55 +184,5 @@ class StockPage extends React.Component {
 // export default StockPage;
 export default withRouter(StockPage);
 
-
-// <li>
-//   <Link to={`/stocks/44`}>{this.props.peers[0]}</Link>
-// </li>
-// <li>
-//   <Link to={`/stocks/1023`}>{this.props.peers[1]}</Link>
-// </li>
-// <li>
-//   <Link to={`/stocks/8873`}>{this.props.peers[2]}</Link>
-// </li>
-// <li>
-//   <Link to={`/stocks/2293`}>{this.props.peers[3]}</Link>
-// </li>
-
-// don't use fetch in component (not it's job):
-// fetchPrice() {
-//   fetch(`https://api.iextrading.com/1.0/stock/aapl/price`)
-//     .then(function(response) {
-//       return response.json();
-//   })
-//     .then(function(myJson) {
-//       console.log(myJson);
-//   });
-// }
-
-
-
-// const stockDetail = ({ currentUser, logout }) => {
-//
-//   const showPage = () => {
-//     return (
-//       <div>
-//         <div>
-//           <h1>Stock Show Page</h1>
-//           <button className="header-button" onClick={logout}>Log Out</button>
-//         </div>
-//         <div>
-//           <StockDetailChart></StockDetailChart>
-//         </div>
-//       </div>
-//     )
-//   }
-//
-//   return showPage();
-// }
-
-
-
-
-//
-//
-//
+// UNAVAILABLE:
+// TLRY

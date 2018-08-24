@@ -4,9 +4,10 @@ class Headers extends React.Component {
 
   render() {
     let selected = this.props.selectedSection;
+    let title, klass;
     let headers = this.props.sections.map((section, index) => {
-      let title = section.title;
-      let klass = '';
+      title = section.header;
+      klass = '';
       if (index === selected) {
         klass = 'active';
       }
@@ -15,6 +16,7 @@ class Headers extends React.Component {
         <li
           key={index}
           className={klass}
+          id="trade-buy-sell"
           onClick={this.props.onTabChosen.bind(null, index)}>
           {title}{' '}
         </li>
@@ -44,7 +46,6 @@ export default class Tabs extends React.Component {
 
   render() {
     let section = this.props.sections[this.state.selectedSection];
-
     return (
       <div>
         <div className='tabs'>
@@ -59,7 +60,7 @@ export default class Tabs extends React.Component {
 
           <div className='tab-content'>
             <article>
-              {section.content}
+              {section.body}
             </article>
           </div>
 
