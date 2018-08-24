@@ -28,7 +28,6 @@
 
 .recharts-surface {
   background: #f9f9f9;
-  padding: 20px;
   width: 100%;
 }
 
@@ -46,6 +45,6 @@
   padding: 10px;
   background-color: #f9f9f9;
   margin-bottom: 0;
-  width: 1170px;
+  /* width: 1170px; */
   color: rgb(33, 206, 153);
 }

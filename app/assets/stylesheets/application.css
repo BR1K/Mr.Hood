@@ -398,12 +398,15 @@ body {
 .main-stock-section {
   display: flex;
   flex-direction: column;
+  width: 70%
 }
 
 
 
 .stock-page-main {
   margin: 0 120px;
+  display: flex;
+  flex-direction: row;
 }
 
 
