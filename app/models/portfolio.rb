@@ -44,7 +44,8 @@ class Portfolio < ApplicationRecord
     value = 0
 
     self.holdings.each do |key, val|
-      trade = Trade.find(stock_id: key)
+      debugger
+      trade = Trade.find_by(stock_id: key)
       value += trade.price * val
     end
 
@@ -54,7 +55,7 @@ class Portfolio < ApplicationRecord
   def create_snapshot
     PortfolioSnapshot.create(
       portfolio_id: self.id,
-      value: self.user.buying_power,
+      value: self.user.buying_power + self.value,
       date: Date.today.to_s
     )
   end

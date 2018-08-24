@@ -10,6 +10,7 @@ class Api::TradesController < ApplicationController
     @trade = Trade.new(trade_params)
 
     if @trade.verify_order == false
+      # debugger
       render json: @trade.errors[:size], status: 422
       return
     end

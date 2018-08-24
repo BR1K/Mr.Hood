@@ -21,6 +21,10 @@ class Trade < ApplicationRecord
 
 
   def verify_order
+    if (self.size == nil)
+      self.size = 0
+    end
+
     if self.size <= 0
       errors[:size].push("Please enter a valid amount")
       return false
