@@ -18,22 +18,30 @@ class Dashboard extends React.Component {
 
 
   componentDidMount() {
-    // this.props.fetchStocks();
     this.props.fetchPortfolio(this.props.currentUser.id)
+    .then(() => this.props.fetchMarketNews())
       .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
-      .then(() => this.setState({loading: false}))
-      .then(() => this.props.fetchMarketNews())
       .then(() => this.props.fetchTopStocks())
+      .then(() => this.setState({loading: false}))
+      debugger
   }
 
   marketNews() {
     let marketNews = [];
-    for (let i = 0; i < this.props.marketNews.length; i++) {
-      let article = this.props.marketNews[i];
+    for (let i = 0; i < this.props.marketNews.articles.length; i++) {
+      let article = this.props.marketNews.articles[i];
       marketNews.push(
-        <li className="article-box">
-          <div className="article-title"><a href={article.url}>{article.headline}</a></div>
-          <div className="article-body">{article.summary}</div>
+        <li className="article-container" key={i}>
+          <div>
+            <img src={article.urlToImage} className="article-image"></img>
+          </div>
+          <div className="article-text">
+            <div className="article-source">{article.source.name}</div>
+            <div className="article-text-bottom">
+              <div className="article-title"><a href={article.url}>{article.title}</a></div>
+              <div className="article-body">{article.description}</div>
+            </div>
+          </div>
         </li>
       )
     }
@@ -55,14 +63,6 @@ class Dashboard extends React.Component {
     return topStocks;
   }
 
-  // const peers = this.props.peers.map((peerSymbol, i) => {
-  //   return (
-  //     <li className="peer" key={i}>
-  //       <Link to={`/stocks/${peerSymbol}`}>{peerSymbol}</Link>
-  //     </li>
-  //   );
-  // });
-
   render() {
 
     if (this.state.loading) {
@@ -83,7 +83,7 @@ class Dashboard extends React.Component {
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
-          
+
           <div>
             <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
           </div>
@@ -100,7 +100,7 @@ class Dashboard extends React.Component {
           <div id="market-news-title">
             Latest Market News
           </div>
-          <div className='news-box'>
+          <div className='news-container'>
             <ul>
               {this.marketNews()}
             </ul>

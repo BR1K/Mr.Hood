@@ -8,7 +8,6 @@ export const RECEIVE_TOP_STOCKS = "RECEIVE_TOP_STOCKS";
 export const RECEIVE_LOGO = "RECEIVE_LOGO";
 export const RECEIVE_PEERS = "RECEIVE_PEERS";
 export const RECEIVE_NEWS = "RECEIVE_NEWS";
-export const RECEIVE_MARKET_NEWS = "RECEIVE_MARKET_NEWS";
 
 
 export const receivePrice = price => {
@@ -67,12 +66,6 @@ export const receiveNews = news => {
   };
 };
 
-export const receiveMarketNews = marketNews => {
-  return {
-    type: RECEIVE_MARKET_NEWS,
-    marketNews
-  };
-};
 
 export const fetchPrice = (symbol) => (dispatch) => (
   IEXAPIUtil.fetchStockPrice(symbol).then((price) => dispatch(receivePrice(price)))
@@ -108,8 +101,4 @@ export const fetchPeers = (symbol) => (dispatch) => (
 
 export const fetchNews = (symbol) => (dispatch) => (
   IEXAPIUtil.fetchStockNews(symbol).then((news) => dispatch(receiveNews(news)))
-);
-
-export const fetchMarketNews = () => (dispatch) => (
-  IEXAPIUtil.fetchMarketNews().then((marketNews) => dispatch(receiveMarketNews(marketNews)))
 );

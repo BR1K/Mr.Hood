@@ -65,10 +65,3 @@ export const fetchStockNews = (symbol) => (
     method: 'GET',
   })
 );
-
-export const fetchMarketNews = (symbol) => (
-  $.ajax({
-    url: 'https://api.iextrading.com/1.0/stock/market/news/last/5',
-    method: 'GET',
-  })
-);

@@ -5,8 +5,7 @@ import { RECEIVE_PRICE,
          RECEIVE_TOP_STOCKS,
          RECEIVE_LOGO,
          RECEIVE_PEERS,
-         RECEIVE_NEWS,
-         RECEIVE_MARKET_NEWS }    from '../actions/iex_actions';
+         RECEIVE_NEWS }    from '../actions/iex_actions';
 import { combineReducers } from 'redux';
 
 const priceReducer = (state = {}, action) => {
@@ -97,16 +96,6 @@ const newsReducer = (state = {}, action) => {
   }
 };
 
-const marketNewsReducer = (state = {}, action) => {
-  Object.freeze(state);
-
-  switch (action.type) {
-    case RECEIVE_MARKET_NEWS:
-      return action.marketNews;
-    default:
-      return state;
-  }
-};
 
 const iexReducer = combineReducers({
   price: priceReducer,
@@ -116,7 +105,6 @@ const iexReducer = combineReducers({
   topStocks: topStocksReducer,
   peers: peersReducer,
   news: newsReducer,
-  marketNews: marketNewsReducer,
 });
 
 export default iexReducer;

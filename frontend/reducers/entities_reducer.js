@@ -6,6 +6,7 @@ import iex from './iex_reducer';
 import portfolio from './portfolios_reducer';
 import trades from './trades_reducer';
 import stockInfo from "./stock_info_reducer";
+import newsAPI from './news_api_reducer';
 
 export default combineReducers({
   users,
@@ -13,5 +14,6 @@ export default combineReducers({
   portfolio,
   trades,
   iex,
+  newsAPI,
   stockInfo
 });

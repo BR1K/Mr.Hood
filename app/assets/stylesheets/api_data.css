@@ -1,4 +1,4 @@
-.peersBox, {
+.peers-container, {
   margin-top: 50px;
   margin-bottom: 20px;
   font-weight: 500;
@@ -51,32 +51,60 @@
   padding-bottom: 10px;
 }
 
+.article-source {
+  font-size: 15px;
+}
+
 .article-title {
   color: rgb(33, 206, 153);
   font-size: 18px;
   font-weight: 400;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .article-title a {
   text-decoration: none;
 }
 
+.article-image {
+  width: 196px;
+  height: 134px;
+}
+
+.article-text {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  margin-left: 10px;
+}
+
+.article-text-bottom {
+  font-family: "DIN Pro", -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  margin: 4px 0;
+  /* max-height: 10.5ex; */
+  /* overflow: scroll; */
+}
+
 .article-body {
   text-align: justify;
+  font-size: 15px;
 }
 
-.news-box, .market-news-box {
-  padding-bottom: 50px;
+.news-container, .market-news-container {
+  margin-bottom: 50px;
+  max-height: 450px;
+  overflow: scroll;
 }
 
-.article-box {
+.article-container {
+  padding: 10px;
+  display: flex;
   background-color: #f2f2f2;
-  padding: 15px;
   margin-bottom: 25px;
 }
 
-.article-box:hover {
+.article-container:hover {
   box-shadow: 0px 0px 13px 3px grey;
 }
