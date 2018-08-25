@@ -7,7 +7,7 @@ class TradeForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.trade;
-    debugger
+    
   }
 
   handleChange(type) {
@@ -18,7 +18,7 @@ class TradeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+    
     this.props.createTrade(this.state);
   }
 

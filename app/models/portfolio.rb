@@ -44,7 +44,7 @@ class Portfolio < ApplicationRecord
     value = 0
 
     self.holdings.each do |key, val|
-      debugger
+      
       trade = Trade.find_by(stock_id: key)
       value += trade.price * val
     end

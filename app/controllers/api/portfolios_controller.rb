@@ -5,7 +5,7 @@ class Api::PortfoliosController < ApplicationController
   end
 
   def show
-    debugger
+    
     @portfolio = Portfolio.find_by(user_id: params[:id])
     render 'api/portfolios/show'
   end
