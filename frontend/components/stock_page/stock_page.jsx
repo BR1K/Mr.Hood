@@ -16,7 +16,6 @@ class StockPage extends React.Component {
     };
 
     this.updatePrice = this.updatePrice.bind(this);
-    // this.peerId = this.peerId.bind(this);
     this.stockNews = this.stockNews.bind(this);
   }
 
@@ -29,10 +28,7 @@ class StockPage extends React.Component {
       .then(() => this.props.fetchPeers(this.props.stock.symbol))
       .then(() => this.props.fetchNews(this.props.stock.symbol))
       .then(() => this.props.fetchTopStocks())
-      // .then(() => this.props.fetchStocks(this.props.stock.symbol))
-      // .then(() => this.props.fetchPeerStocks(this.props.stock.symbol))
-      .then(
-        () => {
+      .then(() => {
           const refresh = setInterval(this.updatePrice, 5000);
           this.setState({
             refresh: refresh,
@@ -40,7 +36,6 @@ class StockPage extends React.Component {
           });
         }
       )
-      //
   }
 
 
@@ -54,7 +49,6 @@ class StockPage extends React.Component {
         }
       }
     )
-    //
   }
 
   componentWillReceiveProps(nextProps) {
@@ -71,20 +65,21 @@ class StockPage extends React.Component {
     clearInterval(this.state.refresh);
   }
 
-  // peerId(peerSymbol) {
-  //   return this.props.fetchStocks(peerSymbol).id
-  // }
-
-// stocks={this.props.searchStocks}
 
   stockNews() {
     let news = [];
     for (let i = 0; i < this.props.news.length; i++) {
       let article = this.props.news[i];
       news.push(
-        <li className="article-box">
-          <div className="article-title"><a href={article.url}>{article.headline}</a></div>
-          <div className="article-body">{article.summary}</div>
+        <li className="article-container" key={i}>
+          <div className="article-image">
+            <img src={article.image}></img>
+          </div>
+          <div className="article-text">
+            <div className="article-source">{article.source}</div>
+            <div className="article-title"><a href={article.url}>{article.headline}</a></div>
+            <div className="article-body">{article.summary}</div>
+          </div>
         </li>
       )
     }
@@ -100,19 +95,11 @@ class StockPage extends React.Component {
             color="#26A65B"
             size="20px"
             margin="5px"
-            />
+          />
         </div>
       )
-    } else {
-      // const stockNews = this.props.news.forEach(article, i => {
-      //   return (
-      //     <li>
-      //       <div><Link to={article.url}>{article.headline}</Link></div>
-      //       <div>{article.summary}</div>
-      //     </li>
-      //   );
-      // });
 
+    } else {
 
       const peers = this.props.peers.map((peerSymbol, i) => {
         return (
@@ -138,19 +125,17 @@ class StockPage extends React.Component {
           <section className="stock-page-main">
 
 
-
-
             <div className="main-stock-section">
               <StockChart
                 key={this.props.stock.id}
                 stock={this.props.stock}
                 price={this.props.price}
                 stats={this.props.stats}
-                />
+              />
               <div id="peers-title">
                 Peers
               </div>
-              <div className="peersBox">
+              <div className="peers-container">
                 <ul>
                   {peers}
                 </ul>
@@ -158,7 +143,7 @@ class StockPage extends React.Component {
               <div id="news-title">
                 Latest News
               </div>
-              <div className='news-box'>
+              <div className='news-container'>
                 <ul>
                   {this.stockNews()}
                 </ul>
@@ -181,7 +166,6 @@ class StockPage extends React.Component {
 
 }
 
-// export default StockPage;
 export default withRouter(StockPage);
 
 // UNAVAILABLE:

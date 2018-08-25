@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => {
 
   return { currentUser: state.session.currentUser,
   stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()],
-  // stock: state.entities.iex.companyData.symbol,
   price: state.entities.iex.price,
   chart: state.entities.iex.chart,
   companyData: state.entities.iex.companyData,
@@ -17,10 +16,9 @@ const mapStateToProps = (state, ownProps) => {
   topStocks: state.entities.iex.topStocks,
   peers: state.entities.iex.peers,
   news: state.entities.iex.news,
-  // searchStocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]),
   searchStocks: Object.keys(state.ui.searchedStocks).map( id => state.ui.searchedStocks[id]),
   // peerIds: this.props.peers.map( id => state.entities.stocks[id])
-  // peerStocks: state.entities.stockInfo.peerStocks,
+  peerStocks: state.entities.stockInfo.peerStocks,
   }
 }
 
