@@ -14,10 +14,6 @@
  *= require_self
  */
 
- ul {
-   width: 700px;
- }
-
  .search-container {
    width: 700px;
    margin: 0 auto;
@@ -33,6 +29,7 @@
 }
 
 body {
+  background-color: #1b1b1d;
   font-family: "DIN Pro", "DIN Web", sans-serif;
   min-height: 100vh;
   margin: 0px;
@@ -398,15 +395,16 @@ body {
 .main-stock-section {
   display: flex;
   flex-direction: column;
-  width: 70%
+  width: 65%
 }
 
 
 
-.stock-page-main {
+.main-container {
   margin: 0 120px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 
@@ -415,11 +413,7 @@ body {
 
 
 .dashboard-page {
-  margin-top: -120px;
-  height: 100vh;
   padding-top: 30px;
-  padding: 120px;
-  background-size: cover;
 }
 
 
@@ -444,11 +438,12 @@ body {
 
 
 .search-bar {
+  background-color: inherit;
+  border: 1px solid #0e0d0d;
+  border-radius: 5px;
   height: 40px;
-  border: 1px solid darkgreen;
   width: 100%;
   margin-top: 20px;
-  border-radius: 5px;
   padding-left: 15px;
   font-size: 15px;
   box-sizing: border-box;
@@ -460,7 +455,10 @@ body {
 }
 
 .search-bar:hover {
-  box-shadow: 0px 0px 13px 3px grey;
+  box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  transition: box-shadow .3s;
 }
 
 .search-bar:focus {
