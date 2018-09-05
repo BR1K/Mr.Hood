@@ -21,6 +21,7 @@ class StockPage extends React.Component {
 
 
   componentDidMount() {
+    // debugger
     this.props.fetchStock(this.props.match.params.symbol)
       .then(() => this.props.fetchPrice(this.props.stock.symbol))
       .then(() => this.props.fetchStats(this.props.stock.symbol))
@@ -29,15 +30,14 @@ class StockPage extends React.Component {
       .then(() => this.props.fetchNews(this.props.stock.symbol))
       .then(() => this.props.fetchTopStocks())
       .then(() => {
-          const refresh = setInterval(this.updatePrice, 5000);
-          this.setState({
-            refresh: refresh,
-            loading: false
-          });
-        }
-      )
+        const refresh = setInterval(this.updatePrice, 5000);
+        this.setState({
+          refresh: refresh,
+          loading: false
+        });
+      }
+    )
   }
-
 
 
   updatePrice() {
@@ -52,14 +52,19 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
+    debugger
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
+      // debugger
       this.setState({ loading: true },
-        () => this.props.fetchStock(this.props.match.params.symbol)
-        .then(() => this.props.fetchPrice(this.props.stock.symbol))
-        .then(() => this.setState({loading: false})));
-      }
+      () => this.props.fetchStock(nextProps.match.params.symbol)
+      .then(() => this.props.fetchPrice(nextProps.match.stock.symbol))
+      .then(() => this.props.fetchStats(nextProps.match.stock.symbol))
+      .then(() => this.props.fetchPeers(nextProps.match.stock.symbol))
+      .then(() => this.props.fetchCompany(nextProps.match.stock.symbol))
+      .then(() => this.props.fetchNews(nextProps.match.stock.symbol))
+      .then(() => this.setState({loading: false})));
     }
+  }
 
   componentWillUnmount() {
     clearInterval(this.state.refresh);
@@ -71,11 +76,8 @@ class StockPage extends React.Component {
     for (let i = 0; i < this.props.news.length; i++) {
       let article = this.props.news[i];
       news.push(
-        <li className="article-container" key={i}>
-          <div className="article-image">
-            <img src={article.image}></img>
-          </div>
-          <div className="article-text">
+        <li className="article-container stock-page" key={i}>
+          <div className="article-text stock-page">
             <div className="article-source">{article.source}</div>
             <div className="article-title"><a href={article.url}>{article.headline}</a></div>
             <div className="article-body">{article.summary}</div>
@@ -85,6 +87,10 @@ class StockPage extends React.Component {
     }
 
     return news;
+  }
+
+  aboutSection() {
+
   }
 
   render() {
@@ -102,6 +108,7 @@ class StockPage extends React.Component {
     } else {
 
       const peers = this.props.peers.map((peerSymbol, i) => {
+
         return (
           <li className="peer" key={i}>
             <Link to={`/stocks/${peerSymbol}`}>{peerSymbol}</Link>
@@ -111,48 +118,88 @@ class StockPage extends React.Component {
 
       return (
         <div className="stock-page">
-          <nav className="greeting-page-navbar-box">
-            <div className="greeting-page-navbar-left">
+          <nav className="navbar-container">
+            <div className="navbar-left">
               <Link to="/">
                 <img className="logo-image" src={window.logo} />
               </Link>
             </div>
-            <div className="greeting-page-navbar-right">
+            <div className="navbar-middle">
               <SearchBar />
+            </div>
+            <div className="navbar-right">
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
-          <section className="stock-page-main">
+        <section className="main-container">
 
 
-            <div className="main-stock-section">
+          <div className="main-stock-section">
               <StockChart
-                key={this.props.stock.id}
+                key={this.props.stock.symbol}
                 stock={this.props.stock}
                 price={this.props.price}
                 stats={this.props.stats}
               />
-              <div id="peers-title">
-                Peers
-              </div>
-              <div className="peers-container">
-                <ul>
+            <div className="about-container">
+              <div id="about-title">About</div>
+              <div id="about-body">{this.props.companyData.description}</div>
+              <ul className="stats-ul">
+                <div className='stats-row'>
+                  <li className="stat-container">
+                    <div className="stat-title">CEO</div>
+                    <div className="stat-body">{this.props.companyData.CEO}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">Exchange</div>
+                    <div className="stat-body">{this.props.companyData.exchange}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">Sector</div>
+                    <div className="stat-body">{this.props.companyData.sector}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">Symbol</div>
+                    <div className="stat-body">{this.props.companyData.symbol}</div>
+                  </li>
+                </div>
+                <div className='stats-row'>
+                  <li className="stat-container">
+                    <div className="stat-title">Market Cap</div>
+                    <div className="stat-body">{this.props.stats.marketcap}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">Revenue</div>
+                    <div className="stat-body">{this.props.stats.revenue}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">52w High</div>
+                    <div className="stat-body">{this.props.stats.week52high}</div>
+                  </li>
+                  <li className="stat-container">
+                    <div className="stat-title">52w Low</div>
+                    <div className="stat-body">{this.props.stats.week52low}</div>
+                  </li>
+                </div>
+              </ul>
+            </div>
+            <div className="peers-container">
+                <div id="peers-title">Peers</div>
+                <ul className="peers-ul">
                   {peers}
                 </ul>
-              </div>
-              <div id="news-title">
-                Latest News
-              </div>
-              <div className='news-container'>
+            </div>
+            <div className='news-container'>
+                <div id="news-title">Latest News</div>
                 <ul>
                   {this.stockNews()}
                 </ul>
-              </div>
-
             </div>
+
+          </div>
             <div className="side">
               <StockSidebar
-                key={this.props.stock.id}
+                key={this.props.stock.symbol}
                 stock={this.props.stock}
                 price={this.props.price}
                 />
