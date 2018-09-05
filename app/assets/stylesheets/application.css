@@ -428,6 +428,7 @@ body {
 
 .dashboard-title {
   margin-top: 30px;
+  margin-bottom: 50px;
   font-size: 25px;
   color: rgb(33, 206, 153);
 }

@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
 
 
           <nav className="navbar-container">
-            <div className="nabar-left">
+            <div className="navbar-left">
               <Link to="/">
                 <img className="logo-image" src={window.logo} />
               </Link>
@@ -94,7 +94,7 @@ class Dashboard extends React.Component {
               </div>
 
               <div>
-                <div id="top-stocks-title">Today's Top Stocks</div>
+                <div id="top-stocks-title">Top Movers</div>
                 <ul className="top-stocks-container">
                   {this.topStocks()}
                 </ul>
