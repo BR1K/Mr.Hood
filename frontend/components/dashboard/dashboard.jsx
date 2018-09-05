@@ -84,7 +84,6 @@ class Dashboard extends React.Component {
               <SearchBar />
             </div>
             <div className="navbar-right">
-              <SearchBar />
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
