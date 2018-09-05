@@ -61,9 +61,7 @@ class Search extends React.Component {
             placeholder='Search by stock symbol'
             className="search-bar">
           </input>
-          <ul className="search-results">
 
-          </ul>
         </div>
       )
     }
