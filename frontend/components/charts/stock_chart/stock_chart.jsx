@@ -15,20 +15,24 @@ class StockChart extends React.Component {
     }
 
     this.updateRange = this.updateRange.bind(this);
+    this.companyTags = this.companyTags.bind(this);
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchChart(this.props.stock.symbol, this.state.range)
     .then(() => this.setState({ loading: false }));
   }
 
   componentWillReceiveProps(newProps) {
+    // debugger
     if (newProps !== this.props) {
       this.reRender();
     }
   }
 
   updateRange(newRange) {
+    debugger
     this.setState({ range: newRange });
     this.props.fetchChart(this.props.stock.symbol, newRange)
   }
@@ -71,10 +75,23 @@ class StockChart extends React.Component {
 
     this.setState({
       change: `${profit}%`,
-      // pastRange: timeLabel
+      pastRange: timeLabel
     })
   }
 
+  companyTags() {
+    const tags = [];
+    for (let i = 0; i < this.props.companyData.tags.length; i++) {
+      let tag = this.props.companyData.tags[i];
+      tags.push(
+        <li className="tag" key={i}>
+          {tag}
+        </li>
+      )
+    }
+
+    return tags;
+  }
 
   render() {
     let data = this.props.chart.filter(datum => datum.close);
@@ -84,7 +101,7 @@ class StockChart extends React.Component {
 
     const max = data.reduce((a, b) => Math.max(a, b), 0);
     const min = data.reduce((a, b) => Math.min(a, b), 0);
-
+    const price = `$${this.props.price}`;
     const ranges = ['1D', '1M', '3M', '1Y', '2Y', '5Y'];
     const rangeButtons = ranges.map((range, i) => {
       return  <button
@@ -112,14 +129,17 @@ class StockChart extends React.Component {
 
 
         <div className="chart">
-          <div className="chart-data">
-            <div className="stock-chart-price">Price: {this.props.price}</div>
+          <div className="chart-header">
+            <ul className="tags">{this.companyTags()}</ul>
+            <h1 className="company-name">{this.props.companyData.companyName}</h1>
+            <div className="stock-chart-price">{price}</div>
             <div className="percent-change">
-              <span className="percent">Percent Change: {this.state.change}</span>
-              <span className="range"></span>
+                <span className="percent">{this.state.change}</span>
+                <span className="range"></span>
             </div>
           </div>
-          <ResponsiveContainer width="100%" height={400}>
+        </div>
+          <ResponsiveContainer width="100%" height={260}>
             <LineChart data={data} margin={{top:25, bottom: 25}} >
               <Line
                 type="linear"
@@ -140,7 +160,6 @@ class StockChart extends React.Component {
           </div>
         </div>
 
-      </div>
     )
   }
 }

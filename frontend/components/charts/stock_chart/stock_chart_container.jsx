@@ -6,6 +6,7 @@ import { fetchChart, fetchStats } from '../../../actions/iex_actions';
 const mSP = (state, ownProps) => ({
   chart: state.entities.iex.chart,
   stats: state.entities.iex.stats,
+  companyData: state.entities.iex.companyData,
 });
 
 const mDP = (dispatch) => ({
