@@ -23,7 +23,7 @@ class Headers extends React.Component {
       );
     });
     return (
-      <ul className='tab-header'>
+      <ul className="tab-header">
         {headers}
       </ul>
 
@@ -47,24 +47,20 @@ export default class Tabs extends React.Component {
   render() {
     let section = this.props.sections[this.state.selectedSection];
     return (
-      <div>
-        <div className='tabs'>
+      <div className='tabs'>
 
-          <div className='tab-headers'>
-            <Headers
-              selectedSection={this.state.selectedSection}
-              onTabChosen={this.selectTab}
-              sections={this.props.sections}
-            />
-          </div>
-
-          <div className='tab-content'>
-            <article>
-              {section.body}
-            </article>
-          </div>
-
+        <div className='tab-headers'>
+          <Headers
+            selectedSection={this.state.selectedSection}
+            onTabChosen={this.selectTab}
+            sections={this.props.sections}
+          />
         </div>
+
+        <div className='tab-content'>
+            {section.body}
+        </div>
+
       </div>
     );
   }

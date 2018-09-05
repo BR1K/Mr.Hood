@@ -7,7 +7,7 @@ class TradeForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.trade;
-    
+
   }
 
   handleChange(type) {
@@ -18,7 +18,7 @@ class TradeForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
+
     this.props.createTrade(this.state);
   }
 
@@ -47,24 +47,25 @@ class TradeForm extends React.Component {
       this.state.price === -1 ?
         <div>Loading ...</div>
       :
-      <section className="trade-form-container">
+      <div className="trade-form-container">
         <form className="trade-form" onSubmit={this.handleSubmit}>
           <div className="shares">
             <label>Shares</label>
-            <input type="number" min="1" step="1" placeholder=""
+            <input type="number" min="1" placeholder="0"
+              className="trade-input"
               onChange={this.handleChange('size')}/>
           </div>
 
           <div className="market-price">
             <label>Market Price</label>
-            <div>
+            <div id="market-price">
               {currencyFormatter.format(this.state.price)}
             </div>
           </div>
 
           <div className="estimated">
             <label>Estimated {estimatedWord}</label>
-            <div>
+            <div id="estimated">
               {currencyFormatter.format(this.state.price * this.state.size)}
             </div>
           </div>
@@ -79,7 +80,7 @@ class TradeForm extends React.Component {
         <div>{this.props.message}</div>
       </div>
 
-    </section>
+    </div>
     );
   }
 }
