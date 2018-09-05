@@ -4,7 +4,8 @@
   margin-right: 35px;
   font-family: DIN Pro,-apple-system,BlinkMacSystemFont,sans-serif;
   position: fixed;
-  margin-left: 60%;
+  margin-left: 50%;
+  padding-left: 5%
 }
 
 .stock-sidebar {
