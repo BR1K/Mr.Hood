@@ -7,7 +7,7 @@ import { fetchMarketNews } from '../../actions/news_api_actions';
 import Dashboard from './dashboard';
 
 const mSP = (state) => {
-  // debugger
+  // 
   return {
     currentUser: state.entities.users[state.session.id],
     stocks: Object.keys(state.entities.stocks).map( id => state.entities.stocks[id]),

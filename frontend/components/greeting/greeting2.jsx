@@ -7,13 +7,13 @@ const Greeting2 = ({ currentUser, logout }) => {
     <div className="greeting-page-main">
 
 
-      <nav className="greeting-page-navbar-box">
-        <div className="greeting-page-navbar-left">
+      <nav className="navbar-container">
+        <div className="navbar-left">
           <Link to="/">
             <img className="logo-image" src={window.logo} />
           </Link>
         </div>
-        <div className="greeting-page-navbar-right">
+        <div className="navbar-right">
           <div className="greeting-page-navbar-login">
             <Link to="/login" className="mrhood-button">Log In</Link>
           </div>
