@@ -23,27 +23,29 @@ class Dashboard extends React.Component {
       .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
       .then(() => this.props.fetchTopStocks())
       .then(() => this.setState({loading: false}))
-      debugger
+
   }
 
   marketNews() {
     let marketNews = [];
     for (let i = 0; i < this.props.marketNews.articles.length; i++) {
       let article = this.props.marketNews.articles[i];
-      marketNews.push(
-        <li className="article-container" key={i}>
-          <div>
-            <img src={article.urlToImage} className="article-image"></img>
-          </div>
-          <div className="article-text">
-            <div className="article-source">{article.source.name}</div>
-            <div className="article-text-bottom">
-              <div className="article-title"><a href={article.url}>{article.title}</a></div>
-              <div className="article-body">{article.description}</div>
+      if (article.urlToImage !== null) {
+        marketNews.push(
+          <li className="article-container" key={i}>
+            <div>
+              <img src={article.urlToImage} className="article-image"></img>
             </div>
-          </div>
-        </li>
-      )
+            <div className="article-text">
+              <div className="article-source">{article.source.name}</div>
+              <div className="article-text-bottom">
+                <div className="article-title"><a href={article.url}>{article.title}</a></div>
+                <div className="article-body">{article.description}</div>
+              </div>
+            </div>
+          </li>
+        )
+      }
     }
 
     return marketNews;
@@ -72,39 +74,43 @@ class Dashboard extends React.Component {
         <div className="dashboard-page">
 
 
-          <nav className="greeting-page-navbar-box">
-            <div className="greeting-page-navbar-left">
+          <nav className="navbar-container">
+            <div className="nabar-left">
               <Link to="/">
                 <img className="logo-image" src={window.logo} />
               </Link>
             </div>
-            <div className="greeting-page-navbar-right">
+            <div className="navbar-middle">
+              <SearchBar />
+            </div>
+            <div className="navbar-right">
               <SearchBar />
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
+          <section className="main-container">
+            <div className="main-stock-section">
+              <div>
+                <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
+              </div>
 
-          <div>
-            <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
-          </div>
+              <div>
+                <div id="top-stocks-title">Today's Top Stocks</div>
+                <ul className="top-stocks-container">
+                  {this.topStocks()}
+                </ul>
+              </div>
 
-          <div id="top-stocks-title">
-            Today's Top Stocks
-          </div>
-          <div className="top-stocks-box">
-              <ul>
-                {this.topStocks()}
-              </ul>
-          </div>
-
-          <div id="market-news-title">
-            Latest Market News
-          </div>
-          <div className='news-container'>
-            <ul>
-              {this.marketNews()}
-            </ul>
-          </div>
+              <div id="market-news-title">
+                Latest Market News
+              </div>
+              <div className='news-container'>
+                <ul>
+                  {this.marketNews()}
+                </ul>
+              </div>
+            </div>
+          </section>
 
         </div>
       );
