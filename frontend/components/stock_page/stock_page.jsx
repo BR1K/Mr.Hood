@@ -52,16 +52,16 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
-      // debugger
+      debugger
       this.setState({ loading: true },
       () => this.props.fetchStock(nextProps.match.params.symbol)
-      .then(() => this.props.fetchPrice(nextProps.match.stock.symbol))
-      .then(() => this.props.fetchStats(nextProps.match.stock.symbol))
-      .then(() => this.props.fetchPeers(nextProps.match.stock.symbol))
-      .then(() => this.props.fetchCompany(nextProps.match.stock.symbol))
-      .then(() => this.props.fetchNews(nextProps.match.stock.symbol))
+      .then(() => this.props.fetchPrice(nextProps.match.params.symbol))
+      .then(() => this.props.fetchStats(nextProps.match.params.symbol))
+      .then(() => this.props.fetchPeers(nextProps.match.params.symbol))
+      .then(() => this.props.fetchCompany(nextProps.match.params.symbol))
+      .then(() => this.props.fetchNews(nextProps.match.params.symbol))
       .then(() => this.setState({loading: false})));
     }
   }
