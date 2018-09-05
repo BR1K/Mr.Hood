@@ -4,7 +4,7 @@ const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_STOCK:
-      return Object.assign({}, state, { [action.stock.symbol]: action.stock });
+      return { [action.stock.symbol]: action.stock };
     case RECEIVE_STOCKS:
       return Object.assign({}, state, action.stocks);
     default:
