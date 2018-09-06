@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: portfolios
+#
+#  id         :bigint(8)        not null, primary key
+#  user_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Portfolio < ApplicationRecord
 
   validates :user_id, presence: true
@@ -30,9 +40,9 @@ class Portfolio < ApplicationRecord
 
     self.trades.each do |trade|
       if trade.trade_type == "buy"
-        holdings[trade.stock_id] += trade.size
+        holdings[trade.stock.symbol] += trade.size
       else
-        holdings[trade.stock_id] -= trade.size
+        holdings[trade.stock.symbol] -= trade.size
       end
     end
     holdings.delete_if { | stock, size | size == 0 }
@@ -43,10 +53,10 @@ class Portfolio < ApplicationRecord
   def value
     value = 0
 
-    self.holdings.each do |key, val|
-      
-      trade = Trade.find_by(stock_id: key)
-      value += trade.price * val
+    self.trades.each do |trade|
+      # debugger
+      # trade = Trade.find_by(stock_id: key)
+      value += trade.price * trade.price
     end
 
     value

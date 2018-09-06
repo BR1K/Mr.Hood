@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: trades
+#
+#  id           :bigint(8)        not null, primary key
+#  stock_id     :integer          not null
+#  portfolio_id :integer          not null
+#  price        :float            not null
+#  size         :integer          not null
+#  trade_type   :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Trade < ApplicationRecord
 
   validates :stock_id, :portfolio_id, :price, :size, :trade_type, presence: true
