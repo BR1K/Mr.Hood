@@ -1,25 +1,23 @@
-.peers-ul {
-  margin-top: 30px;
-  /* font-weight: 500;
-  display: flex;
-  overflow: auto; */
-  /* margin-top: 50px;
-  margin-bottom: 20px;
-  font-weight: 500;
-  display: flex;
-  margin-left: 0;
-  margin-right: 50px; */
-}
-
 .peers-container {
   margin: 2%;
   padding: 2%;
   background-color: #1b1b1d;
   color: white;
-  /* box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6); */
 }
+
+.peers-ul {
+  margin-top: 30px;
+  display: flex;
+
+}
+
+.peer {
+  border: 1px solid #0e0d0d;
+  padding: 15px;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
 
 .top-stocks-container {
   font-weight: 500;
@@ -28,7 +26,7 @@
 }
 
 .peer, .topStock {
-  background-color: rgb(33, 206, 153);
+  /* background-color: rgb(33, 206, 153);
   color: white;
   padding-top: 10%;
   padding-bottom: 10%;
@@ -38,7 +36,7 @@
   margin-bottom: 10px;
   border: 1px solid rgb(33, 206, 153);
   width: 10%;
-  display: inline-flex;
+  display: inline-flex; */
 }
 
 .peer:hover, .topStock:hover {
@@ -51,9 +49,9 @@
 }
 
 .peer a, .topStock a {
-  text-align: center;
+  /* text-align: center;
   color: white;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 #peers-title, #news-title, #market-news-title, #top-stocks-title {

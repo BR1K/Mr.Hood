@@ -17,11 +17,11 @@ class StockPage extends React.Component {
 
     this.updatePrice = this.updatePrice.bind(this);
     this.stockNews = this.stockNews.bind(this);
+    this.peers = this.peers.bind(this);
   }
 
 
   componentDidMount() {
-    //
     this.props.fetchStock(this.props.match.params.symbol)
       .then(() => this.props.fetchPrice(this.props.stock.symbol))
       .then(() => this.props.fetchStats(this.props.stock.symbol))
@@ -54,7 +54,7 @@ class StockPage extends React.Component {
   componentWillReceiveProps(nextProps) {
 
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
-      
+
       this.setState({ loading: true },
       () => this.props.fetchStock(nextProps.match.params.symbol)
       .then(() => this.props.fetchPrice(nextProps.match.params.symbol))
@@ -89,6 +89,30 @@ class StockPage extends React.Component {
     return news;
   }
 
+  peers() {
+    let peers = [];
+
+    for (let i = 0; i < 4; i++) {
+      let peer = this.props.peers[i];
+      peers.push(
+        <Link to={`/stocks/${peer}`} className="peer">
+          {peer}
+        </Link>
+      )
+    }
+
+    return peers;
+  }
+
+  // const peers = this.props.peers.map((peerSymbol, i) => {
+  //
+  //   return (
+  //     <li key={i}>
+  //       <Link to={`/stocks/${peerSymbol}`} className="peer">{peerSymbol}</Link>
+  //     </li>
+  //   );
+  // });
+
   render() {
     if (this.state.loading) {
       return (
@@ -103,14 +127,6 @@ class StockPage extends React.Component {
 
     } else {
 
-      const peers = this.props.peers.map((peerSymbol, i) => {
-
-        return (
-          <li className="peer" key={i}>
-            <Link to={`/stocks/${peerSymbol}`}>{peerSymbol}</Link>
-          </li>
-        );
-      });
 
       return (
         <div className="stock-page">
@@ -181,9 +197,9 @@ class StockPage extends React.Component {
             </div>
             <div className="peers-container">
                 <div id="peers-title">Peers</div>
-                <ul className="peers-ul">
-                  {peers}
-                </ul>
+                <div className="peers-ul">
+                  {this.peers()}
+                </div>
             </div>
             <div className='news-container'>
                 <div id="news-title">Latest News</div>
