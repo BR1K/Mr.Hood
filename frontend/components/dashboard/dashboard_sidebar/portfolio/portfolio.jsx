@@ -7,34 +7,41 @@ const handleClick = (id, history) => {
   };
 };
 
-const renderTableRows = (holdings, stocks, history) =>  (
-  Object.keys(holdings).map((stockId, idx) => {
-    let numStocks = holdings[stockId];
 
-    if (numStocks > 0) {
-      return(
-        <tr key={idx} className="main-table-row"
-          onClick={handleClick(stockId, history)}>
-          <td className="portfolio-symbol">{stocks[stockId - 1].symbol}</td>
-          <td className="portfolio-holdings">{numShares} shares</td>
-          <td className="stock-price">
-            {this.props.fetchPrice(stocks[stockId - 1].symbol)}
-          </td>
-        </tr>
-      );
-    }
-  })
-);
+const renderTableRows = (holdings, stocks, history) =>  {
+debugger
 
-const renderStocks = (holdings, stocks, history) => (
-  <table className="sidebar-table">
-    <tbody>
-      {renderTableRows(holdings, stocks, history)}
-    </tbody>
-  </table>
-);
+  return (
+    Object.keys(holdings).map( (stockId, idx) => {
+      let numStocks = holdings[stockId];
+      if (numStocks > 0) {
+        return(
+          <tr key={idx} className="main-table-row"
+            onClick={handleClick(stockId, history)}>
+            <td className="portfolio-holdings">{numStocks} shares</td>
+            <td className="stock-price">
+              {this.props.fetchPrice(stocks[stockId].symbol)}
+            </td>
+          </tr>
+        );
+      }
+    })
+  );
+};
+
+const renderStocks = (holdings, stocks, history) => {
+  //
+  return(
+    <table className="sidebar-table">
+      <tbody>
+        {renderTableRows(holdings, stocks, history)}
+      </tbody>
+    </table>
+  );
+};
 
 const Portfolio = ({ holdings, stocks, history }) => {
+  //
   return(
     <aside className="sidebar-box">
       <h3 className="sidebar-header-one">Portfolio</h3>

@@ -109,8 +109,8 @@ class Dashboard extends React.Component {
                 </ul>
               </div>
             </div>
-          </section>
 
+          </section>
         </div>
       );
     }
@@ -121,6 +121,8 @@ class Dashboard extends React.Component {
 
 
 export default Dashboard
+
+
 
 
 

@@ -17,6 +17,7 @@ const sections = (stock, price) => {
 };
 
 const StockSidebar = ({ stock, price }) => {
+  // debugger
   return (
 
     <section className='stock-sidebar'>
