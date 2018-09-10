@@ -54,7 +54,7 @@ class StockPage extends React.Component {
   componentWillReceiveProps(nextProps) {
 
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
-      debugger
+      
       this.setState({ loading: true },
       () => this.props.fetchStock(nextProps.match.params.symbol)
       .then(() => this.props.fetchPrice(nextProps.match.params.symbol))

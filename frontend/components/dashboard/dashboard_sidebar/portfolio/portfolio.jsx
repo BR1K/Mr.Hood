@@ -9,7 +9,7 @@ const handleClick = (id, history) => {
 
 
 const renderTableRows = (holdings, stocks, history) =>  {
-debugger
+
 
   return (
     Object.keys(holdings).map( (stockId, idx) => {
