@@ -6,10 +6,10 @@ import { fetchPrice, fetchChart, fetchCompany, fetchStats,
 import { fetchStocks, fetchStock, fetchPeerStocks } from '../../actions/stock_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+debugger
   return {
     currentUser: state.session.currentUser,
-    stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()],
+    stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()] || {},
     price: state.entities.iex.price,
     chart: state.entities.iex.chart,
     companyData: state.entities.iex.companyData,
