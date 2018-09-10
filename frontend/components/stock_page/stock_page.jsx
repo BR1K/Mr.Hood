@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
-import { MoonLoader } from 'halogenium';
+import { RingLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
 
@@ -21,7 +21,7 @@ class StockPage extends React.Component {
 
 
   componentDidMount() {
-    // debugger
+    //
     this.props.fetchStock(this.props.match.params.symbol)
       .then(() => this.props.fetchPrice(this.props.stock.symbol))
       .then(() => this.props.fetchStats(this.props.stock.symbol))
@@ -89,18 +89,14 @@ class StockPage extends React.Component {
     return news;
   }
 
-  aboutSection() {
-
-  }
-
   render() {
     if (this.state.loading) {
       return (
         <div className="loading-icon">
-          <MoonLoader
-            color="#26A65B"
-            size="20px"
-            margin="5px"
+          <RingLoader
+            size="100px"
+            margin="0 auto"
+            margin-top="25%"
           />
         </div>
       )
@@ -136,7 +132,7 @@ class StockPage extends React.Component {
 
           <div className="main-stock-section">
               <StockChart
-                key={this.props.stock.symbol}
+                key={this.props.match.params.symbol}
                 stock={this.props.stock}
                 price={this.props.price}
                 stats={this.props.stats}
@@ -199,7 +195,7 @@ class StockPage extends React.Component {
           </div>
             <div className="side">
               <StockSidebar
-                key={this.props.stock.symbol}
+                key={this.props.match.params.symbol}
                 stock={this.props.stock}
                 price={this.props.price}
                 />

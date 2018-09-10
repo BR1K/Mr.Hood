@@ -19,20 +19,20 @@ class StockChart extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    // 
     this.props.fetchChart(this.props.stock.symbol, this.state.range)
     .then(() => this.setState({ loading: false }));
   }
 
   componentWillReceiveProps(newProps) {
-    // debugger
+    // 
     if (newProps !== this.props) {
       this.reRender();
     }
   }
 
   updateRange(newRange) {
-    debugger
+    
     this.setState({ range: newRange });
     this.props.fetchChart(this.props.stock.symbol, newRange)
   }

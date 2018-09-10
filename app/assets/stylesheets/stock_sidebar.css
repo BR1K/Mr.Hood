@@ -33,6 +33,11 @@
   font-size: 12px;
   border: none;
   background-color: rgb(33, 206, 153);
+  color: white;
+}
+
+#trade-button:hover {
+  cursor: pointer;
 }
 
 .trade-input {
