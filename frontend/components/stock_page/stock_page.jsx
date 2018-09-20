@@ -12,7 +12,8 @@ class StockPage extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      refresh: null
+      refresh: null,
+      peers: [],
     };
 
     this.updatePrice = this.updatePrice.bind(this);
@@ -93,10 +94,10 @@ class StockPage extends React.Component {
     let peers = [];
 
     for (let i = 0; i < 4; i++) {
-      let peer = this.props.peers[i];
+      let symbol = this.props.peers[i];
       peers.push(
-        <Link to={`/stocks/${peer}`} className="peer">
-          {peer}
+        <Link to={`/stocks/${symbol}`} key={i} className="peer">
+          {symbol}
         </Link>
       )
     }
@@ -104,14 +105,24 @@ class StockPage extends React.Component {
     return peers;
   }
 
-  // const peers = this.props.peers.map((peerSymbol, i) => {
+  // peers() {
+  //   let peers = [];
   //
-  //   return (
-  //     <li key={i}>
-  //       <Link to={`/stocks/${peerSymbol}`} className="peer">{peerSymbol}</Link>
-  //     </li>
-  //   );
-  // });
+  //   for (let i = 0; i < 4; i++) {
+  //     let peer = this.props.peers[i];
+  //     this.props.fetchPrice(peer).then(price => {
+  //       peers.push(
+  //         <Link to={`/stocks/${peer}`} key={i} className="peer">
+  //           {peer}
+  //           {price}
+  //         </Link>
+  //       )
+  //     });
+  //   }
+  //
+  //   return peers;
+  // }
+
 
   render() {
     if (this.state.loading) {
@@ -197,9 +208,9 @@ class StockPage extends React.Component {
             </div>
             <div className="peers-container">
                 <div id="peers-title">Peers</div>
-                <div className="peers-ul">
+                <ul className="peers-ul">
                   {this.peers()}
-                </div>
+                </ul>
             </div>
             <div className='news-container'>
                 <div id="news-title">Latest News</div>
