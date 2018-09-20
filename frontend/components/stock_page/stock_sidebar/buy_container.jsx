@@ -6,6 +6,7 @@ import { fetchPrice } from '../../../actions/iex_actions';
 import { currencyFormatter } from '../../../util/formatter';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
     trade: {
       stock_id: ownProps.stock.id,
@@ -17,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     errors: state.errors.trade,
     user: state.session,
     stocks: state.entities.stocks,
-    message: `${currencyFormatter.format(state.session.buying_power || 0)} Buying Power Available`
+    message: `${currencyFormatter.format(state.entities.users[state.session.id].buying_power || 0)} Buying Power Available`
 
   }
 };
