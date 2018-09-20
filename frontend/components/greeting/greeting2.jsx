@@ -7,7 +7,7 @@ const Greeting2 = ({ currentUser, logout }) => {
     <div className="greeting-page-main">
 
 
-      <nav className="navbar-container">
+      <nav className="navbar-container welcome">
         <div className="navbar-left">
           <Link to="/">
             <img className="logo-image" src={window.logo} />
