@@ -68,7 +68,7 @@ export const receiveNews = news => {
 
 
 export const fetchPrice = (symbol) => (dispatch) => (
-  IEXAPIUtil.fetchStockPrice(symbol).then((price) => dispatch(receivePrice(price)))
+  IEXAPIUtil.fetchStockPrice(symbol).then((price) => { dispatch(receivePrice(price)); return price; })
 );
 
 // export const fetchLiveStockPrice = (symbol) => (dispatch) => (
