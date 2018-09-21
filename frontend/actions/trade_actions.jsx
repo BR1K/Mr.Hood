@@ -1,4 +1,4 @@
-import * as FillAPIUtil from '../util/trade_api_util';
+import * as TradeAPIUtil from '../util/trade_api_util';
 
 export const RECEIVE_TRADE = "RECEIVE_TRADE";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -14,7 +14,7 @@ export const receiveErrors = (errors) => ({
 });
 
 export const createTrade = (trade) => (dispatch) => (
-  FillAPIUtil.createTrade(trade)
+  TradeAPIUtil.createTrade(trade)
     .then((newTrade) => dispatch(receiveTrade(newTrade)),
     (errors) => dispatch(receiveErrors(errors.responseJSON)))
 );
