@@ -20,3 +20,11 @@ export const fetchPeerStocks = (peer) => (
     data: { peer },
   })
 );
+
+export const getPrice = (stock) => (
+  $.ajax({
+    method: "PATCH",
+    url: `/api/stocks/${stock.id}`,
+    data: { stock },
+  })
+);
