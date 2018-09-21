@@ -15,7 +15,7 @@ PortfolioSnapshot.destroy_all
 Trade.destroy_all
 
 
-user = User.create(first_name: "Robin", last_name: "Hood", email: "rhood@mrhood.com", password: "Hunter12", buying_power: 5000000)
+user = User.create(first_name: "Robin", last_name: "Hood", email: "rhood@mrhood.com", password: "Hunter12", buying_power: 100000)
 user.save
 
 symbols = File.join(Rails.root, 'db', 'iex_stocks', 'IEX_Stocks.csv')
