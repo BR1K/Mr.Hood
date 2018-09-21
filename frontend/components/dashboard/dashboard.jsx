@@ -19,10 +19,11 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.fetchPortfolio(this.props.currentUser.id)
+    // .then(() => this.props.fetchStocks())
     .then(() => this.props.fetchMarketNews())
-      .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
-      .then(() => this.props.fetchTopStocks())
-      .then(() => this.setState({loading: false}))
+    .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
+    .then(() => this.props.fetchTopStocks())
+    .then(() => this.setState({loading: false}))
 
   }
 
@@ -87,12 +88,18 @@ class Dashboard extends React.Component {
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
+
+
           <section className="main-container">
             <div className="main-stock-section">
               <div>
                 <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
               </div>
-
+              <DashboardChart
+                data={this.props.snapshots}
+                portfolio={this.props.portfolio}
+                currentUser={this.props.currentUser}
+              />
               <div>
                 <div id="top-stocks-title">Top Movers</div>
                 <ul className="top-stocks-container">
