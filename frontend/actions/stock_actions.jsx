@@ -24,6 +24,10 @@ export const resetStocks = () => ({
   type: RESET_STOCKS,
 })
 
+export const getPrice = (stock) => (dispatch) => (
+  StockAPIUtil.getPrice(stock).then((stock) => dispatch(receiveStock(stock)))
+);
+
 export const fetchStocks = (query) => (dispatch) => (
   StockAPIUtil.fetchStocks(query).then((stocks) => dispatch(receiveStocks(stocks)))
 );
