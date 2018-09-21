@@ -1,3 +1,14 @@
+import React from 'react';
+import { LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, ResponsiveContainer} from 'recharts';
+import { currencyFormatter } from '../../../util/formatter';
+
+class DashboardChart extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+}
+export default DashboardChart;
 // import React from 'react';
 // import { LineChart, XAxis, YAxis, CartesianGrid, Line} from 'recharts';
 //
