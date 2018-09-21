@@ -141,6 +141,8 @@ class StockPage extends React.Component {
 
       return (
         <div className="stock-page">
+
+
           <nav className="navbar-container">
             <div className="navbar-left">
               <Link to="/">
@@ -154,9 +156,10 @@ class StockPage extends React.Component {
               <button className="header-button" onClick={this.props.logout}>Log Out</button>
             </div>
           </nav>
+
+
+
         <section className="main-container">
-
-
           <div className="main-stock-section">
               <StockChart
                 key={this.props.match.params.symbol}
