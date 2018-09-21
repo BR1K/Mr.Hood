@@ -7,7 +7,7 @@ import { fetchStocks } from '../../../../actions/stock_actions';
 import { fetchPrice } from '../../../../actions/iex_actions';
 
 const mSP = state => ({
-  currentUser: state.session.currentUser,
+  currentUser: state.entities.users[state.session.id],
   portfolio: state.entities.portfolio,
   stocks: Object.values(state.entities.stocks),
   price: state.entities.iex.price
