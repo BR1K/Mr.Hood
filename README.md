@@ -11,7 +11,7 @@ IEX API
 News API
 
 
-## Features
+### Features
 
 Mr. Hood currently supports the following features
 
