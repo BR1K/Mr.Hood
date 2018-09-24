@@ -2,6 +2,7 @@ import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
+import StockCard from '../stock_card/stock_card_container';
 import { RingLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
@@ -13,7 +14,6 @@ class StockPage extends React.Component {
     this.state = {
       loading: true,
       refresh: null,
-      peers: [],
     };
 
     this.updatePrice = this.updatePrice.bind(this);

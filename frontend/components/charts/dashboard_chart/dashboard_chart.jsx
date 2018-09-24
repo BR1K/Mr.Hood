@@ -6,9 +6,98 @@ class DashboardChart extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      asOf: 'Latest Value',
+    }
   }
+
+
+
+
+  render() {
+    const data = Object.values(this.props.data).map(snapshot => {
+      return snapshot.value;
+    });
+    debugger
+
+    const min = Math.min(...data);
+    const max = Math.max(...data);
+    const portfolioValue = data[data.length - 1];
+
+    return (
+      <div className='stock-chart'>
+
+        <div className="chart">
+          <div className="chart-header">
+            <ul className="tags">test1, test2, test3</ul>
+            <h1 className="company-name">Portfolio Chart</h1>
+            <div className="stock-chart-price">50505050500</div>
+            <div className="percent-change">
+              <span className="percent">50</span>
+              <span className="range"></span>
+            </div>
+          </div>
+
+          <ResponsiveContainer width="100%" height={260}>
+            <LineChart data={Object.values(this.props.data)} margin={{top:25, bottom: 25}} >
+              <Line
+                type="linear"
+                dataKey="value"
+                strokeWidth={2} stroke='#21ce99'
+                dot={false}
+                isAnimationActive={true}
+                animationDuration={500}
+                />
+              <YAxis
+                hide={true}
+                domain={[min, max]}
+                />
+              <Tooltip
+                wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
+                cursor={{strokeWidth: 1}}
+                offset={-90}
+                isAnimationActive={false}
+                position={{x: 0, y: 0 }}
+                />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <br/>
+        </div>
+    )
+  }
+
 }
 export default DashboardChart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React from 'react';
 // import { LineChart, XAxis, YAxis, CartesianGrid, Line} from 'recharts';
 //

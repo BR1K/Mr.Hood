@@ -19,20 +19,20 @@ class StockChart extends React.Component {
   }
 
   componentDidMount() {
-    // 
+    //
     this.props.fetchChart(this.props.stock.symbol, this.state.range)
     .then(() => this.setState({ loading: false }));
   }
 
   componentWillReceiveProps(newProps) {
-    // 
+    //
     if (newProps !== this.props) {
       this.reRender();
     }
   }
 
   updateRange(newRange) {
-    
+
     this.setState({ range: newRange });
     this.props.fetchChart(this.props.stock.symbol, newRange)
   }
@@ -125,8 +125,9 @@ class StockChart extends React.Component {
             />
         </div>
       :
-      <div className="stock-chart">
 
+
+      <div className="stock-chart">
 
         <div className="chart">
           <div className="chart-header">
@@ -139,26 +140,27 @@ class StockChart extends React.Component {
             </div>
           </div>
         </div>
-          <ResponsiveContainer width="100%" height={260}>
-            <LineChart data={data} margin={{top:25, bottom: 25}} >
-              <Line
-                type="linear"
-                dataKey="high"
-                strokeWidth={2} stroke="#21ce99"
-                dot={false}
-                isAnimationActive={true}
-                />
 
-              <YAxis
-                hide={true}
-                domain={[min, max]}
-                />
-            </LineChart>
-          </ResponsiveContainer>
-          <div className="button-list">
-            <ul>{rangeButtons}</ul>
-          </div>
+        <ResponsiveContainer width="100%" height={260}>
+          <LineChart data={data} margin={{top:25, bottom: 25}} >
+            <Line
+              type="linear"
+              dataKey="high"
+              strokeWidth={2} stroke="#21ce99"
+              dot={false}
+              isAnimationActive={true}
+              />
+
+            <YAxis
+              hide={true}
+              domain={[min, max]}
+              />
+          </LineChart>
+        </ResponsiveContainer>
+        <div className="button-list">
+          <ul>{rangeButtons}</ul>
         </div>
+      </div>
 
     )
   }
