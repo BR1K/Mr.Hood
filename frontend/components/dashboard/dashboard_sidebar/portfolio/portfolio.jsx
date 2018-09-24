@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const handleClick = (id, history) => {
+const handleClick = (symbol, history) => {
   return (e) => {
-    history.push(`/stocks/${id}`);
+    history.push(`/stocks/${symbol}`);
   };
 };
 
@@ -12,17 +12,18 @@ const renderTableRows = (holdings, stocks, history) =>  {
 
 
   return (
-    Object.keys(holdings).map( (stockId, idx) => {
-      let numStocks = holdings[stockId];
+    Object.keys(holdings).map( (symbol, idx) => {
+      let numStocks = holdings[symbol];
       if (numStocks > 0) {
         return(
-          <tr key={idx} className="main-table-row"
-            onClick={handleClick(stockId, history)}>
-            <td className="portfolio-holdings">{numStocks} shares</td>
-            <td className="stock-price">
-              {this.props.fetchPrice(stocks[stockId].symbol)}
-            </td>
-          </tr>
+          <div key={idx} className="portfolio-row"
+            onClick={handleClick(symbol, history)}>
+            <div className="stock-symbol">{symbol}</div>
+            <div className="portfolio-holdings">{numStocks} shares</div>
+            <div className="stock-price">
+
+            </div>
+          </div>
         );
       }
     })
@@ -32,25 +33,20 @@ const renderTableRows = (holdings, stocks, history) =>  {
 const renderStocks = (holdings, stocks, history) => {
   //
   return(
-    <table className="sidebar-table">
-      <tbody>
+      <div>
         {renderTableRows(holdings, stocks, history)}
-      </tbody>
-    </table>
+      </div>
   );
 };
 
 const Portfolio = ({ holdings, stocks, history }) => {
   //
   return(
-    <aside className="sidebar-box">
-      <h3 className="sidebar-header-one">Portfolio</h3>
-      <div className="sidebar-info">
+    <aside className="portfolio">
+      <h3 className="portfolio-header">Portfolio</h3>
+      <div className="portfolio-body">
         {renderStocks(holdings, stocks, history)}
       </div>
-      <div>AAPL</div>
-      <div>NFLX</div>
-      <div>TRXC</div>
     </aside>
   );
 };

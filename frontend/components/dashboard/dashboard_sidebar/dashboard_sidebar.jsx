@@ -7,12 +7,10 @@ const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
 
   return(
     <section className='dashboard-sidebar'>
-      <div className="scrollable">
         <Portfolio
           holdings={holdings}
           stocks={stocks}
         />
-      </div>
     </section>
   );
 

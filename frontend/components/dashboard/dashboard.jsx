@@ -107,17 +107,22 @@ class Dashboard extends React.Component {
                 </ul>
               </div>
 
-              <div id="market-news-title">
-                Latest Market News
-              </div>
+              <div id="market-news-title">Recent News</div>
               <div className='news-container'>
                 <ul>
                   {this.marketNews()}
                 </ul>
               </div>
             </div>
-
+            <div className="side">
+              <DashboardSidebar
+                stocks={this.props.stocks}
+                holdings={this.props.portfolio.portfolio.holdings}
+              />
+            </div>
           </section>
+
+
         </div>
       );
     }
