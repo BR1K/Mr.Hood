@@ -227,7 +227,7 @@ body {
 
 
 
-.greeting-page-main {
+.greeting-page {
   background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532033889/Mr.Hood/Welcome%20Page/fog-foggy-forest-4827.jpg);
   height: 100vh;
   background-size: cover;
@@ -273,13 +273,13 @@ body {
   top: 60px;
 }
 
-.greeting-page-content-box-1-image {
+.greeting-page-content-image {
   width: 500px;
   height: 700px;
   margin-right: 25px;
 }
 
-.greeting-page-content-box-1-left {
+.greeting-page-content-left {
   margin-left: 35px;
   width: -webkit-fill-available;
 }

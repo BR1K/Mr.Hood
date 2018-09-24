@@ -15,11 +15,11 @@ class StockCard extends React.Component {
 
 
   componentDidMount() {
-    debugger
-    this.props.fetchPrice(this.props.peer)
+    this.props.fetchStock(this.props.peer)
+      .then(() => this.props.fetchPrice(this.props.peer))
       .then(() => this.props.fetchStats(this.props.peer))
       .then(() => this.props.fetchCompany(this.props.peer))
-      debugger
+
   }
 
   // updatePrice() {

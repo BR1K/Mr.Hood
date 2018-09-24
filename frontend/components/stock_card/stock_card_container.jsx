@@ -8,12 +8,13 @@ import { fetchStocks, fetchStock, fetchPeerStocks } from '../../actions/stock_ac
 const mapStateToProps = (state, ownProps) => {
   debugger
   return {
-
+    
   }
   debugger
 }
 
 const mapDispatchToProps = (dispatch) => ({
+
   fetchPrice: (symbol) => dispatch(fetchPrice(symbol)),
   fetchCompany: (symbol) => dispatch(fetchCompany(symbol)),
   fetchStats: (symbol) => dispatch(fetchStats(symbol)),
