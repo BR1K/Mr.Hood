@@ -1,24 +1,26 @@
-# README
+# Mr. Hood
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mr. Hood is a full-stack, single-page stock trading/investment application built with Ruby on Rails and React.js. Users can invest in real companies with live market data, without spending any money. Mr. Hood's design was inspired by Robinhood's web application.
 
-Things you may want to cover:
+## Technologies
 
-* Ruby version
+Backend: Ruby on Rails, ActiveRecord, PostgreSQL
+Frontend: React, Redux
+Recharts
+IEX API
+News API
 
-* System dependencies
 
-* Configuration
+## Features
 
-* Database creation
+Mr. Hood currently supports the following features
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User authorization  
+Search
+Dashboard
+Stock research
+Portfolio
+Live news feed
+Stock peers
+Daily Top-moving stocks
+Useful errors
