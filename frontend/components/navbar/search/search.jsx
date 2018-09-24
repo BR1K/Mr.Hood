@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Search extends React.Component {
 
@@ -21,6 +21,7 @@ class Search extends React.Component {
       searchInput: e.target.value
     }, () => {
       this.timeOut = setTimeout(() => this.props.fetchStocks(this.state.searchInput), 400)
+      // this.timeOut = setTimeout(() => this.props.searchStocks(this.state.searchInput), 400)
       }
     );
     // if (this.state.searchInput.length === 0) {
@@ -35,13 +36,13 @@ class Search extends React.Component {
 
 
   componentWillUnmount() {
-    this.setState({ searchInput: ""});
+    this.setState({ searchInput: "" });
     this.props.resetStocks();
   }
 
   render() {
-
-    const results = this.props.searchStocks.map((result, i) => {
+    
+    const results = this.props.searchedStocks.map((result, i) => {
       return (
         <Link to={`/stocks/${result.symbol}`}>
           <li
