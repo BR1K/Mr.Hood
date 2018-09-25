@@ -6,7 +6,6 @@ import { fetchPrice } from '../../../actions/iex_actions';
 import { currencyFormatter } from '../../../util/formatter';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     trade: {
       stock_id: ownProps.stock.id,

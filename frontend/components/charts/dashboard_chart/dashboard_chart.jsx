@@ -18,7 +18,7 @@ class DashboardChart extends React.Component {
     const data = Object.values(this.props.data).map(snapshot => {
       return snapshot.value;
     });
-    debugger
+    
 
     const min = Math.min(...data);
     const max = Math.max(...data);
