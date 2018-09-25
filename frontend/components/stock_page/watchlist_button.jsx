@@ -15,7 +15,7 @@ class WatchlistButton extends React.Component {
 
 
   render() {
-    debugger
+    
     let handleClick;
     let text;
     if (this.props.watchlist[this.props.stock.symbol]) {
