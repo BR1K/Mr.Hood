@@ -22,16 +22,15 @@ class DashboardChart extends React.Component {
 
     const min = Math.min(...data);
     const max = Math.max(...data);
-    const portfolioValue = data[data.length - 1];
+    const portfolioValue = this.props.portfolio.portfolio.value;
 
     return (
       <div className='stock-chart'>
 
         <div className="chart">
           <div className="chart-header">
-            <ul className="tags">test1, test2, test3</ul>
             <h1 className="company-name">Portfolio Chart</h1>
-            <div className="stock-chart-price">50505050500</div>
+            <div className="stock-chart-price">{portfolioValue}</div>
             <div className="percent-change">
               <span className="percent">50</span>
               <span className="range"></span>
