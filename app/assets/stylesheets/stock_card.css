@@ -1,0 +1,40 @@
+.stock-card {
+  border: 1px solid #0e0d0d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow .3s;
+  text-decoration: none;
+
+}
+
+.stock-card:hover {
+  box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  transition: box-shadow .3s;
+
+}
+
+.stock-card-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stock-card-name {
+  margin-bottom: 10px;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+.stock-card-body {
+  color: white;
+}
+
+.stock-card-price {
+  font-size: 25px;
+  color: rgb(33, 206, 153);
+}
