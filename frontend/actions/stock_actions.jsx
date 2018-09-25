@@ -5,6 +5,19 @@ export const RECEIVE_STOCK = "RECEIVE_STOCK";
 export const RECEIVE_PEER_STOCKS = "RECEIVE_PEER_STOCKS";
 export const RESET_STOCKS = "RESET_STOCKS";
 
+export const RECEIVE_WATCH = "RECEIVE_WATCH";
+export const RECEIVE_WATCHLIST = "RECEIVE_WATCHLIST";
+
+export const receiveWatch = (watch) => ({
+  type: RECEIVE_WATCH,
+  watch,
+});
+
+export const receiveWatchlist = (watchlist) => ({
+  type: RECEIVE_WATCHLIST,
+  watchlist,
+});
+
 export const receiveStocks = (stocks) => ({
   type: RECEIVE_STOCKS,
   stocks
@@ -41,9 +54,13 @@ export const fetchPeerStocks = (peer) => (dispatch) => (
 );
 
 export const watchStock = (id) => (dispatch) => (
-  StockAPIUtil.watchStock(id).then((stock) => dispatch(receiveStock(stock)))
+  StockAPIUtil.watchStock(id).then((stock) => dispatch(receiveWatch(stock)))
 );
 
 export const unwatchStock = (id) => (dispatch) => (
-  StockAPIUtil.unwatchStock(id).then((stock) => dispatch(receiveStock(stock)))
+  StockAPIUtil.unwatchStock(id).then(({}) => dispatch(receiveWatchlist({})))
+);
+
+export const fetchWatchlist = () => (dispatch) => (
+  StockAPIUtil.fetchWatchlist().then((watchlist) => dispatch(receiveWatchlist(watchlist)))
 );
