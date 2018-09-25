@@ -39,3 +39,11 @@ export const fetchStock = (symbol) => (dispatch) => (
 export const fetchPeerStocks = (peer) => (dispatch) => (
   StockAPIUtil.fetchPeerStocks(peer).then((peerStocks) => dispatch(receivePeerStocks(peerStocks)))
 );
+
+export const watchStock = (id) => (dispatch) => (
+  StockAPIUtil.watchStock(id).then((stock) => dispatch(receiveStock(stock)))
+);
+
+export const unwatchStock = (id) => (dispatch) => (
+  StockAPIUtil.unwatchStock(id).then((stock) => dispatch(receiveStock(stock)))
+);
