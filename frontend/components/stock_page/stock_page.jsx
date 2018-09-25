@@ -6,6 +6,7 @@ import StockCard from '../stock_card/stock_card_container';
 import { RingLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
+import WatchlistButton from './watchlist_button_container';
 
 class StockPage extends React.Component {
 
@@ -24,11 +25,13 @@ class StockPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchStock(this.props.match.params.symbol)
+      .then(() => this.props.fetchStocks())
       .then(() => this.props.fetchPrice(this.props.stock.symbol))
       .then(() => this.props.fetchStats(this.props.stock.symbol))
       .then(() => this.props.fetchCompany(this.props.stock.symbol))
       .then(() => this.props.fetchPeers(this.props.stock.symbol))
       .then(() => this.props.fetchNews(this.props.stock.symbol))
+      .then(() => this.props.fetchWatchlist())
       .then(() => this.props.fetchTopStocks())
       .then(() => {
         const refresh = setInterval(this.updatePrice, 5000);
@@ -125,6 +128,7 @@ class StockPage extends React.Component {
 
 
   render() {
+
     if (this.state.loading) {
       return (
         <div className="loading-icon">
@@ -137,7 +141,7 @@ class StockPage extends React.Component {
       )
 
     } else {
-
+      debugger
 
       return (
         <div className="stock-page">
@@ -212,7 +216,10 @@ class StockPage extends React.Component {
             <div className="peers-container">
                 <div id="peers-title">Peers</div>
                 <ul className="peers-ul">
-                  {this.peers()}
+                  <StockCard
+                    peer={this.props.peers[0]}
+                  />
+
                 </ul>
             </div>
             <div className='news-container'>
@@ -229,7 +236,15 @@ class StockPage extends React.Component {
                 stock={this.props.stock}
                 price={this.props.price}
                 />
+
+              <div className="watchlist-button-wrapper">
+                <WatchlistButton
+                  stock={this.props.stock}
+                  watchlist={this.props.watchlist}
+                />
+              </div>
             </div>
+
           </section>
         </div>
       )

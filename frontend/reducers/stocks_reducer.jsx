@@ -5,9 +5,11 @@ const stocksReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_STOCK:
-      return { [action.stock.symbol]: action.stock };
+      const newStock = { [action.stock.symbol]: action.stock };
+      const newState = merge({}, state, newStock);
+      return newState;
     case RECEIVE_STOCKS:
-      return Object.assign({}, state, action.stocks);
+      return action.stocks;
     default:
       return state;
   }

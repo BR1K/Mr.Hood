@@ -1,9 +1,8 @@
-
-class Api::WatchListItemsController < ApplicationController
+class Api::WatchlistItemsController < ApplicationController
 
   def create
-
-    @watchlist_item = WatchListItem.new(user_id: current_user.id, stock_id: params[:id])
+    @watchlist_item = WatchlistItem.new(user_id: current_user.id, stock_id: params[:id])
+    # @watchlist_item = WatchlistItem.new(watchlist_item_params)
 
     if @watchlist_item.save
       @stock = Stock.find(@watchlist_item.stock_id)
@@ -13,15 +12,25 @@ class Api::WatchListItemsController < ApplicationController
     end
   end
 
+  def index
+    @watchlist_items = WatchlistItem.where(user_id: current_user.id)
+    @stocks = @watchlist_items.map { |watch| watch.stock }
+
+    render 'api/stocks/index'
+  end
+
+
   def destroy
-    @watchlist_item = WatchListItem.find_by(stock_id: params[:id])
+    @watchlist_item = WatchlistItem.find_by(stock_id: params[:id])
     @stock = Stock.find(@watchlist_item.stock_id)
-    @watch_list_item.destroy
+    @watchlist_item.destroy
     render 'api/stocks/show'
   end
 
-  # def watchlist_item_params
-  #   params.require(:watchlist_item).permit(:user_id, :stock_id)
-  # end
+  def watchlist_item_params
+    params.require(:watchlist_item).permit(:user_id, :stock_id)
+  end
+
+
 
 end

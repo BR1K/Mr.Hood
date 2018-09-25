@@ -1,8 +1,14 @@
-export const fetchStocks = (query) => (
+// export const fetchStocks = (query) => (
+//   $.ajax({
+//     url: 'api/stocks',
+//     method: 'GET',
+//     data: { query },
+//   })
+// );
+export const fetchStocks = () => (
   $.ajax({
     url: 'api/stocks',
     method: 'GET',
-    data: { query },
   })
 );
 
@@ -29,6 +35,13 @@ export const getPrice = (stock) => (
   })
 );
 
+export const fetchWatchlist = () => (
+  $.ajax({
+    url: `/api/watchlist_items`,
+    method: 'GET',
+  })
+);
+
 export const watchStock = (id) => (
   $.ajax({
     url: `/api/watchlist_items`,
@@ -39,7 +52,7 @@ export const watchStock = (id) => (
 
 export const unwatchStock = (id) => (
   $.ajax({
-    url: `/api/watchlist_items`,
+    url: `/api/watchlist_items/${id}`,
     method: 'DELETE',
     data: { id },
   })
