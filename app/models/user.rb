@@ -29,6 +29,10 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id
 
+  # has_many :watched_stocks,
+  #   through: :watchlist_items,
+  #   source: :stocks,
+
   has_one :portfolio,
     class_name: 'Portfolio',
     primary_key: :id,
