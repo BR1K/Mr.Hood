@@ -1,6 +1,7 @@
 .side {
   /* background: black; */
   display: flex;
+  flex-direction: column;
   margin-right: 35px;
   font-family: DIN Pro,-apple-system,BlinkMacSystemFont,sans-serif;
   position: fixed;
@@ -8,9 +9,14 @@
   padding-left: 5%
 }
 
+/* .stock-page {
+  display: flex;
+  flex-direction: column;
+} */
+
 .stock-sidebar {
   width: 300px;
-  height: 404px;
+  /* height: 404px; */
   margin: 4%;
   background-color: #1b1b1d;
   color: white;
@@ -26,14 +32,14 @@
 
 #trade-button {
   width: 100%;
-  height: 48px;
+  /* height: 48px; */
   border-radius: 5px;
   padding: 15px;
   font-weight: 600;
   font-size: 12px;
   border: none;
   background-color: rgb(33, 206, 153);
-  color: white;
+  color: black;
 }
 
 #trade-button:hover {
@@ -71,9 +77,6 @@
   border-bottom: 1px solid #F0F0F0;
 }
 
-.trade-form {
-
-}
 
 .shares {
   display: flex;
@@ -162,7 +165,7 @@
 .tab-content {
   padding: 0 24px;
   font-size: 13px;
-  height: 353px;
+  /* height: 353px; */
 }
 
 #trade-buy-sell {
