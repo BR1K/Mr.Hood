@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 		resource :session, only: [:create, :destroy, :show]
     resources :stocks, only: [:index]
     resources :trades, only: [:index, :create, :show]
+    resources :watchlist_items, only: [:create, :destroy, :index]
     resources :portfolios, only: [:show]
     resources :portfolio_snapshots, only: [:create, :index]
     get '/stocks/:symbol', to: 'stocks#show'
