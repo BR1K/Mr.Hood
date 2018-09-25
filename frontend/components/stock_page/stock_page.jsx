@@ -141,7 +141,7 @@ class StockPage extends React.Component {
       )
 
     } else {
-      debugger
+      
 
       return (
         <div className="stock-page">

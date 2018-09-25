@@ -1,5 +1,6 @@
 import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import StockCardChart1 from '../charts/stock_card_chart/stock_card_chart_container1';
 
 class StockCard extends React.Component {
 
@@ -19,6 +20,7 @@ class StockCard extends React.Component {
     this.props.fetchPeerPrice(this.props.peer)
       .then(() => this.props.fetchPeerStats(this.props.peer))
       .then(() => this.props.fetchPeerCompany(this.props.peer))
+      .then(() => this.props.fetchPeerChart(this.props.peer, "1D"))
       .then(() => {
         const refresh = setInterval(this.updatePrice, 5000);
         this.setState({
@@ -58,6 +60,12 @@ class StockCard extends React.Component {
             <div className="stock-card-symbol">{this.props.companyData.symbol}</div>
           </div>
           <div className="stock-card-body">
+            <StockCardChart1
+              stock={this.props.peer}
+              price={this.props.price}
+              stats={this.props.stats}
+              chart={this.props.chart}
+            />
             <div className="stock-card-price">{this.props.price}</div>
           </div>
         </Link>

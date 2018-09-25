@@ -29,6 +29,7 @@ const statsReducer = (state = {}, action) => {
 };
 
 const chartReducer = (state = [], action) => {
+
   Object.freeze(state);
 
   switch(action.type) {
