@@ -14,9 +14,9 @@ class Api::WatchListItemsController < ApplicationController
   end
 
   def destroy
-    watchlist_item = WatchListItem.find_by(stock_id: params[:id])
-    @stock = Stock.find(watch_list_item.stock_id)
-    watch_list_item.destroy
+    @watchlist_item = WatchListItem.find_by(stock_id: params[:id])
+    @stock = Stock.find(@watchlist_item.stock_id)
+    @watch_list_item.destroy
     render 'api/stocks/show'
   end
 
