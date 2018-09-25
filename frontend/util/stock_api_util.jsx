@@ -23,8 +23,24 @@ export const fetchPeerStocks = (peer) => (
 
 export const getPrice = (stock) => (
   $.ajax({
-    method: "PATCH",
     url: `/api/stocks/${stock.id}`,
+    method: "PATCH",
     data: { stock },
+  })
+);
+
+export const watchStock = (id) => (
+  $.ajax({
+    url: `/api/watchlist_items`,
+    method: 'POST',
+    data: { id },
+  })
+);
+
+export const unwatchStock = (id) => (
+  $.ajax({
+    url: `/api/watchlist_items`,
+    method: 'DELETE',
+    data: { id },
   })
 );
