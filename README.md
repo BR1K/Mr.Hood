@@ -16,11 +16,11 @@ News API
 Mr. Hood currently supports the following features
 
 User authorization  
-Search
-Dashboard
-Stock research
-Portfolio
-Live news feed
-Stock peers
-Daily Top-moving stocks
-Useful errors
+- Search
+- Dashboard
+- Stock research
+- Portfolio
+- Live news feed
+- Stock peers
+- Daily Top-moving stocks
+- Useful errors
