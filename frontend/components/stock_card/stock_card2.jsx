@@ -2,44 +2,44 @@ import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StockCardChart1 from '../charts/stock_card_chart/stock_card_chart_container1';
 
-class StockCard extends React.Component {
+class StockCard2 extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
-      refresh: null,
+      loading2: true,
+      refresh2: null,
     };
 
-    this.updatePrice = this.updatePrice.bind(this);
+    this.updatePrice2 = this.updatePrice2.bind(this);
   }
 
 
 
   componentDidMount() {
-    this.props.fetchPeerPrice(this.props.peer)
-      .then(() => this.props.fetchPeerStats(this.props.peer))
-      .then(() => this.props.fetchPeerCompany(this.props.peer))
-      .then(() => this.props.fetchPeerChart(this.props.peer, "1D"))
-      .then(() => { 
-        const refresh = setInterval(this.updatePrice, 5000);
+    this.props.fetchPeerPrice2(this.props.peer)
+      .then(() => this.props.fetchPeerStats2(this.props.peer))
+      .then(() => this.props.fetchPeerCompany2(this.props.peer))
+      .then(() => this.props.fetchPeerChart2(this.props.peer, "1D"))
+      .then(() => {
+        const refresh = setInterval(this.updatePrice2, 5000);
         this.setState({
-          refresh: refresh,
-          loading: false
+          refresh2: refresh,
+          loading2: false
         });
       }
     )
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.refresh);
+    clearInterval(this.state.refresh2);
   }
 
 
-  updatePrice() {
+  updatePrice2() {
 
     const currentPrice = this.props.price;
-    this.props.fetchPeerPrice(this.props.peer).then(
+    this.props.fetchPeerPrice2(this.props.peer).then(
       newPrice => {
         if (currentPrice !== newPrice) {
           this.props.price = newPrice
@@ -49,7 +49,8 @@ class StockCard extends React.Component {
   }
 
   render() {
-    if (this.state.loading) {
+    debugger
+    if (this.state.loading2) {
       return <div>loading...</div>
     } else {
       return (
@@ -76,4 +77,4 @@ class StockCard extends React.Component {
 
 }
 
-export default withRouter(StockCard);
+export default withRouter(StockCard2);

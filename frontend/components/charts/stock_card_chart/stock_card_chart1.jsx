@@ -13,23 +13,8 @@ class StockCardChart1 extends React.Component {
 
   }
 
-  // componentDidMount() {
-  //   //
-  //   this.props.fetchPeerChart(this.props.stock, this.state.range)
-  //   .then(() => this.setState({ loading: false }));
-  //
-  // }
-
-  // componentWillReceiveProps(newProps) {
-  //   //
-  //   if (newProps !== this.props) {
-  //     this.reRender();
-  //   }
-  // }
-
 
   render() {
-    debugger
 
     let data = this.props.chart.filter(datum => datum.close);
     let dataArray = data.map(datum => {
