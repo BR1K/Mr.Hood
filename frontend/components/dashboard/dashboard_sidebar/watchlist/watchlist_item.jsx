@@ -22,9 +22,35 @@ class WatchlistItem extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchChart(this.props.symbol);
     this.fetchPrice(this.props.symbol);
     this.setState({ loading: false });
   }
+
+  fetchChart(symbol) {
+    let x = fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
+    .then(res => {
+      // debugger
+      return(
+        res.json()
+        )
+      }
+    )
+    .then(
+      (result) => {
+        debugger
+        this.setState({
+          chart: { data: result }
+        });
+      },
+      (error) => {
+        this.setState({
+          price: { error }
+        });
+      }
+    )
+  }
+
   fetchPrice(symbol) {
     fetch(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
     .then(res => res.json())
