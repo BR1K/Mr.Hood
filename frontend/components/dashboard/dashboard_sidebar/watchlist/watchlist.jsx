@@ -45,4 +45,4 @@ class Watchlist extends React.Component {
   }
 }
 
-export default Watchlist;
+export default withRouter(Watchlist);
