@@ -1,4 +1,6 @@
 .dashboard-sidebar {
+  height: 500px;
+  overflow: scroll;
   color: white;
   width: 300px;
   margin: 4%;
@@ -10,7 +12,6 @@
 }
 
 .portfolio {
-  height: inherit;
   padding: 5px;
 }
 
