@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import WatchlistItem from './watchlist_item';
 
 class Watchlist extends React.Component {
 
@@ -22,9 +22,11 @@ class Watchlist extends React.Component {
     for (let i = 0; i < symbols.length; i++) {
       let symbol = symbols[i];
       watchlist.push (
-        <Link to={`/stocks/${symbol}`} className="portfolio-row" key={i}>
-          {symbol}
-        </Link>
+        <WatchlistItem
+          className="portfolio-row"
+          key={i}
+          symbol={symbol}
+        />
       )
     }
 
