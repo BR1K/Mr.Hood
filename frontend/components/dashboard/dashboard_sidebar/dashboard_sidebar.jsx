@@ -1,6 +1,6 @@
 import React from 'react';
 import Portfolio from './portfolio/portfolio_container';
-// import Watchlist from './watchlist/watchlist';
+import Watchlist from './watchlist/watchlist';
 
 const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
 
@@ -10,6 +10,9 @@ const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
         <Portfolio
           holdings={holdings}
           stocks={stocks}
+        />
+        <Watchlist
+          watchlist={watchlist}
         />
     </section>
   );
