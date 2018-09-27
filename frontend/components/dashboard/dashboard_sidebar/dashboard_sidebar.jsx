@@ -1,9 +1,8 @@
 import React from 'react';
 import Portfolio from './portfolio/portfolio_container';
-import Watchlist from './watchlist/watchlist';
+import Watchlist from './watchlist/watchlist_container';
 
 const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
-
 
   return(
     <section className='dashboard-sidebar'>

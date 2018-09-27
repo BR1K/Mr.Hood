@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.fetchPortfolio(this.props.currentUser.id)
     // .then(() => this.props.fetchStocks())
+    .then(() => this.props.fetchWatchlist())
     .then(() => this.props.fetchMarketNews())
     .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
     .then(() => this.props.fetchTopStocks())
@@ -67,7 +68,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-
     if (this.state.loading) {
       return <div>loading...</div>
     } else {
@@ -118,6 +118,7 @@ class Dashboard extends React.Component {
               <DashboardSidebar
                 stocks={this.props.stocks}
                 holdings={this.props.portfolio.portfolio.holdings}
+                watchlist={this.props.watchlist}
               />
             </div>
           </section>
