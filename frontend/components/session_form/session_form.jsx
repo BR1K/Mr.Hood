@@ -5,9 +5,10 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: 'rhood@mrhood.com',
+      password: 'Hunter12'
     };
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,6 +27,14 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
+
+  demoLogin(user) {
+    this.props.login(user);
+  }
+
+  // handleDemoSubmit() {
+  // this.props.login(this.demo).then(() => this.props.history.push('/'));
+  // }
 
   renderErrors() {
     return(
@@ -84,6 +93,13 @@ class SessionForm extends React.Component {
                 </div>
                 <footer className="login-form-footer">
                   <div className="login-button-box">
+                    <button className="session-submit" onClick={() =>
+                        this.demoLogin({
+                        email: 'rhood@mrhood.com',
+                        password: 'Hunter12',
+                        })
+                      }>Demo
+                    </button>
                     <input className="session-submit" type="submit" value="Sign In" />
                   </div>
                 </footer>
