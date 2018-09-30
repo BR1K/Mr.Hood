@@ -13,7 +13,6 @@ class Watchlist extends React.Component {
   componentDidMount() {
     this.props.fetchWatchlist()
     .then(() => this.props.fetchStocks())
-    .then(() => this.props.fetchWatchlist())
   }
 
   watchlistItems() {
@@ -38,7 +37,7 @@ class Watchlist extends React.Component {
     return(
 
       <ul className="watchlist">
-        <h3 className="portfolio-header">Watchlist</h3>
+        <h3 id="watchlist-header" className="portfolio-header">Watchlist</h3>
         <div className="portfolio-body">
           {this.watchlistItems()}
         </div>

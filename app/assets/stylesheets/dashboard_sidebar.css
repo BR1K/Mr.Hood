@@ -1,5 +1,5 @@
 .dashboard-sidebar {
-  height: 500px;
+  height: 600px;
   overflow: scroll;
   color: white;
   width: 300px;
@@ -15,21 +15,65 @@
   padding: 5px;
 }
 
+.holdings {
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  width: 63px;
+  margin-top: 7px;
+}
+
+/* #watchlist-header {
+  margin-top: -25px
+} */
+
 .portfolio-header {
-  padding: 15px;
+  padding-top: 20px;
+  padding-left: 25px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #0e0d0d;
+  border-top: 1px solid #0e0d0d;
 }
 
 .portfolio-body {
-  padding: 15px;
+
 }
 
 .portfolio-row {
   display: flex;
-  margin-bottom: 25px;
+  justify-content: space-between;
+  /* margin-bottom: 35px; */
+  /* margin-top: 15px; */
+  /* margin-bottom: 15px; */
   cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.portfolio-row:hover {
+  background-color: #161617;
 }
 
 .stock-symbol {
-  margin-right: 15px;
+  color: white;
+  /* margin-right: 15px; */
+  font-size: 13px;
+  width: 63px;
+  /* margin-bottom: 7px; */
+}
+
+.stock-price {
+  color: white;
+  text-align: right;
+  width: 65px;
+  font-weight: 100;
+}
+
+.portfolio-item-left {
+  /* height: 40px;
+  justify-content: space-between; */
 }

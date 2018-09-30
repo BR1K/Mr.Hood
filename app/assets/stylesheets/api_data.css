@@ -83,8 +83,8 @@
 
 .article-image {
   border-radius: 5px;
-  width: 196px;
-  height: 134px;
+  /* width: 196px;
+  height: 134px; */
 }
 
 .article-text {
