@@ -8,7 +8,6 @@ const DashboardSidebar = ({ stocks, holdings, watchlist }) => {
     <section className='dashboard-sidebar'>
         <Portfolio
           holdings={holdings}
-          stocks={stocks}
         />
         <Watchlist
           watchlist={watchlist}
