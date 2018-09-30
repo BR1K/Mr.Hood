@@ -59,6 +59,23 @@ class StockCard extends React.Component {
     )
   }
 
+  fetchPrice(symbol) {
+    fetch(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          price: { data: result }
+        });
+      },
+      (error) => {
+        this.setState({
+          chart: { error }
+        });
+      }
+    )
+  }
+
 
   updatePrice() {
 
