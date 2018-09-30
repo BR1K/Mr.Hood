@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import MiniChart from '../../../charts/mini_chart/mini_chart';
 
 class WatchlistItem extends React.Component {
   constructor(props) {
