@@ -198,19 +198,19 @@ class StockPage extends React.Component {
                 <div className='stats-row'>
                   <li className="stat-container">
                     <div className="stat-title">Market Cap</div>
-                    <div className="stat-body">{this.props.stats.marketcap}</div>
+                    <div className="stat-body">${this.props.stats.marketcap}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">Revenue</div>
-                    <div className="stat-body">{this.props.stats.revenue}</div>
+                    <div className="stat-body">${this.props.stats.revenue}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">52w High</div>
-                    <div className="stat-body">{this.props.stats.week52high}</div>
+                    <div className="stat-body">${this.props.stats.week52high}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">52w Low</div>
-                    <div className="stat-body">{this.props.stats.week52low}</div>
+                    <div className="stat-body">${this.props.stats.week52low}</div>
                   </li>
                 </div>
               </ul>

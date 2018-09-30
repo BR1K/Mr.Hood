@@ -67,7 +67,7 @@ class StockCard2 extends React.Component {
               stats={this.props.stats}
               chart={this.props.chart}
             />
-            <div className="stock-card-price">{this.props.price}</div>
+            <div className="stock-card-price">${this.props.price}</div>
           </div>
         </Link>
       )

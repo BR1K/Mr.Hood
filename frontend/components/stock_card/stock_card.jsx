@@ -21,7 +21,7 @@ class StockCard extends React.Component {
       .then(() => this.props.fetchPeerStats(this.props.peer))
       .then(() => this.props.fetchPeerCompany(this.props.peer))
       .then(() => this.props.fetchPeerChart(this.props.peer, "1D"))
-      .then(() => { 
+      .then(() => {
         const refresh = setInterval(this.updatePrice, 5000);
         this.setState({
           refresh: refresh,
@@ -66,7 +66,7 @@ class StockCard extends React.Component {
               stats={this.props.stats}
               chart={this.props.chart}
             />
-            <div className="stock-card-price">{this.props.price}</div>
+            <div className="stock-card-price">${this.props.price}</div>
           </div>
         </Link>
       )
