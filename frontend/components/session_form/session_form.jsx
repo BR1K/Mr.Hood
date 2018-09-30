@@ -32,10 +32,6 @@ class SessionForm extends React.Component {
     this.props.login(user);
   }
 
-  // handleDemoSubmit() {
-  // this.props.login(this.demo).then(() => this.props.history.push('/'));
-  // }
-
   renderErrors() {
     return(
       <ul>
