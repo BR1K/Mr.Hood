@@ -29,7 +29,7 @@ class WatchlistItem extends React.Component {
   }
 
   fetchChart(symbol) {
-    let x = fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
+    fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
     .then(res => {
       // debugger
       return(
@@ -70,12 +70,19 @@ class WatchlistItem extends React.Component {
   }
 
   render() {
-    return(
-      <Link to={`/stocks/${this.props.symbol}`} className="portfolio-row">
-        <div>{this.props.symbol}</div>
-        <div>{this.state.price.data}</div>
-      </Link>
-    )
+    if (this.state.chart.data === null) {
+      return <div>loading...</div>
+    } else {
+      return (
+        <Link to={`/stocks/${this.props.symbol}`} className="portfolio-row">
+          <div className="stock-symbol">{this.props.symbol}</div>
+          <MiniChart
+            chart={this.state.chart.data}
+          />
+          <div className="stock-price">${this.state.price.data}</div>
+        </Link>
+      )
+    }
   }
 }
 
