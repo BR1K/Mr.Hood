@@ -21,6 +21,8 @@ class MiniChart extends React.Component {
       return datum.close;
     });
 
+
+
     const max = data.reduce((a, b) => Math.max(a, b), 0);
     const min = data.reduce((a, b) => Math.min(a, b), 0);
 
@@ -32,12 +34,13 @@ class MiniChart extends React.Component {
           <Line
             type="linear"
             dataKey="high"
-            strokeWidth={1} stroke="#21ce99"
+            strokeWidth={1} stroke={this.props.kolor}
             dot={false}
             isAnimationActive={true}
           />
 
           <YAxis
+            reversed={true}
             hide={true}
             domain={[min, max]}
           />
