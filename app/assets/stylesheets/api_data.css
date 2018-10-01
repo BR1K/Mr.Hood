@@ -8,7 +8,8 @@
 .peers-ul {
   margin-top: 30px;
   display: flex;
-  justify-content: space-around;
+  overflow: scroll;
+  /* justify-content: space-around; */
 }
 
 .peer {
