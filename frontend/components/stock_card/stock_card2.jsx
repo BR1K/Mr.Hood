@@ -49,7 +49,7 @@ class StockCard2 extends React.Component {
   }
 
   render() {
-    debugger
+    
     if (this.state.loading2) {
       return <div>loading...</div>
     } else {
