@@ -7,38 +7,57 @@ class StockCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true,
+      price: {
+        data: null,
+        error: null,
+        loading: true,
+      },
+      chart: {
+        data: null,
+        error: null,
+        loading: true,
+      },
+      company: {
+        data: null,
+        error: null,
+        loading: true,
+      },
+      // loading: true,
       refresh: null,
     };
 
-    this.updatePrice = this.updatePrice.bind(this);
+    this.fetchChart = this.fetchChart.bind(this);
+    this.fetchPrice = this.fetchPrice.bind(this);
+    this.fetchCompany = this.fetchCompany.bind(this);
   }
 
 
 
   componentDidMount() {
-    this.props.fetchPeerPrice(this.props.peer)
-      .then(() => this.props.fetchPeerStats(this.props.peer))
-      .then(() => this.props.fetchPeerCompany(this.props.peer))
-      .then(() => this.props.fetchPeerChart(this.props.peer, "1D"))
-      .then(() => {
-        const refresh = setInterval(this.updatePrice, 5000);
-        this.setState({
-          refresh: refresh,
-          loading: false
-        });
-      }
-    )
+    this.fetchChart(this.props.symbol);
+    this.fetchPrice(this.props.symbol);
+    this.fetchCompany(this.props.symbol);
+    // this.props.fetchPeerPrice(this.props.peer)
+    //   .then(() => this.props.fetchPeerStats(this.props.peer))
+    //   .then(() => this.props.fetchPeerCompany(this.props.peer))
+    //   .then(() => this.props.fetchPeerChart(this.props.peer, "1D"))
+    //   .then(() => {
+    //     const refresh = setInterval(this.updatePrice, 5000);
+    //     this.setState({
+    //       refresh: refresh,
+    //       loading: false
+    //     });
+    //   }
+    // )
   }
 
-  componentWillUnmount() {
-    clearInterval(this.state.refresh);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.state.refresh);
+  // }
 
   fetchChart(symbol) {
     fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
     .then(res => {
-      // debugger
       return(
         res.json()
         )

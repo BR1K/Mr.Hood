@@ -94,7 +94,7 @@ class StockChart extends React.Component {
   }
 
   render() {
-    let data = this.props.chart.filter(datum => datum.close);
+    let data = this.props.chart.filter(datum => datum.close > 0);
     let dataArray = data.map(datum => {
       return datum.close;
     });

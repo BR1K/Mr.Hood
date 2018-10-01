@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
 import DashboardChart from '../charts/dashboard_chart/dashboard_chart';
 import SearchBar from '../navbar/search/search_container';
+import StockCard from '../stock_card/stock_card';
 
 
 class Dashboard extends React.Component {
@@ -36,13 +37,13 @@ class Dashboard extends React.Component {
         marketNews.push(
           <li className="article-container" key={i}>
             <div>
-              <img src={article.urlToImage} className="article-image"></img>
+              <img src={article.urlToImage} width={250} className="article-image"></img>
             </div>
             <div className="article-text">
               <div className="article-source">{article.source.name}</div>
               <div className="article-text-bottom">
                 <div className="article-title"><a href={article.url}>{article.title}</a></div>
-                <div className="article-body">{article.description}</div>
+                <div className="article-body">{article.description.slice(0, 200)}...</div>
               </div>
             </div>
           </li>
@@ -57,15 +58,18 @@ class Dashboard extends React.Component {
     let topStocks = [];
     for (var i = 0; i < this.props.topStocks.length; i++) {
       let topStock = this.props.topStocks[i];
+      debugger
       topStocks.push(
-        <li className="topStock" key={i}>
-          <Link to={`/stocks/${this.props.topStocks[i].symbol}`}>{this.props.topStocks[i].symbol}</Link>
-        </li>
+        <StockCard
+          key={i}
+          symbol={topStock.symbol}
+        />
       )
     }
 
     return topStocks;
   }
+
 
   render() {
     if (this.state.loading) {
