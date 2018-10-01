@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
-import StockCard from '../stock_card/stock_card_container';
+import StockCard from '../stock_card/stock_card';
 import StockCard2 from '../stock_card/stock_card_container2';
 import { RingLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
@@ -94,35 +94,50 @@ class StockPage extends React.Component {
     return news;
   }
 
+  // peers() {
+  //   let peers = [];
+  //   if (this.props.peers[0] === undefined) {
+  //     peers.push(null);
+  //     return peers;
+  //   } else if (this.props.peers[1] === undefined) {
+  //     peers.push(
+  //       <div className="peers-container">
+  //         <div id="peers-title">Peers</div>
+  //         <ul className="peers-ul">
+  //           <StockCard
+  //             peer={this.props.peers[0]}
+  //           />
+  //         </ul>
+  //       </div>
+  //     )
+  //   } else {
+  //     peers.push(
+  //       <div className="peers-container">
+  //         <div id="peers-title">Peers</div>
+  //         <ul className="peers-ul">
+  //           <StockCard
+  //             peer={this.props.peers[0]}
+  //           />
+  //           <StockCard2
+  //             peer={this.props.peers[1]}
+  //           />
+  //         </ul>
+  //       </div>
+  //     )
+  //   }
+  //
+  //   return peers;
+  // }
+
   peers() {
     let peers = [];
-    if (this.props.peers[0] === undefined) {
-      peers.push(null);
-      return peers;
-    } else if (this.props.peers[1] === undefined) {
+    for (let i = 0; i < this.props.peers.length; i++) {
+      let peer = this.props.peers[i];
       peers.push(
-        <div className="peers-container">
-          <div id="peers-title">Peers</div>
-          <ul className="peers-ul">
-            <StockCard
-              peer={this.props.peers[0]}
-            />
-          </ul>
-        </div>
-      )
-    } else {
-      peers.push(
-        <div className="peers-container">
-          <div id="peers-title">Peers</div>
-          <ul className="peers-ul">
-            <StockCard
-              peer={this.props.peers[0]}
-            />
-            <StockCard2
-              peer={this.props.peers[1]}
-            />
-          </ul>
-        </div>
+        <StockCard
+          symbol={peer}
+          key={i}
+        />
       )
     }
 
@@ -215,7 +230,12 @@ class StockPage extends React.Component {
                 </div>
               </ul>
             </div>
-            {this.peers()}
+            <div className="peers-container">
+              <div id="peers-title">Peers</div>
+              <span className="peers-ul">
+                {this.peers()}
+              </span>
+            </div>
             <div className='news-container'>
                 <div id="news-title">Latest News</div>
                 <ul>
