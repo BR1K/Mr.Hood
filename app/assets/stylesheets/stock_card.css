@@ -6,7 +6,10 @@
   cursor: pointer;
   transition: box-shadow .3s;
   text-decoration: none;
-  width: 235px;
+  min-width: 235px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 .stock-card:hover {
