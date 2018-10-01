@@ -31,7 +31,7 @@ class PortfolioItem extends React.Component {
   fetchChart(symbol) {
     fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
     .then(res => {
-      // debugger
+      //
       return(
         res.json()
         )
@@ -39,7 +39,7 @@ class PortfolioItem extends React.Component {
     )
     .then(
       (result) => {
-        debugger
+
         this.setState({
           chart: { data: result }
         });
@@ -70,9 +70,18 @@ class PortfolioItem extends React.Component {
   }
 
   render() {
+    let kolor;
+
     if (this.state.chart.data === null) {
-      return <div>loading...</div>
+      return <div className="portfolio-row">loading...</div>
     } else {
+      let prices = this.state.chart.data;
+      if (prices[0].marketClose > prices[prices.length - 1].marketClose) {
+        kolor = '#f45531';
+      } else {
+        kolor = "#21ce99";
+      }
+
       return (
         <Link to={`/stocks/${this.props.symbol}`} className="portfolio-row">
           <div className="portfolio-item-left">
@@ -81,6 +90,7 @@ class PortfolioItem extends React.Component {
           </div>
           <MiniChart
             chart={this.state.chart.data}
+            kolor={kolor}
           />
         <div className="stock-price">${this.state.price.data}</div>
         </Link>
