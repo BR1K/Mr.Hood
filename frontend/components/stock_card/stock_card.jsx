@@ -65,14 +65,13 @@ class StockCard extends React.Component {
     )
     .then(
       (result) => {
-        debugger
         this.setState({
-          chart: { data: result }
+          chart: { data: result, loading: false }
         });
       },
       (error) => {
         this.setState({
-          price: { error }
+          chart: { error },
         });
       }
     )
@@ -84,49 +83,64 @@ class StockCard extends React.Component {
     .then(
       (result) => {
         this.setState({
-          price: { data: result }
+          price: { data: result, loading: false }
         });
       },
       (error) => {
         this.setState({
-          chart: { error }
+          price: { error }
         });
       }
     )
   }
 
-
-  updatePrice() {
-
-    const currentPrice = this.props.price;
-    this.props.fetchPeerPrice(this.props.peer).then(
-      newPrice => {
-        if (currentPrice !== newPrice) {
-          this.props.price = newPrice
-        }
+  fetchCompany(symbol) {
+    fetch(`https://api.iextrading.com/1.0/stock/${symbol}/company`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          company: { data: result, loading: false }
+        });
+      },
+      (error) => {
+        this.setState({
+          company: { error }
+        });
       }
     )
+    debugger
   }
 
+
+  // updatePrice() {
+  //
+  //   const currentPrice = this.props.price;
+  //   this.props.fetchPeerPrice(this.props.peer).then(
+  //     newPrice => {
+  //       if (currentPrice !== newPrice) {
+  //         this.props.price = newPrice
+  //       }
+  //     }
+  //   )
+  // }
+
   render() {
-    if (this.state.loading) {
+    if (this.state.price.loading || this.state.chart.loading || this.state.company.loading) {
       return <div>loading...</div>
     } else {
       return (
 
-        <Link to={`/stocks/${this.props.companyData.symbol}`} className="stock-card">
+        <Link to={`/stocks/${this.props.symbol}`} className="stock-card">
           <div className="stock-card-header">
-            <div className="stock-card-name">{this.props.companyData.companyName}</div>
-            <div className="stock-card-symbol">{this.props.companyData.symbol}</div>
+            <div className="stock-card-name">{this.state.company.data.companyName}</div>
+            <div className="stock-card-symbol">{this.props.symbol}</div>
           </div>
           <div className="stock-card-body">
             <StockCardChart1
-              stock={this.props.peer}
-              price={this.props.price}
-              stats={this.props.stats}
-              chart={this.props.chart}
+              chart={this.state.chart.data}
             />
-            <div className="stock-card-price">${this.props.price}</div>
+          <div className="stock-card-price">${this.state.price.data}</div>
           </div>
         </Link>
       )
