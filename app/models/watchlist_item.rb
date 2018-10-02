@@ -12,6 +12,7 @@
 class WatchlistItem < ApplicationRecord
 
   validates :user_id, :stock_id, presence: true
+  validates_uniqueness_of :stock_id, scope: :user_id 
 
   belongs_to :user,
     class_name: 'User',
