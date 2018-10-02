@@ -64,3 +64,7 @@ export const unwatchStock = (id) => (dispatch) => (
 export const fetchWatchlist = () => (dispatch) => (
   StockAPIUtil.fetchWatchlist().then((watchlist) => dispatch(receiveWatchlist(watchlist)))
 );
+
+export const updateStockPrice = stock => dispatch => (
+  StockAPIUtil.updateStockPrice(stock).then(stock => dispatch(receiveStock(stock)))
+);
