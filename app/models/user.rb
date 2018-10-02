@@ -79,11 +79,17 @@ class User < ApplicationRecord
     self.portfolio.trades.count
   end
 
+  def trades
+    self.portfolio.trades
+  end
+
   def watchlist
     stocks = []
 
     self.watchlist_items.each_with_index do |watchlist_item, i|
-      stocks.push(self.watchlist_items[i].stock_id)
+      stock = Stock.find_by(id: watchlist_item.stock_id)
+      # stocks.push(self.watchlist_items[i].stock_id)
+      stocks.push(stock)
     end
 
     stocks
