@@ -140,7 +140,8 @@ class StockPage extends React.Component {
               <SearchBar />
             </div>
             <div className="navbar-right">
-              <button className="header-button" onClick={this.props.logout}>Log Out</button>
+              <Link to="/" id="navbar-home" className="navbar-link">Home</Link>
+              <h3 id="navbar-logout" className="navbar-link" onClick={this.props.logout}>Log Out</h3>
             </div>
           </nav>
 

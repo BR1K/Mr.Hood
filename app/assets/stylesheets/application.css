@@ -248,8 +248,23 @@ body {
   margin-left: 2%;
 }
 
+.navbar-link {
+  font-size: 13.5px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-link:hover {
+  color: rgb(33, 206, 153);
+}
+
 .navbar-right {
   display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
 }
 
 .navbar-middle {
@@ -428,16 +443,8 @@ body {
   color: rgb(33, 206, 153);
 }
 
-.header-button {
-  width: 100px;
-  height: 40px;
-  border-radius: 6px;
-  border: 1px solid darkgreen;
-  background-color: rgb(33, 206, 153);
-  border: 1px solid rgb(33, 206, 153);
-  /* margin-top: 20px; */
-  color: #fff;
-  margin-left: 15px;
+.navbar-link {
+
 }
 
 

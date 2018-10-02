@@ -89,16 +89,15 @@ class Dashboard extends React.Component {
               <SearchBar />
             </div>
             <div className="navbar-right">
-              <button className="header-button" onClick={this.props.logout}>Log Out</button>
+              <Link to="/" id="navbar-home" className="navbar-link">Home</Link>
+              <h3 id="navbar-logout" className="navbar-link" onClick={this.props.logout}>Log Out</h3>
             </div>
           </nav>
 
 
           <section className="main-container">
             <div className="main-stock-section">
-              <div>
-                <h1 className="dashboard-title">Welcome, {this.props.currentUser.first_name} </h1>
-              </div>
+
               <DashboardChart
                 data={this.props.snapshots}
                 portfolio={this.props.portfolio}
