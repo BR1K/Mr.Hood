@@ -44,9 +44,9 @@ q:before, q:after {
 blockquote, q {
  quotes: "" "";
 }
-a:visited {
+/* a:visited {
   color: #045242;
-}
+} */
 a {
   color: #21a098;
 }

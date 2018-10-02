@@ -25,6 +25,7 @@
   flex-direction: column;
   margin-bottom: 20px;
   color: white;
+  height: 52px;
 }
 
 .stock-card-name {
@@ -38,6 +39,6 @@
 }
 
 .stock-card-price {
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(33, 206, 153);
 }
