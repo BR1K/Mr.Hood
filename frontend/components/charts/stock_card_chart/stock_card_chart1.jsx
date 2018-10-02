@@ -32,7 +32,7 @@ class StockCardChart1 extends React.Component {
             <Line
               type="linear"
               dataKey="high"
-              strokeWidth={2} stroke="#21ce99"
+              strokeWidth={2} stroke={this.props.kolor}
               dot={false}
               isAnimationActive={true}
             />
