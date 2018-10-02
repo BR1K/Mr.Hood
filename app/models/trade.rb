@@ -32,7 +32,9 @@ class Trade < ApplicationRecord
     source: :user,
     class_name: 'User'
 
-
+  def symbol
+    self.stock.symbol
+  end
 
   def verify_order
     if (self.size == nil)
@@ -63,7 +65,8 @@ class Trade < ApplicationRecord
 
 
   def verify_holdings
-    if self.size <= self.portfolio.holdings[self.stock_id]
+    debugger
+    if self.size <= self.portfolio.holdings[self.stock.symbol]
       return true
     else
       errors[:size].push("Not enough shares")
