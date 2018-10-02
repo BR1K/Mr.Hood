@@ -18,7 +18,7 @@ class DashboardChart extends React.Component {
     const data = Object.values(this.props.data).map(snapshot => {
       return snapshot.value;
     });
-    
+
 
     const min = Math.min(...data);
     const max = Math.max(...data);
@@ -29,11 +29,8 @@ class DashboardChart extends React.Component {
 
         <div className="chart">
           <div className="chart-header">
-            <h1 className="company-name">Portfolio Chart</h1>
-            <div className="stock-chart-price">{portfolioValue}</div>
+            <div className="stock-chart-price">{currencyFormatter.format(portfolioValue)}</div>
             <div className="percent-change">
-              <span className="percent">50</span>
-              <span className="range"></span>
             </div>
           </div>
 
@@ -46,18 +43,18 @@ class DashboardChart extends React.Component {
                 dot={false}
                 isAnimationActive={true}
                 animationDuration={500}
-                />
+              />
               <YAxis
                 hide={true}
                 domain={[min, max]}
-                />
+              />
               <Tooltip
                 wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
                 cursor={{strokeWidth: 1}}
                 offset={-90}
                 isAnimationActive={false}
                 position={{x: 0, y: 0 }}
-                />
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>
