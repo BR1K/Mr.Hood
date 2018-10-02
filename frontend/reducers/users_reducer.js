@@ -12,7 +12,7 @@ const usersReducer = (state = {}, action) => {
       userId = action.currentUser.id;
       case RECEIVE_TRADE:
         let nextState = merge({}, state);
-        debugger
+        
         let tradeAmount = action.trade.size * action.trade.price;
         let buyingPower = nextState[action.trade.portfolio_id].buying_power;
         let holdings = nextState[action.trade.portfolio_id].holdings;

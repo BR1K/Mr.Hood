@@ -65,7 +65,7 @@ class Trade < ApplicationRecord
 
 
   def verify_holdings
-    debugger
+    
     if self.size <= self.portfolio.holdings[self.stock.symbol]
       return true
     else

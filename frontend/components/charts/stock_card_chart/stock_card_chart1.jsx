@@ -15,7 +15,7 @@ class StockCardChart1 extends React.Component {
 
 
   render() {
-    debugger
+    
     let data = this.props.chart.filter(datum => datum.close);
     let dataArray = data.map(datum => {
       return datum.close;

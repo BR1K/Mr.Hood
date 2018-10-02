@@ -5,7 +5,7 @@ import { createTrade, receiveErrors } from '../../../actions/trade_actions';
 import { fetchPrice } from '../../../actions/iex_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
 
   return {
     trade: {
