@@ -57,3 +57,11 @@ export const unwatchStock = (id) => (
     data: { id },
   })
 );
+
+export const updateStockPrice = (stock) => (
+  $.ajax({
+    url: `/api/stocks/${stock.id}`,
+    method: 'PATCH',
+    data: { stock },
+  })
+);
