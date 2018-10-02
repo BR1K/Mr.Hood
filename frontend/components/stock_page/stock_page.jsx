@@ -4,7 +4,7 @@ import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
 import StockCard from '../stock_card/stock_card';
 import StockCard2 from '../stock_card/stock_card_container2';
-import { RingLoader } from 'halogenium';
+import { SyncLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
 import WatchlistButton from './watchlist_button_container';
@@ -115,17 +115,16 @@ class StockPage extends React.Component {
     if (this.state.loading) {
       return (
         <div className="loading-icon">
-          <RingLoader
-            size="100px"
-            margin="0 auto"
-            margin-top="25%"
+          <SyncLoader
+            size="20px"
+            color="#21ce99"
           />
         </div>
       )
 
     } else {
 
-      debugger
+
       return (
         <div className="stock-page">
 

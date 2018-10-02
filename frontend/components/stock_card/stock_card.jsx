@@ -2,6 +2,7 @@ import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StockCardChart1 from '../charts/stock_card_chart/stock_card_chart_container1';
 import { currencyFormatter } from '../../util/formatter';
+import { ClipLoader } from 'halogenium';
 
 class StockCard extends React.Component {
 
@@ -137,7 +138,16 @@ class StockCard extends React.Component {
     let kolor;
 
     if (this.state.price.loading || this.state.chart.loading || this.state.company.loading || this.state.quote.loading) {
-      return <div>loading...</div>
+      return (
+        <div className="stock-card">
+          <div className="loading-icon-stock-card">
+            <ClipLoader
+              size="20px"
+              color="#21ce99"
+              />
+          </div>
+        </div>
+      )
     } else {
 
       let quote = this.state.quote.data;

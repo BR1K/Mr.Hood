@@ -1,3 +1,16 @@
 .loading-icon {
-  height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+}
+
+.loading-icon-stock-card {
+  align-self: center;
+  margin-top: 80px;
+}
+
+.loading-icon-portfolio-row {
+  margin-left: 100px;
 }

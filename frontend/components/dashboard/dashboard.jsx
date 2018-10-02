@@ -4,6 +4,7 @@ import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
 import DashboardChart from '../charts/dashboard_chart/dashboard_chart';
 import SearchBar from '../navbar/search/search_container';
 import StockCard from '../stock_card/stock_card';
+import { SyncLoader } from 'halogenium';
 
 
 class Dashboard extends React.Component {
@@ -30,6 +31,7 @@ class Dashboard extends React.Component {
   }
 
   marketNews() {
+
     let marketNews = [];
     for (let i = 0; i < this.props.marketNews.articles.length; i++) {
       let article = this.props.marketNews.articles[i];
@@ -58,7 +60,7 @@ class Dashboard extends React.Component {
     let topStocks = [];
     for (var i = 0; i < this.props.topStocks.length; i++) {
       let topStock = this.props.topStocks[i];
-      debugger
+
       topStocks.push(
         <StockCard
           key={i}
@@ -73,7 +75,14 @@ class Dashboard extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <div>loading...</div>
+      return (
+        <div className="loading-icon">
+          <SyncLoader
+            size="20px"
+            color="#21ce99"
+          />
+        </div>
+      )
     } else {
       return (
         <div className="dashboard-page">

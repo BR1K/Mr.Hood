@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import MiniChart from '../../../charts/mini_chart/mini_chart';
 import { currencyFormatter } from '../../../../util/formatter';
+import { BeatLoader } from 'halogenium';
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -119,7 +120,16 @@ class PortfolioItem extends React.Component {
   render() {
 
     if (this.state.chart.data === null || this.state.quote.data === null) {
-      return <div className="portfolio-row">loading...</div>
+      return (
+        <div className="portfolio-row">
+          <div className="loading-icon-portfolio-row">
+            <BeatLoader
+              size="10px"
+              color="#21ce99"
+              />
+          </div>
+        </div>
+      )
     } else {
       let color;
       if (this.marketSignal() === 'bearish') {
