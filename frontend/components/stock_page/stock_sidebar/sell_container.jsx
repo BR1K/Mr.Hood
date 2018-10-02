@@ -5,6 +5,7 @@ import { createTrade, receiveErrors } from '../../../actions/trade_actions';
 import { fetchPrice } from '../../../actions/iex_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
 
   return {
     trade: {
@@ -14,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
       size: 0,
       trade_type: 'sell'
     },
+    message: `${ state.entities.users[state.session.id].holdings[ownProps.stock.symbol] || 0 } Shares Available`,
     errors: state.errors.trade,
     user: state.session,
     stocks: state.entities.stocks,
