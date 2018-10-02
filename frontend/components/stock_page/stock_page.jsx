@@ -8,6 +8,7 @@ import { RingLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
 import WatchlistButton from './watchlist_button_container';
+import { currencyFormatter } from '../../util/formatter';
 
 class StockPage extends React.Component {
 
@@ -94,41 +95,6 @@ class StockPage extends React.Component {
     return news;
   }
 
-  // peers() {
-  //   let peers = [];
-  //   if (this.props.peers[0] === undefined) {
-  //     peers.push(null);
-  //     return peers;
-  //   } else if (this.props.peers[1] === undefined) {
-  //     peers.push(
-  //       <div className="peers-container">
-  //         <div id="peers-title">Peers</div>
-  //         <ul className="peers-ul">
-  //           <StockCard
-  //             peer={this.props.peers[0]}
-  //           />
-  //         </ul>
-  //       </div>
-  //     )
-  //   } else {
-  //     peers.push(
-  //       <div className="peers-container">
-  //         <div id="peers-title">Peers</div>
-  //         <ul className="peers-ul">
-  //           <StockCard
-  //             peer={this.props.peers[0]}
-  //           />
-  //           <StockCard2
-  //             peer={this.props.peers[1]}
-  //           />
-  //         </ul>
-  //       </div>
-  //     )
-  //   }
-  //
-  //   return peers;
-  // }
-
   peers() {
     let peers = [];
     for (let i = 0; i < this.props.peers.length; i++) {
@@ -213,19 +179,19 @@ class StockPage extends React.Component {
                 <div className='stats-row'>
                   <li className="stat-container">
                     <div className="stat-title">Market Cap</div>
-                    <div className="stat-body">${this.props.stats.marketcap}</div>
+                    <div className="stat-body">{currencyFormatter.format(this.props.stats.marketcap)}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">Revenue</div>
-                    <div className="stat-body">${this.props.stats.revenue}</div>
+                    <div className="stat-body">{currencyFormatter.format(this.props.stats.revenue)}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">52w High</div>
-                    <div className="stat-body">${this.props.stats.week52high}</div>
+                    <div className="stat-body">{currencyFormatter.format(this.props.stats.week52high)}</div>
                   </li>
                   <li className="stat-container">
                     <div className="stat-title">52w Low</div>
-                    <div className="stat-body">${this.props.stats.week52low}</div>
+                    <div className="stat-body">{currencyFormatter.format(this.props.stats.week52low)}</div>
                   </li>
                 </div>
               </ul>
