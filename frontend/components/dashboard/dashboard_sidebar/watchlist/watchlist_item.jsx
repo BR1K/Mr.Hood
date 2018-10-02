@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import MiniChart from '../../../charts/mini_chart/mini_chart';
+import { currencyFormatter } from '../../../../util/formatter';
 
 class WatchlistItem extends React.Component {
   constructor(props) {
@@ -88,9 +89,9 @@ class WatchlistItem extends React.Component {
           <div className="stock-symbol">{this.props.symbol}</div>
           <MiniChart
             chart={this.state.chart.data}
-            kolor={kolor}
+            color={color}
           />
-          <div className="stock-price">${this.state.price.data}</div>
+          <div className="stock-price">{currencyFormatter.format(this.state.price.data)}</div>
         </Link>
       )
     }

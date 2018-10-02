@@ -1,7 +1,7 @@
 import React from 'react';
 import { LineChart, Line, Tooltip, YAxis, ResponsiveContainer } from 'recharts';
 import { MoonLoader } from 'halogenium';
-
+import { currencyFormatter } from '../../../util/formatter';
 
 class StockChart extends React.Component {
   constructor(props) {
@@ -101,7 +101,8 @@ class StockChart extends React.Component {
 
     const max = data.reduce((a, b) => Math.max(a, b), 0);
     const min = data.reduce((a, b) => Math.min(a, b), 0);
-    const price = `$${this.props.price}`;
+    // const price = `$${this.props.price}`;
+    const price = currencyFormatter.format(this.props.price);
     const ranges = ['1D', '1M', '3M', '1Y', '2Y', '5Y'];
     const rangeButtons = ranges.map((range, i) => {
       return  <button
