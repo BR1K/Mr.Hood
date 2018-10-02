@@ -16,16 +16,23 @@ class WatchlistItem extends React.Component {
         data: null,
         error: null,
       },
+      quote: {
+        data: null,
+        error: null,
+      },
       loading: true,
     };
 
     this.fetchChart = this.fetchChart.bind(this);
     this.fetchPrice = this.fetchPrice.bind(this);
+    this.fetchQuote = this.fetchQuote.bind(this);
+    this.marketSignal = this.marketSignal.bind(this);
   }
 
   componentDidMount() {
     this.fetchChart(this.props.symbol);
     this.fetchPrice(this.props.symbol);
+    this.fetchQuote(this.props.symbol);
     this.setState({ loading: false });
   }
 
@@ -70,18 +77,43 @@ class WatchlistItem extends React.Component {
     )
   }
 
-  render() {
-    let kolor;
+  fetchQuote(symbol) {
+    fetch(`https://api.iextrading.com/1.0/stock/${symbol}/quote`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          quote: { data: result }
+        });
+      },
+      (error) => {
+        this.setState({
+          quote: { error }
+        });
+      }
+    )
+  }
 
-    if (this.state.chart.data === null) {
+  marketSignal() {
+    let quote = this.state.quote.data;
+    if (quote.open > quote.latestPrice) {
+      return 'bearish';
+    } else {
+      return 'bullish';
+    }
+  }
+
+  render() {
+
+    if (this.state.chart.data === null || this.state.quote.data === null) {
       return <div className="portfolio-row">loading...</div>
     } else {
 
-      let prices = this.state.chart.data;
-      if ( prices[prices.length - 1].marketChangeOverTime < 0) {
-        kolor = '#f45531';
+      let color;
+      if (this.marketSignal() === 'bearish') {
+        color = '#f45531';
       } else {
-        kolor = "#21ce99";
+        color = "#21ce99";
       }
 
       return (
