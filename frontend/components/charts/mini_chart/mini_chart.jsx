@@ -34,7 +34,7 @@ class MiniChart extends React.Component {
           <Line
             type="linear"
             dataKey="high"
-            strokeWidth={1} stroke={this.props.kolor}
+            strokeWidth={1} stroke={this.props.color}
             dot={false}
             isAnimationActive={true}
           />
