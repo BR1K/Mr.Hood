@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import MiniChart from '../../../charts/mini_chart/mini_chart';
+import { currencyFormatter } from '../../../../util/formatter';
 
 class PortfolioItem extends React.Component {
   constructor(props) {
@@ -15,17 +16,37 @@ class PortfolioItem extends React.Component {
         data: null,
         error: null,
       },
+      quote: {
+        data: null,
+        error: null,
+      },
       loading: true,
+      refresh: null,
     };
 
     this.fetchChart = this.fetchChart.bind(this);
     this.fetchPrice = this.fetchPrice.bind(this);
+    this.fetchQuote = this.fetchQuote.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
+    this.marketSignal = this.marketSignal.bind(this);
   }
 
   componentDidMount() {
     this.fetchChart(this.props.symbol);
     this.fetchPrice(this.props.symbol);
-    this.setState({ loading: false });
+    this.fetchQuote(this.props.symbol);
+    const refresh = setInterval(this.updatePrice, 5000)
+    this.setState({
+      refresh: refresh,
+    })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.refresh);
+  }
+
+  updatePrice() {
+    this.fetchPrice(this.props.symbol)
   }
 
   fetchChart(symbol) {
@@ -46,7 +67,7 @@ class PortfolioItem extends React.Component {
       },
       (error) => {
         this.setState({
-          price: { error }
+          chart: { error }
         });
       }
     )
@@ -63,25 +84,49 @@ class PortfolioItem extends React.Component {
       },
       (error) => {
         this.setState({
-          chart: { error }
+          price: { error }
         });
       }
     )
   }
 
-  render() {
-    let kolor;
+  fetchQuote(symbol) {
+    fetch(`https://api.iextrading.com/1.0/stock/${symbol}/quote`)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          quote: { data: result }
+        });
+      },
+      (error) => {
+        this.setState({
+          quote: { error }
+        });
+      }
+    )
+  }
 
-    if (this.state.chart.data === null) {
+  marketSignal() {
+    let quote = this.state.quote.data;
+    if (quote.open > quote.latestPrice) {
+      return 'bearish';
+    } else {
+      return 'bullish';
+    }
+  }
+
+  render() {
+
+    if (this.state.chart.data === null || this.state.quote.data === null) {
       return <div className="portfolio-row">loading...</div>
     } else {
-      let prices = this.state.chart.data;
-      if (prices[0].marketClose > prices[prices.length - 1].marketClose) {
-        kolor = '#f45531';
+      let color;
+      if (this.marketSignal() === 'bearish') {
+        color = '#f45531';
       } else {
-        kolor = "#21ce99";
+        color = "#21ce99";
       }
-
       return (
         <Link to={`/stocks/${this.props.symbol}`} className="portfolio-row">
           <div className="portfolio-item-left">
@@ -90,9 +135,9 @@ class PortfolioItem extends React.Component {
           </div>
           <MiniChart
             chart={this.state.chart.data}
-            kolor={kolor}
+            color={color}
           />
-        <div className="stock-price">${this.state.price.data}</div>
+        <div className="stock-price">{currencyFormatter.format(this.state.price.data)}</div>
         </Link>
       )
     }
