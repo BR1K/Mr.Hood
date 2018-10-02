@@ -35,18 +35,18 @@ class Dashboard extends React.Component {
       let article = this.props.marketNews.articles[i];
       if (article.urlToImage !== null) {
         marketNews.push(
-          <li className="article-container" key={i}>
+          <a href={article.url} className="article-container" key={i}>
             <div>
-              <img src={article.urlToImage} width={250} className="article-image"></img>
+              <img src={article.urlToImage} width={196} height={134} className="article-image"></img>
             </div>
             <div className="article-text">
               <div className="article-source">{article.source.name}</div>
               <div className="article-text-bottom">
-                <div className="article-title"><a href={article.url}>{article.title}</a></div>
+                <div className="article-title">{article.title}</div>
                 <div className="article-body">{article.description.slice(0, 200)}...</div>
               </div>
             </div>
-          </li>
+          </a>
         )
       }
     }
@@ -104,7 +104,7 @@ class Dashboard extends React.Component {
                 portfolio={this.props.portfolio}
                 currentUser={this.props.currentUser}
               />
-              <div>
+              <div className="top-stocks">
                 <div id="top-stocks-title">Top Movers</div>
                 <ul className="top-stocks-container">
                   {this.topStocks()}
