@@ -11,11 +11,21 @@ class Dashboard extends React.Component {
 
   constructor(props) {
     super(props);
-    this.marketNews = this.marketNews.bind(this);
-    this.topStocks = this.topStocks.bind(this);
+    let obj = {};
+    let symbols = Object.keys(this.props.currentUser.holdings);
+    for (let i = 0; i < symbols.length; i++) {
+      let symbol = symbols[i];
+      obj[symbol] = 1;
+    }
+
+
     this.state = {
+      portfolioValues: obj,
       loading: true,
     };
+    this.marketNews = this.marketNews.bind(this);
+    this.topStocks = this.topStocks.bind(this);
+    this.portfolioValue = this.portfolioValue.bind(this);
   }
 
 
