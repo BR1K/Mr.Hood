@@ -2,10 +2,11 @@ class Api::StocksController < ApplicationController
 
 
   def index
-    # @stocks = Stock.where("symbol iLIKE '#{params[:query]}%'").limit(6)
+    @stocks = Stock.where("symbol iLIKE '#{params[:query]}%'").limit(6)
+    # debugger
     # sql
     # params[:query]
-    @stocks = Stock.all
+    # @stocks = Stock.all
     render 'api/stocks/index'
   end
 
