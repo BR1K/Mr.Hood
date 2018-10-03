@@ -99,6 +99,13 @@ class Dashboard extends React.Component {
         </div>
       )
     } else {
+      let buyingPower = this.props.currentUser.buying_power;
+      let stockValues = Object.values(this.state.portfolioValues);
+      let sum = 0;
+      for (let i = 0; i < stockValues.length; i++) {
+        sum += stockValues[i];
+      }
+      let portfolioValue = sum + buyingPower;
       return (
         <div className="dashboard-page">
 
@@ -121,11 +128,11 @@ class Dashboard extends React.Component {
 
           <section className="main-container">
             <div className="main-stock-section">
-
               <DashboardChart
                 data={this.props.snapshots}
                 portfolio={this.props.portfolio}
                 currentUser={this.props.currentUser}
+                livePortfolioValue={portfolioValue}
               />
               <div className="top-stocks">
                 <div id="top-stocks-title">Top Movers</div>
@@ -146,6 +153,7 @@ class Dashboard extends React.Component {
                 stocks={this.props.stocks}
                 holdings={this.props.portfolio.portfolio.holdings}
                 watchlist={this.props.watchlist}
+                portfolioValue={this.portfolioValue}
               />
             </div>
           </section>
