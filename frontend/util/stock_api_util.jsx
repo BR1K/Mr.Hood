@@ -1,16 +1,16 @@
-// export const fetchStocks = (query) => (
-//   $.ajax({
-//     url: 'api/stocks',
-//     method: 'GET',
-//     data: { query },
-//   })
-// );
-export const fetchStocks = () => (
+export const fetchStocks = (query) => (
   $.ajax({
     url: 'api/stocks',
     method: 'GET',
+    data: { query },
   })
 );
+// export const fetchStocks = () => (
+//   $.ajax({
+//     url: 'api/stocks',
+//     method: 'GET',
+//   })
+// );
 
 export const fetchStock = (symbol) => (
   $.ajax({
