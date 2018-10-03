@@ -29,7 +29,7 @@ class DashboardChart extends React.Component {
 
         <div className="chart">
           <div className="chart-header">
-            <div className="stock-chart-price">{currencyFormatter.format(portfolioValue)}</div>
+            <div className="stock-chart-price">{currencyFormatter.format(this.props.livePortfolioValue)}</div>
             <div className="percent-change">
             </div>
           </div>
