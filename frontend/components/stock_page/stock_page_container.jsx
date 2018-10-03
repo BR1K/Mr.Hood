@@ -7,9 +7,11 @@ import { fetchStocks, fetchStock, fetchPeerStocks, watchStock, unwatchStock, fet
 
 const mapStateToProps = (state, ownProps) => {
 
+
   return {
     currentUser: state.entities.users[state.session.id],
     stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()] || {},
+    // stock: state.entities.stocks[ownProps.match.params.symbol.toUpperCase()],
     price: state.entities.iex.price,
     chart: state.entities.iex.chart,
     companyData: state.entities.iex.companyData,
