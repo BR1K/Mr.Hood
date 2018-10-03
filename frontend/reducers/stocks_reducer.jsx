@@ -9,7 +9,7 @@ const stocksReducer = (state = {}, action) => {
       const newState = merge({}, state, newStock);
       return newState;
     case RECEIVE_STOCKS:
-      return action.stocks;
+      return Object.assign({}, state, action.stocks);
     default:
       return state;
   }
