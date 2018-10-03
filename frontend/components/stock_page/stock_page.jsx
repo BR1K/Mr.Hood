@@ -28,11 +28,11 @@ class StockPage extends React.Component {
   componentDidMount() {
     this.props.fetchStock(this.props.match.params.symbol)
       .then(() => this.props.fetchStocks())
-      .then(() => this.props.fetchPrice(this.props.stock.symbol))
-      .then(() => this.props.fetchStats(this.props.stock.symbol))
-      .then(() => this.props.fetchCompany(this.props.stock.symbol))
-      .then(() => this.props.fetchPeers(this.props.stock.symbol))
-      .then(() => this.props.fetchNews(this.props.stock.symbol))
+      .then(() => this.props.fetchPrice(this.props.match.params.symbol))
+      .then(() => this.props.fetchStats(this.props.match.params.symbol))
+      .then(() => this.props.fetchCompany(this.props.match.params.symbol))
+      .then(() => this.props.fetchPeers(this.props.match.params.symbol))
+      .then(() => this.props.fetchNews(this.props.match.params.symbol))
       .then(() => this.props.fetchWatchlist())
       .then(() => this.props.fetchTopStocks())
       .then(() => {
@@ -58,8 +58,7 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
-
+    if ( nextProps.stock && (nextProps.match.params.symbol !== this.props.match.params.symbol.toUpperCase())) {
       this.setState({ loading: true },
       () => this.props.fetchStock(nextProps.match.params.symbol)
       .then(() => this.props.fetchPrice(nextProps.match.params.symbol))
@@ -122,7 +121,7 @@ class StockPage extends React.Component {
       )
 
     } else {
-
+      debugger
 
       return (
         <div className="stock-page">
@@ -149,7 +148,7 @@ class StockPage extends React.Component {
           <div className="main-stock-section">
               <StockChart
                 key={this.props.match.params.symbol}
-                stock={this.props.stock}
+                symbol={this.props.match.params.symbol}
                 price={this.props.price}
                 stats={this.props.stats}
               />
@@ -214,7 +213,7 @@ class StockPage extends React.Component {
                 key={this.props.match.params.symbol}
                 stock={this.props.stock}
                 price={this.props.price}
-                />
+              />
 
               <div className="watchlist-button-wrapper">
                 <WatchlistButton
