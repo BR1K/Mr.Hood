@@ -40,8 +40,8 @@ class Dashboard extends React.Component {
 
   }
 
-  marketNews() {
 
+  marketNews() {
     let marketNews = [];
     for (let i = 0; i < this.props.marketNews.articles.length; i++) {
       let article = this.props.marketNews.articles[i];
@@ -82,6 +82,11 @@ class Dashboard extends React.Component {
     return topStocks;
   }
 
+  portfolioValue(val, symbol) {
+    let oldState = Object.assign({}, this.state);
+    oldState.portfolioValues[symbol] = val;
+    this.setState({oldState});
+  }
 
   render() {
     if (this.state.loading) {
