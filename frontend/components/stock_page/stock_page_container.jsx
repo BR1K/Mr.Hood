@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchStock: (symbol) => dispatch(fetchStock(symbol)),
-  fetchStocks: () => dispatch(fetchStocks()),
+  fetchStocks: (query) => dispatch(fetchStocks(query)),
   fetchPrice: (symbol) => dispatch(fetchPrice(symbol)),
   fetchChart: (symbol, range) => dispatch(fetchChart(symbol, range)),
   fetchCompany: (symbol) => dispatch(fetchCompany(symbol)),

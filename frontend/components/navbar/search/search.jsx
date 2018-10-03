@@ -14,6 +14,7 @@ class Search extends React.Component {
   }
 
   handleInput(e) {
+    // e.stopPropagation();
     if (this.timeOut) {
       clearTimeout(this.timeOut);
     }
@@ -37,12 +38,13 @@ class Search extends React.Component {
 
   componentWillUnmount() {
     this.setState({ searchInput: "" });
-    this.props.resetStocks();
+    // this.props.resetStocks();
   }
 
   render() {
-    
+
     const results = this.props.searchedStocks.map((result, i) => {
+      debugger
       return (
         <Link to={`/stocks/${result.symbol}`}>
           <li

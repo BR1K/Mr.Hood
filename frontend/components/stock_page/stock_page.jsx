@@ -58,7 +58,6 @@ class StockPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     if ( nextProps.stock && (nextProps.stock.symbol !== this.props.match.params.symbol.toUpperCase())) {
 
       this.setState({ loading: true },
