@@ -32,6 +32,13 @@ class PortfolioItem extends React.Component {
     this.marketSignal = this.marketSignal.bind(this);
   }
 
+  myFunc(price, symbol) {
+    let holdings = this.props.holdings;
+    let value = holdings * price;
+    debugger
+    this.props.portfolioValue(value, symbol);
+  }
+
   componentDidMount() {
     this.fetchChart(this.props.symbol);
     this.fetchPrice(this.props.symbol);
@@ -49,6 +56,13 @@ class PortfolioItem extends React.Component {
   updatePrice() {
     this.fetchPrice(this.props.symbol)
   }
+
+  // stockValue = () => {
+  //   let holdings = this.props.holdings;
+  //   let price = this.state.price.data;
+  //   let value = holdings * price;
+  //   this.props.portfolioValue()
+  // };
 
   fetchChart(symbol) {
     fetch(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1D`)
@@ -131,6 +145,7 @@ class PortfolioItem extends React.Component {
         </div>
       )
     } else {
+      this.myFunc(this.state.price.data, this.props.symbol);
       let color;
       if (this.marketSignal() === 'bearish') {
         color = '#f45531';
