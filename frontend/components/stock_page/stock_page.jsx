@@ -148,7 +148,7 @@ class StockPage extends React.Component {
           <div className="main-stock-section">
               <StockChart
                 key={this.props.match.params.symbol}
-                stock={this.props.stock.symbol}
+                stock={this.props.stock}
                 price={this.props.price}
                 stats={this.props.stats}
               />
