@@ -5,7 +5,10 @@ import PortfolioItem from './portfolio_item';
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      loading: true,
+    }
+    // this.stockValue = this.stockValue.bind(this);
     this.portfolioItems = this.portfolioItems.bind(this);
   }
 
@@ -21,6 +24,7 @@ class Portfolio extends React.Component {
       let symbol = symbols[i];
       holdings.push (
         <PortfolioItem
+          portfolioValue={this.props.portfolioValue}
           className="portfolio-row"
           key={i}
           symbol={symbol}
@@ -31,6 +35,8 @@ class Portfolio extends React.Component {
 
     return holdings;
   }
+
+
 
   render() {
 
@@ -43,6 +49,8 @@ class Portfolio extends React.Component {
       </ul>
     )
   }
+
+  
 }
 
 export default withRouter(Portfolio)
