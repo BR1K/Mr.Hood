@@ -35,7 +35,7 @@ class PortfolioItem extends React.Component {
   myFunc(price, symbol) {
     let holdings = this.props.holdings;
     let value = holdings * price;
-    debugger
+    
     this.props.portfolioValue(value, symbol);
   }
 

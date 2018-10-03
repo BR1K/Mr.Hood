@@ -44,7 +44,7 @@ class Search extends React.Component {
   render() {
 
     const results = this.props.searchedStocks.map((result, i) => {
-      debugger
+      
       return (
         <Link to={`/stocks/${result.symbol}`}>
           <li
