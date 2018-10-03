@@ -27,11 +27,11 @@ end
 
 portfolio = Portfolio.find(user.portfolio.id)
 
-Trade.create!(stock_id: Stock.find_by(symbol: 'AAPL').id, portfolio_id: user.id, price: 50, size: 100, trade_type: 'buy')
-Trade.create!(stock_id: Stock.find_by(symbol: 'GERN').id, portfolio_id: user.id, price: 50, size: 100, trade_type: 'buy')
-Trade.create!(stock_id: Stock.find_by(symbol: 'GSV').id, portfolio_id: user.id, price: 50, size: 100, trade_type: 'buy')
-Trade.create!(stock_id: Stock.find_by(symbol: 'NFLX').id, portfolio_id: user.id, price: 50, size: 100, trade_type: 'buy')
-Trade.create!(stock_id: Stock.find_by(symbol: 'TRXC').id, portfolio_id: user.id, price: 50, size: 100, trade_type: 'buy')
+Trade.create!(stock_id: Stock.find_by(symbol: 'AAPL').id, portfolio_id: portfolio.id, price: 50, size: 100, trade_type: 'buy')
+Trade.create!(stock_id: Stock.find_by(symbol: 'GERN').id, portfolio_id: portfolio.id, price: 50, size: 100, trade_type: 'buy')
+Trade.create!(stock_id: Stock.find_by(symbol: 'GSV').id, portfolio_id: portfolio.id, price: 50, size: 100, trade_type: 'buy')
+Trade.create!(stock_id: Stock.find_by(symbol: 'NFLX').id, portfolio_id: portfolio.id, price: 50, size: 100, trade_type: 'buy')
+Trade.create!(stock_id: Stock.find_by(symbol: 'TRXC').id, portfolio_id: portfolio.id, price: 50, size: 100, trade_type: 'buy')
 
 
 PortfolioSnapshot.create!(portfolio_id: portfolio.id, date:'Jan 8, 2015',value:95650)
