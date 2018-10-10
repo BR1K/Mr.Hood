@@ -8,15 +8,15 @@ The live news feed is made possible by [News API](https://newsapi.org/), and cha
 
 ## Features
 
-### [Dashboard](#dashboard)
+### [Dashboard ](#dashboard)
 - **Portfolio Chart**: historical performance is rendered using portfolio snapshots
 - **[Portfolio Value](#portfolio)**: a live portfolio value is calculated using the user's holdings and current stock price
-- **[Top Movers]()**: a list of daily top-moving stocks
-- **[Watchlist]()**: add or remove stocks to your watchlist!
-- **[News Feed]()**: View realtime general market news & stock specific news
+- **[Top Movers ](#top-movers)**: a list of daily top-moving stocks
+- **[Watchlist ](#watchlist)**: add or remove stocks to your watchlist!
+- **[News Feed](#news)**: View realtime general market news & stock specific news
 
 
-### [Stock Page](#stock-page)
+### [Stock Page ](#stock-page)
 
 - **Stock Chart**: Historical price performance for any given stock. Users can change the chart's time range (1D, 1M, 3M, 6M, 1Y, 2Y, 5Y)
 - **About Section**: A detailed look at a company, including a description, and metrics such as market cap, revenue, etc.
