@@ -2,19 +2,47 @@
 
 Mr. Hood is a full-stack, single-page stock trading/investment application built with Ruby on Rails and React.js. Users can invest in real companies with live market data, without spending any money. Mr. Hood's design was inspired by [Robinhood's](https://www.robinhood.com/) web application.
 
+All stock data is provided by IEX's awesome API. Check out the cool work they're doing [here](https://iextrading.com/developer/).
+
+The live news feed is made possible by [News API](https://newsapi.org/), and chart rendering was done with the help of [Recharts](http://recharts.org/en-US/).
+
+## Features
+
+### [Dashboard](#dashboard)
+- **Portfolio Chart**: historical performance is rendered using portfolio snapshots
+- **[Portfolio Value](#portfolio)**: a live portfolio value is calculated using the user's holdings and current stock price
+- **[Top Movers]()**: a list of daily top-moving stocks
+- **[Watchlist]()**: add or remove stocks to your watchlist!
+- **[News Feed]()**: View realtime general market news & stock specific news
+
+
+### [Stock Page](#stock-page)
+
+- **Stock Chart**: Historical price performance for any given stock. Users can change the chart's time range (1D, 1M, 3M, 6M, 1Y, 2Y, 5Y)
+- **About Section**: A detailed look at a company, including a description, and metrics such as market cap, revenue, etc.
+- **[Trading](#trading)**: Users can buy or sell shares, which will update their portfolio and buying power.
+- **[Peers](#peers)**: a list of companies similar to the current company; users can compare similar stocks
+
+### Other
+- **User authorization:** the handy Ruby gem [bcrypt](https://rubygems.org/gems/bcrypt/versions/3.1.12) allows for secure hashing & salting and ensures authorization
+- **[Search]()**: search stocks by their stock symbol
+- **Realtime stock prices**: Stock prices are fetched every few seconds throughout the application. API calls are made to the [IEX API]() to ensure accurate information.
+- **Useful errors:** Errors are present throughout the application to assist users in navigating around. Logging in without the correct credentials will produce errors, as well as signing up a user without completed fields. Additionally, trying to create a trade without the proper holdings or buying power will notify the user.
+
+
 ## [Demo](https://mrhood.herokuapp.com/)
 
 
 ### Dashboard
 ![dashboard](https://res.cloudinary.com/fullstackimages/image/upload/v1539194939/Mr.Hood/gifs/login.gif)
-###### Once logged in, users are navigated to their dashboard, where they are presented with a chart of their trade history, as well as a [portfolio](https://mrhood.herokuapp.com/) value which is automatically re-calculated with every [price change](https://mrhood.herokuapp.com/).
+###### Once logged in, users are navigated to their dashboard, where they are presented with a chart of their trade history, as well as a [portfolio](#portfolio) value which is automatically re-calculated with every price change.
 
 
 ###### This page also includes several other features:
 
 #### Top Movers
 ![top movers](https://res.cloudinary.com/fullstackimages/image/upload/v1539195485/Mr.Hood/gifs/topmovers.gif)
-###### The Top Movers component offers users a live look at the day's most volatile stocks. Each stock card represents a single company, and includes that company's title, stock symbol, daily stock chart, and [realtime](https://mrhood.herokuapp.com/) stock price. Clicking on a stock card will take you to that stock's [show page](https://mrhood.herokuapp.com/).  This is a great way to discover new stocks to buy!
+###### The Top Movers component offers users a live look at the day's most volatile stocks. Each stock card represents a single company, and includes that company's title, stock symbol, daily stock chart, and realtime stock price. Clicking on a stock card will take you to that stock's [show page](#stock-page).  This is a great way to discover new stocks to buy!
 
 #### Portfolio
 ![portfolio](https://res.cloudinary.com/fullstackimages/image/upload/v1539195905/Mr.Hood/gifs/portfolio.gif)
