@@ -62,25 +62,12 @@ Mr. Hood is a full-stack, single-page stock trading/investment application built
 ###### This page also includes other features:
 
 #### Trading
-![peers](https://res.cloudinary.com/fullstackimages/image/upload/v1539200633/Mr.Hood/gifs/trading.gif)
+![trading](https://res.cloudinary.com/fullstackimages/image/upload/v1539200633/Mr.Hood/gifs/trading.gif)
 ###### Users have the ability to buy and sell shares! Navigate to a stock show page, and use the sidebar. Buying a new new stock will add to your portfolio.
 
 #### Peers
 ![peers](https://res.cloudinary.com/fullstackimages/image/upload/v1539200625/Mr.Hood/gifs/Peers.gif)
 ###### Here users can check out similar companies and compare.
-
-## Technologies
-
-- Backend:
-  - Ruby on Rails
-  - ActiveRecord
-  - PostgreSQL
-- Frontend:
-  - React/ Redux
-  - Recharts
-  - IEX API
-  - News API
-
 
 ### Features
 
@@ -96,3 +83,21 @@ Mr. Hood currently supports the following features
 - Stock peers
 - Daily Top-moving stocks
 - Useful errors
+
+## Technologies
+
+- Backend:
+  - Ruby on Rails
+  - ActiveRecord
+  - PostgreSQL
+- Frontend:
+  - React/ Redux
+  - Recharts
+  - IEX API
+  - News API
+
+
+## Coming Soon
+- Users will have the ability to search by company name as well. I'd also like to add a preview of each result company's current stock price.
+- A profile page which will include detailed trade history, as well as the ability to update user information such as username, password, and buying power.
+- A dashboard chart that updates with every trade action. The current dashboard chart is generated using seed data.
