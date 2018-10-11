@@ -97,21 +97,6 @@ The live news feed is made possible by [News API](https://newsapi.org/), and cha
 ![peers](https://res.cloudinary.com/fullstackimages/image/upload/v1539200625/Mr.Hood/gifs/Peers.gif)
 ###### Here users can check out similar companies and compare.
 
-### Features
-
-Mr. Hood currently supports the following features
-
-- User authorization  
-- Search
-- Dashboard
-- Stock research
-- Portfolio
-- Realtime stock prices
-- Live news feed
-- Stock peers
-- Daily Top-moving stocks
-- Useful errors
-
 ## Technologies
 
 - Backend:
