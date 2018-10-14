@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import MiniChart from '../../../charts/mini_chart/mini_chart';
-import { currencyFormatter } from '../../../../util/formatter';
+import { currencyFormatter, numberFormatter } from '../../../../util/formatter';
 import { BeatLoader } from 'halogenium';
 
 class PortfolioItem extends React.Component {
@@ -35,7 +35,7 @@ class PortfolioItem extends React.Component {
   myFunc(price, symbol) {
     let holdings = this.props.holdings;
     let value = holdings * price;
-    
+
     this.props.portfolioValue(value, symbol);
   }
 
@@ -156,7 +156,7 @@ class PortfolioItem extends React.Component {
         <Link to={`/stocks/${this.props.symbol}`} className="portfolio-row">
           <div className="portfolio-item-left">
             <div className="stock-symbol">{this.props.symbol}</div>
-            <div className="holdings">{this.props.holdings} Shares</div>
+            <div className="holdings">{numberFormatter.format(this.props.holdings)} Shares</div>
           </div>
           <MiniChart
             chart={this.state.chart.data}
