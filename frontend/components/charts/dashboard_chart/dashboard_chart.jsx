@@ -41,20 +41,13 @@ class DashboardChart extends React.Component {
                 dataKey="value"
                 strokeWidth={2} stroke='#21ce99'
                 dot={false}
-                isAnimationActive={true}
-                animationDuration={500}
+                isAnimationActive={false}
               />
               <YAxis
                 hide={true}
                 domain={[min, max]}
               />
-              <Tooltip
-                wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
-                cursor={{strokeWidth: 1}}
-                offset={-90}
-                isAnimationActive={false}
-                position={{x: 0, y: 0 }}
-              />
+
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -67,7 +60,13 @@ class DashboardChart extends React.Component {
 export default DashboardChart;
 
 
-
+// <Tooltip
+//   wrapperStyle={{background: 'transparent', border: 'none', color: 'lightgray'}}
+//   cursor={{strokeWidth: 1}}
+//   offset={-90}
+//   isAnimationActive={false}
+//   position={{x: 0, y: 0 }}
+// />
 
 
 
