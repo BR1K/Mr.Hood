@@ -136,7 +136,6 @@ class StockChart extends React.Component {
             <h1 className="company-name">{this.props.companyData.companyName}</h1>
             <div className="stock-chart-price">{price}</div>
             <div className="percent-change">
-                <span className="percent">{this.state.change}</span>
                 <span className="range"></span>
             </div>
           </div>
