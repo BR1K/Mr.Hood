@@ -67,7 +67,7 @@ body {
   letter-spacing: 0.25px;
   line-height: 19px;
   text-size-adjust: 100%;
-  width: 85%;
+  width: 90%;
   -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
@@ -157,6 +157,7 @@ body {
 }
 
 .session-submit {
+  margin-right: 10px;
   align-items: center;
   box-sizing: border-box;
   color: rgb(23, 23, 24);
