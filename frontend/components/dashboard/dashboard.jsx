@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
     let marketNews = [];
     for (let i = 0; i < this.props.marketNews.articles.length; i++) {
       let article = this.props.marketNews.articles[i];
-      if (article.urlToImage !== null) {
+      if (article.urlToImage !== null && article.description !== null) {
         marketNews.push(
           <a href={article.url} className="article-container" key={i}>
             <div>
