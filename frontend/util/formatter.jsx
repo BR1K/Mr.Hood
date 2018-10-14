@@ -1,7 +1,11 @@
-// from https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
+// from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
 
 export const currencyFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
   minimumFractionDigits: 2,
+});
+
+export const numberFormatter = new Intl.NumberFormat('en-IN', {
+  maximumSignificantDigits: 3,
 });
