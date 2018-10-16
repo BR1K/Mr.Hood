@@ -12,10 +12,10 @@ class Portfolio extends React.Component {
     this.portfolioItems = this.portfolioItems.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchPortfolio()
-    .then(() => this.props.fetchStocks())
-  }
+  // componentDidMount() {
+    // this.props.fetchPortfolio(this.props.currentUser.id)
+    // .then(() => this.props.fetchStocks())
+  // }
 
   portfolioItems() {
     let symbols = Object.keys(this.props.holdings);
@@ -50,7 +50,7 @@ class Portfolio extends React.Component {
     )
   }
 
-  
+
 }
 
 export default withRouter(Portfolio)

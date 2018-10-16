@@ -10,10 +10,10 @@ class Watchlist extends React.Component {
     this.watchlistItems = this.watchlistItems.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchWatchlist()
-    .then(() => this.props.fetchStocks())
-  }
+  // componentDidMount() {
+    // this.props.fetchWatchlist()
+    // .then(() => this.props.fetchStocks())
+  // }
 
   watchlistItems() {
     let symbols = Object.keys(this.props.watchlist);
