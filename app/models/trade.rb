@@ -55,7 +55,8 @@ class Trade < ApplicationRecord
 
 
   def verify_buying_power
-    if (self.price * self.size) <= self.user.buying_power
+    user = User.find(self.portfolio.user_id)
+    if (self.price * self.size) <= user.buying_power
       return true
     else
       errors[:size].push("Not enough buying power")
@@ -65,7 +66,7 @@ class Trade < ApplicationRecord
 
 
   def verify_holdings
-    
+
     if self.size <= self.portfolio.holdings[self.stock.symbol]
       return true
     else
