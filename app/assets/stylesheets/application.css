@@ -284,9 +284,8 @@ body {
 }
 
 .greeting-page-content {
-  margin: 0 95px;
-  position: relative;
-  top: 60px;
+  padding-top: 100px;
+  padding-left: 30px;
 }
 
 .greeting-page-content-image {
