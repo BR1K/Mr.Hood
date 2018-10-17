@@ -2,7 +2,12 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Greeting2 = ({ currentUser, logout }) => {
+
+const Greeting2 = ({ currentUser, logout, login }) => {
+  const demoLogin = (user) => {
+    login(user);
+  }
+
   const greetingPage = () => (
     <div className="greeting-page">
 
@@ -15,10 +20,11 @@ const Greeting2 = ({ currentUser, logout }) => {
         </div>
         <div className="navbar-right">
           <div className="greeting-page-navbar-login">
-            <Link to="/login" className="mrhood-button">Log In</Link>
+            <Link to="/login" className="navbar-link">Log In</Link>
           </div>
           <div className="greeting-page-navbar-signup">
-            <Link to="/signup" className="mrhood-button">Sign Up</Link>
+            <Link to="/signup" className="navbar-link">Sign Up</Link>
+
           </div>
         </div>
       </nav>
@@ -35,7 +41,13 @@ const Greeting2 = ({ currentUser, logout }) => {
           <div className="greeting-page-body">
             Mr.Hood lets you learn to invest in the stock market for free.
           </div>
-            <Link className="greeting-signup" to="/signup" >Sign Up</Link>
+            <button className="session-submit" onClick={() =>
+                demoLogin({
+                email: 'rhood@mrhood.com',
+                password: 'Hunter12',
+                })
+              }>Demo
+            </button>
         </div>
         <div className="greeting-page-content-right">
         </div>
