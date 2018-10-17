@@ -12,20 +12,18 @@ const Greeting2 = ({ currentUser, logout, login }) => {
     <div className="greeting-page">
 
 
-      <nav className="navbar-container welcome">
+
+      <nav className="navbar-container">
         <div className="navbar-left">
           <Link to="/">
             <img className="logo-image" src={window.logo} />
           </Link>
         </div>
+        <div className="navbar-middle">
+        </div>
         <div className="navbar-right">
-          <div className="greeting-page-navbar-login">
-            <Link to="/login" className="navbar-link">Log In</Link>
-          </div>
-          <div className="greeting-page-navbar-signup">
-            <Link to="/signup" className="navbar-link">Sign Up</Link>
-
-          </div>
+          <Link to="/login" className="navbar-link">Log In</Link>
+          <Link to="/signup" className="navbar-link">Sign Up</Link>
         </div>
       </nav>
 
@@ -72,3 +70,21 @@ export default Greeting2;
 //     <button className="header-button" onClick={logout}>Log Out</button>
 //   </hgroup>
 // );
+
+
+// <nav className="navbar-container welcome">
+//   <div className="navbar-left">
+//     <Link to="/">
+//       <img className="logo-image" src={window.logo} />
+//     </Link>
+//   </div>
+//   <div className="navbar-right">
+//     <div className="greeting-page-navbar-login">
+//       <Link to="/login" className="navbar-link">Log In</Link>
+//     </div>
+//     <div className="greeting-page-navbar-signup">
+//       <Link to="/signup" className="navbar-link">Sign Up</Link>
+//
+//     </div>
+//   </div>
+// </nav>
