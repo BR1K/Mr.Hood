@@ -1,8 +1,6 @@
 import React    from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Greeting = ({ currentUser, logout, login }) => {
   const demoLogin = (user) => {
     login(user);
@@ -10,8 +8,6 @@ const Greeting = ({ currentUser, logout, login }) => {
 
   const greetingPage = () => (
     <div className="greeting-page">
-
-
 
       <nav className="navbar-container">
         <div className="navbar-left">
@@ -26,7 +22,6 @@ const Greeting = ({ currentUser, logout, login }) => {
           <Link to="/signup" className="navbar-link">Sign Up</Link>
         </div>
       </nav>
-
 
       <div className="greeting-page-content">
         <div className="greeting-page-content-left">

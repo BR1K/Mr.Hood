@@ -13,7 +13,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SignUpPage from './session_form/signup_form_container';
 import LogInPage from './session_form/login_form_container';
 import SearchContainer from './navbar/search/search_container';
-import GreetingPage from './greeting/greeting_container2';
+import GreetingPage from './greeting/greeting_container';
 import Dashboard from './dashboard/dashboard_container';
 import StockPage from './stock_page/stock_page_container';
 
