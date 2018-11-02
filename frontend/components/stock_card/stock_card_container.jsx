@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StockCard from './stock_card';
-import { fetchPeerPrice, fetchPeerChart, fetchPeerCompany, fetchPeerStats } from '../../actions/iex_actions2';
 import { fetchStocks, fetchStock, fetchPeerStocks } from '../../actions/stock_actions';
 
 const mapStateToProps = (state, ownProps) => {
