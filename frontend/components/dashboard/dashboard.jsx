@@ -11,16 +11,16 @@ class Dashboard extends React.Component {
 
   constructor(props) {
     super(props);
-    let obj = {};
+    let values = {};
     let symbols = Object.keys(this.props.currentUser.holdings);
     for (let i = 0; i < symbols.length; i++) {
       let symbol = symbols[i];
-      obj[symbol] = 1;
+      values[symbol] = 1;
     }
 
 
     this.state = {
-      portfolioValues: obj,
+      portfolioValues: values,
       loading: true,
     };
     this.marketNews = this.marketNews.bind(this);
