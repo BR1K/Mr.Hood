@@ -1,6 +1,6 @@
 import React    from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import StockCardChart1 from '../charts/stock_card_chart/stock_card_chart_container1';
+import StockCardChart from '../charts/stock_card_chart/stock_card_chart_container';
 import { currencyFormatter } from '../../util/formatter';
 import { ClipLoader } from 'halogenium';
 
@@ -144,7 +144,7 @@ class StockCard extends React.Component {
             <ClipLoader
               size="20px"
               color="#21ce99"
-              />
+            />
           </div>
         </div>
       )
@@ -161,17 +161,26 @@ class StockCard extends React.Component {
       return (
 
         <Link to={`/stocks/${this.props.symbol}`} className="stock-card">
+
           <div className="stock-card-header">
-            <div className="stock-card-name">{this.state.company.data.companyName}</div>
-            <div className="stock-card-symbol">{this.props.symbol}</div>
+            <div className="stock-card-name">
+              {this.state.company.data.companyName}
+            </div>
+            <div className="stock-card-symbol">
+              {this.props.symbol}
+            </div>
           </div>
+
           <div className="stock-card-body">
-            <StockCardChart1
+            <StockCardChart
               chart={this.state.chart.data}
               kolor={kolor}
             />
-          <div style={priceColor} className="stock-card-price">{currencyFormatter.format(this.state.price.data)}</div>
+            <div style={priceColor} className="stock-card-price">
+              {currencyFormatter.format(this.state.price.data)}
+            </div>
           </div>
+
         </Link>
       )
     }

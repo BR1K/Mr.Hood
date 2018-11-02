@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StockCardChart1 from './stock_card_chart1';
+import StockCardChart from './stock_card_chart';
 
 const mSP = (state, ownProps) => ({
   // stats: state.entities.iex2.stats,
@@ -13,4 +13,4 @@ const mDP = (dispatch) => ({
 });
 
 
-export default connect(mSP, mDP)(StockCardChart1)
+export default connect(mSP, mDP)(StockCardChart)

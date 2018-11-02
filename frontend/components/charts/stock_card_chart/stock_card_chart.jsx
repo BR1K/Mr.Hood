@@ -2,7 +2,7 @@ import React from 'react';
 import { LineChart, Line, Tooltip, YAxis, ResponsiveContainer } from 'recharts';
 
 
-class StockCardChart1 extends React.Component {
+class StockCardChart extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class StockCardChart1 extends React.Component {
 
 
   render() {
-    
+
     let data = this.props.chart.filter(datum => datum.close);
     let dataArray = data.map(datum => {
       return datum.close;
@@ -48,4 +48,4 @@ class StockCardChart1 extends React.Component {
   }
 }
 
-export default StockCardChart1;
+export default StockCardChart;
