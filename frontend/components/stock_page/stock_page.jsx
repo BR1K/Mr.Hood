@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import StockSidebar from './stock_sidebar/stock_sidebar';
 import StockChart from '../charts/stock_chart/stock_chart_container';
 import StockCard from '../stock_card/stock_card';
-import StockCard2 from '../stock_card/stock_card_container2';
 import { SyncLoader } from 'halogenium';
 import SearchBar from '../navbar/search/search_container';
 import TradeForm from './stock_sidebar/trade_form';
