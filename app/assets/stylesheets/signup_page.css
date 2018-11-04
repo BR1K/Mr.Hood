@@ -1,0 +1,79 @@
+.signup-submit {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(23, 23, 24);
+  font-size: 13px;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: 0.25px;
+  line-height: 19px;
+  margin-top: 24px;
+  text-size-adjust: 100%;
+  width: 175px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-form-container {
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532048206/Mr.Hood/signup%20page/autumn-clouds-fall-91228.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.signup-page-bar-box {
+  margin: 0 130px;
+}
+
+.signup-content {
+  margin: 0 130px;
+  box-sizing: border-box;
+}
+
+.signup-header {
+  font-size: 55px;
+  font-weight: lighter;
+  padding-bottom: 15px;
+  padding-top: 90px;
+}
+
+.signup-subheader {
+  padding-bottom: 15px;
+}
+
+.signup-row {
+  padding: 6px 0px;
+  display: flex;
+}
+
+.signup-firstname-input {
+  width: 192px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 9px;
+}
+
+.signup-lastname-input {
+  width: 192px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 9px;
+}
+
+.signup-input-right {
+  padding: 0 15px 0 12px;
+}
+
+.signup-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #b1bfc4;
+  padding-left: 18px;
+}
