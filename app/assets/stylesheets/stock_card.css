@@ -1,5 +1,5 @@
 .stock-card {
-  border: 1px solid #0e0d0d;
+  border: var(--border);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -14,9 +14,9 @@
 }
 
 .stock-card:hover {
-  box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
   transition: box-shadow .3s;
 
 }
@@ -25,7 +25,6 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  color: white;
   height: 52px;
 }
 
@@ -33,10 +32,6 @@
   margin-bottom: 10px;
   font-weight: 100;
   font-size: 13px;
-}
-
-.stock-card-body {
-  color: white;
 }
 
 .stock-card-price {

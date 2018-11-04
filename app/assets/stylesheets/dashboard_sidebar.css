@@ -1,14 +1,12 @@
 .dashboard-sidebar {
   height: 670px;
   overflow: scroll;
-  color: white;
   width: 300px;
   margin: 4%;
-  background-color: #1b1b1d;
-  color: white;
-  box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+
 }
 
 .portfolio {
@@ -16,35 +14,23 @@
 }
 
 .holdings {
-  color: white;
   font-size: 12px;
   font-weight: 100;
   width: 80px;
   margin-top: 7px;
 }
 
-/* #watchlist-header {
-  margin-top: -25px
-} */
-
 .portfolio-header {
   padding-top: 20px;
   padding-left: 25px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #0e0d0d;
-  border-top: 1px solid #0e0d0d;
-}
-
-.portfolio-body {
-
+  border-bottom: var(--border);
+  border-top: none;
 }
 
 .portfolio-row {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 35px; */
-  /* margin-top: 15px; */
-  /* margin-bottom: 15px; */
   cursor: pointer;
   text-decoration: none;
   align-items: center;
@@ -55,26 +41,21 @@
 }
 
 .portfolio-row:hover {
-  background-color: #161617;
+  background-color: var(--row-hover);
+  transition: background-color .3s;
+}
+.portfolio-row {
+  transition: background-color .3s;
 }
 
 .stock-symbol {
-  color: white;
-  /* margin-right: 15px; */
   font-size: 13px;
   width: 63px;
-  /* margin-bottom: 7px; */
 }
 
 .stock-price {
-  color: white;
   text-align: right;
   width: 65px;
   font-weight: 100;
   font-size: 14px;
-}
-
-.portfolio-item-left {
-  /* height: 40px;
-  justify-content: space-between; */
 }

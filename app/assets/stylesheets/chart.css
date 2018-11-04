@@ -1,12 +1,9 @@
 .range-buttons {
   background-color: inherit;
   border: none;
-  /* width: 50px; */
-  color: white;
   padding-left: 0px;
   margin-right: 10px;
   font-size: 14px;
-  /* font-weight: 400; */
 }
 
 .range-buttons:hover {
@@ -27,15 +24,9 @@
   width: 100%;
 }
 
-.chart {
-  /* margin-top: 60px; */
-  /* padding: 20px; */
-}
-
 .percent-change {
   z-index: 4;
 }
-
 
 .stock-chart-price {
   font-size: 36px;
@@ -47,12 +38,7 @@
 .stock-chart {
   margin: 2%;
   padding: 2%;
-  background-color: #1b1b1d;
-  color: white;
-  border-bottom: 1px solid #0e0d0d
-  /* box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6); */
+  border-bottom: var(--border);
 }
 
 .chart-header {
@@ -61,8 +47,6 @@
 
 .tags {
   display: flex;
-  /* margin-right: 200px;
-  justify-content: space-around; */
 }
 
 .tag {
