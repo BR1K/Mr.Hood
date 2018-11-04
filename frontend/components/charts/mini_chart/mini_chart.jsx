@@ -13,7 +13,6 @@ class MiniChart extends React.Component {
 
   }
 
-
   render() {
 
     let data = this.props.chart.filter(datum => datum.close);
@@ -21,14 +20,10 @@ class MiniChart extends React.Component {
       return datum.close;
     });
 
-
-
     const max = data.reduce((a, b) => Math.max(a, b), 0);
     const min = data.reduce((a, b) => Math.min(a, b), 0);
 
-
     return (
-
       <div className="mini-chart">
         <LineChart data={data} margin={{top:25, bottom: 25}} width={60} height={25} >
           <Line
