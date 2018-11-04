@@ -16,21 +16,35 @@ import SearchContainer from './navbar/search/search_container';
 import GreetingPage from './greeting/greeting_container';
 import Dashboard from './dashboard/dashboard_container';
 import StockPage from './stock_page/stock_page_container';
+import Navbar from './navbar/navbar_container';
 
-const App = () => (
-  <div className="app">
-    <Switch>
-      <ProtectedRoute exact path="/" component={Dashboard} />
-      <ProtectedRoute exact path="/stocks/:symbol" component={StockPage} />
-      <AuthRoute exact path="/login" component={LogInPage} />
-      <AuthRoute exact path="/signup" component={SignUpPage} />
-      <AuthRoute exact path="/welcome" component={GreetingPage} />
-    </Switch>
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div className="app">
+        <Navbar />
+        <Switch>
+          <ProtectedRoute exact path="/" component={Dashboard} />
+          <ProtectedRoute exact path="/stocks/:symbol" component={StockPage} />
+          <AuthRoute exact path="/login" component={LogInPage} />
+          <AuthRoute exact path="/signup" component={SignUpPage} />
+          <AuthRoute exact path="/welcome" component={GreetingPage} />
+        </Switch>
+      </div>
+    )
+  }
+}
+// const App = () => (
+//   <div className="app">
+//     <h1 >hey</h1>
+//     <Switch>
+//       <ProtectedRoute exact path="/" component={Dashboard} />
+//       <ProtectedRoute exact path="/stocks/:symbol" component={StockPage} />
+//       <AuthRoute exact path="/login" component={LogInPage} />
+//       <AuthRoute exact path="/signup" component={SignUpPage} />
+//       <AuthRoute exact path="/welcome" component={GreetingPage} />
+//     </Switch>
+//   </div>
+// );
 
 export default App;
-
-// <h1>Mr.Hood</h1>
-
-// <AuthRoute exact path="/" component={GreetingContainer2} />
