@@ -1,4 +1,4 @@
-import React    from 'react';
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import DashboardSidebar from './dashboard_sidebar/dashboard_sidebar';
 import DashboardChart from '../charts/dashboard_chart/dashboard_chart';
@@ -17,8 +17,6 @@ class Dashboard extends React.Component {
       let symbol = symbols[i];
       values[symbol] = 1;
     }
-
-
     this.state = {
       portfolioValues: values,
       loading: true,
@@ -31,7 +29,6 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.fetchPortfolio(this.props.currentUser.id)
-    // .then(() => this.props.fetchStocks())
     .then(() => this.props.fetchWatchlist())
     .then(() => this.props.fetchMarketNews())
     .then(() => this.props.fetchPortfolioSnapshots(this.props.currentUser.id))
@@ -39,7 +36,6 @@ class Dashboard extends React.Component {
     .then(() => this.setState({loading: false}))
 
   }
-
 
   marketNews() {
     let marketNews = [];
@@ -109,23 +105,6 @@ class Dashboard extends React.Component {
       return (
         <div className="dashboard-page">
 
-
-          <nav className="navbar-container">
-            <div className="navbar-left">
-              <Link to="/">
-                <img className="logo-image" src={window.logo} />
-              </Link>
-            </div>
-            <div className="navbar-middle">
-              <SearchBar />
-            </div>
-            <div className="navbar-right">
-              <Link to="/" id="navbar-home" className="navbar-link">Home</Link>
-              <h3 id="navbar-logout" className="navbar-link" onClick={this.props.logout}>Log Out</h3>
-            </div>
-          </nav>
-
-
           <section className="main-container">
             <div className="main-stock-section">
               <DashboardChart
@@ -157,7 +136,6 @@ class Dashboard extends React.Component {
               />
             </div>
           </section>
-
 
         </div>
       );

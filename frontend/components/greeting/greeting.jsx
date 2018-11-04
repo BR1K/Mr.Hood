@@ -9,20 +9,6 @@ const Greeting = ({ currentUser, logout, login }) => {
   const greetingPage = () => (
     <div className="greeting-page">
 
-      <nav className="navbar-container">
-        <div className="navbar-left">
-          <Link to="/">
-            <img className="logo-image" src={window.logo} />
-          </Link>
-        </div>
-        <div className="navbar-middle">
-        </div>
-        <div className="navbar-right">
-          <Link to="/login" className="navbar-link">Log In</Link>
-          <Link to="/signup" className="navbar-link">Sign Up</Link>
-        </div>
-      </nav>
-
       <div className="greeting-page-content">
         <div className="greeting-page-content-left">
           <div className="greeting-page-title">
@@ -45,8 +31,6 @@ const Greeting = ({ currentUser, logout, login }) => {
         <div className="greeting-page-content-right">
         </div>
       </div>
-
-
 
     </div>
   );
