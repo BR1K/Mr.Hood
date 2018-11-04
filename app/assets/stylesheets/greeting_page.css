@@ -1,0 +1,61 @@
+.greeting-page {
+  background-image: url(https://res.cloudinary.com/fullstackimages/image/upload/v1532033889/Mr.Hood/Welcome%20Page/fog-foggy-forest-4827.jpg);
+  height: 100vh;
+  background-size: cover;
+}
+
+.greeting-page-content {
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+.greeting-page-content-image {
+  width: 500px;
+  height: 700px;
+  margin-right: 25px;
+}
+
+.greeting-page-content-left {
+  margin-left: 35px;
+  width: -webkit-fill-available;
+}
+
+.greeting-page-body {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  max-width: 380px;
+  margin-top: 20px;
+}
+
+.greeting-page-title {
+  font-size: 55px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 58px;
+}
+
+.greeting-signup {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.07px;
+  background-color: rgb(33, 206, 153);
+  border-color: rgb(33, 206, 153);
+  /* color: rgb(255, 255, 255); */
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  padding: 14px 16px;
+  float: left;
+  margin-top: 10px;
+  text-decoration: none;
+  opacity: 1;
+  line-height: 18px;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.greeting-signup a {
+  color: #fff;
+}
