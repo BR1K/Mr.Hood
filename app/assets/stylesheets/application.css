@@ -28,8 +28,14 @@
   --theme-row-hover: #eee;
 }
 
-.app {
-  min-height: 100vh;
+
+body {
+  display: flex;
+  color: var(--color);
+  font-family: "DIN Pro", "DIN Web", sans-serif;
+  margin: 0px;
+  min-width: 1036px;
+  display: block;
   background-color: var(--background-color);
   -webkit-transition: background-color 2s, color 2s ease-out;
   -moz-transition: background-color 2s, color 2s ease-out;
@@ -37,20 +43,8 @@
   transition: background-color 2s, color 2s ease-out;
 }
 
-body {
-  display: flex;
-  background-color: var(--background-color);
-  color: var(--color);
-  /* color: red; */
-  font-family: "DIN Pro", "DIN Web", sans-serif;
+.app {
   min-height: 100vh;
-  margin: 0px;
-  min-width: 1036px;
-  display: block;
-  /* -webkit-transition: background-color 2s, color 2s ease-out;
-  -moz-transition: background-color 2s, color 2s ease-out;
-  -o-transition: background-color 2s, color 2s ease-out;
-  transition: background-color 2s, color 2s ease-out; */
 }
 
 .main-stock-section {
