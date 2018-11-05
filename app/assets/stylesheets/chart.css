@@ -1,4 +1,5 @@
 .range-buttons {
+  color: var(--color);
   background-color: inherit;
   border: none;
   padding-left: 0px;
@@ -54,8 +55,8 @@
 }
 
 .tag {
-  color: #21ce99;
-  background-color: #182b27;
+  color: var(--tag-text);
+  background-color: var(--tag-background);
   font-size: 13px;
   margin: 0 20px 12px 0;
   -webkit-box-align: center;
@@ -69,6 +70,10 @@
   height: 28px;
   overflow: hidden;
   padding: 0 14px;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
 
 .company-name {
