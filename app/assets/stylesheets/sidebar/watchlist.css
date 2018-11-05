@@ -10,6 +10,11 @@
   cursor: pointer;
 }
 
+.watchlist-button:hover {
+  border-color: #1ae9aa;
+  color: #1ae9aa;
+}
+
 .watchlist-button-wrapper {
   width: 300px;
   margin: 4%;
