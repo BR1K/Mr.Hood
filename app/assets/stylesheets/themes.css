@@ -1,0 +1,26 @@
+.theme-modal:hover {
+  background-color: var(--theme-background);
+  color: var(--theme-color);
+  transition: background-color 1s ease-out;
+}
+
+.theme-modal:hover .themes {
+  display: block;
+}
+
+.themes {
+  margin-left: -15px;
+  margin-top: 15px;
+  display: none;
+  position: absolute;
+  background-color: inherit;
+}
+
+.theme {
+  padding: 15px;
+}
+
+.theme:hover {
+  background-color: var(--theme-row-hover);
+  transition: background-color .3s;
+}
