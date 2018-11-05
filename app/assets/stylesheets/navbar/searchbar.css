@@ -7,11 +7,11 @@
   width: 100%;
   padding-left: 15px;
   font-size: 13px;
-  transition: box-shadow .3s;
   -webkit-transition: border 2s ease-out;
   -moz-transition: border 2s ease-out;
   -o-transition: border 2s ease-out;
   transition: border 2s ease-out;
+  transition: box-shadow .3s;
 }
 
 .search-container {
