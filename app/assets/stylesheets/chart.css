@@ -39,6 +39,10 @@
   margin: 2%;
   padding: 2%;
   border-bottom: var(--border);
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 .chart-header {

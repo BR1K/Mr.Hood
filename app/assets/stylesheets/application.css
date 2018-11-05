@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 :root {
   --background-color: #1b1b1d;
   --color: white;
@@ -24,20 +23,34 @@
   --row-hover: #161617;
   --trade-input: #171718;
   --trade-input-hover: 1px solid #8c8c87;
+  --theme-background: white;
+  --theme-color: black;
+  --theme-row-hover: #eee;
 }
 
 .app {
   min-height: 100vh;
+  background-color: var(--background-color);
+  -webkit-transition: background-color 2s, color 2s ease-out;
+  -moz-transition: background-color 2s, color 2s ease-out;
+  -o-transition: background-color 2s, color 2s ease-out;
+  transition: background-color 2s, color 2s ease-out;
 }
 
 body {
+  display: flex;
   background-color: var(--background-color);
   color: var(--color);
+  /* color: red; */
   font-family: "DIN Pro", "DIN Web", sans-serif;
   min-height: 100vh;
   margin: 0px;
   min-width: 1036px;
   display: block;
+  /* -webkit-transition: background-color 2s, color 2s ease-out;
+  -moz-transition: background-color 2s, color 2s ease-out;
+  -o-transition: background-color 2s, color 2s ease-out;
+  transition: background-color 2s, color 2s ease-out; */
 }
 
 .main-stock-section {

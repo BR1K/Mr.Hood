@@ -11,6 +11,10 @@
   margin-right: 20px;
   margin-bottom: 20px;
   margin-top: 15px;
+  -webkit-transition: border 2s ease-out;
+  -moz-transition: border 2s ease-out;
+  -o-transition: border 2s ease-out;
+  transition: border 2s ease-out;
 }
 
 .stock-card:hover {

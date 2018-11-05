@@ -13,6 +13,10 @@
   box-shadow: var(--shadow);
   -webkit-box-shadow: var(--shadow);
   -moz-box-shadow: var(--shadow);
+  -webkit-transition: box-shadow 2s ease-out;
+  -moz-transition: box-shadow 2s ease-out;
+  -o-transition: box-shadow 2s ease-out;
+  transition: box-shadow 2s ease-out;
 
 }
 
@@ -62,6 +66,10 @@
 #horizontal-breaker-trade {
   width: 100%;
   border-bottom: 1px solid #F0F0F0;
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 
@@ -80,6 +88,10 @@
   display: flex;
   justify-content: space-between;
   border-bottom: var(--border);
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 #market-price {
@@ -115,6 +127,10 @@
   display: flex;
   justify-content: center;
   padding: 20px;
+  -webkit-transition: border-top 2s ease-out;
+  -moz-transition: border-top 2s ease-out;
+  -o-transition: border-top 2s ease-out;
+  transition: border-top 2s ease-out;
 }
 
 .active {
@@ -138,6 +154,10 @@
 .tab-headers {
   border-bottom: var(--border);
   padding: 20px 24px 15px 24px;
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 .tab-content {

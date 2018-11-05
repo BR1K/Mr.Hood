@@ -14,6 +14,10 @@
   padding: 15px;
   margin-right: 15px;
   text-decoration: none;
+  -webkit-transition: border 2s ease-out;
+  -moz-transition: border 2s ease-out;
+  -o-transition: border 2s ease-out;
+  transition: border 2s ease-out;
 }
 
 
@@ -117,6 +121,10 @@
   font-size: 25px;
   padding-bottom: 20px;
   border-bottom: var(--border);
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 #about-body {

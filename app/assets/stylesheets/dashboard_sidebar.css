@@ -6,7 +6,10 @@
   box-shadow: var(--shadow);
   -webkit-box-shadow: var(--shadow);
   -moz-box-shadow: var(--shadow);
-
+  -webkit-transition: box-shadow 2s ease-out;
+  -moz-transition: box-shadow 2s ease-out;
+  -o-transition: box-shadow 2s ease-out;
+  transition: box-shadow 2s ease-out;
 }
 
 .portfolio {
@@ -26,6 +29,10 @@
   padding-bottom: 15px;
   border-bottom: var(--border);
   border-top: none;
+  -webkit-transition: border-bottom 2s ease-out;
+  -moz-transition: border-bottom 2s ease-out;
+  -o-transition: border-bottom 2s ease-out;
+  transition: border-bottom 2s ease-out;
 }
 
 .portfolio-row {
