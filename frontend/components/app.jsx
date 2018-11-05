@@ -34,17 +34,5 @@ class App extends React.Component {
     )
   }
 }
-// const App = () => (
-//   <div className="app">
-//     <h1 >hey</h1>
-//     <Switch>
-//       <ProtectedRoute exact path="/" component={Dashboard} />
-//       <ProtectedRoute exact path="/stocks/:symbol" component={StockPage} />
-//       <AuthRoute exact path="/login" component={LogInPage} />
-//       <AuthRoute exact path="/signup" component={SignUpPage} />
-//       <AuthRoute exact path="/welcome" component={GreetingPage} />
-//     </Switch>
-//   </div>
-// );
 
 export default App;
