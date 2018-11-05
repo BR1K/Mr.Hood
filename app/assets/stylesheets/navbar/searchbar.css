@@ -10,8 +10,7 @@
   -webkit-transition: border 2s ease-out;
   -moz-transition: border 2s ease-out;
   -o-transition: border 2s ease-out;
-  transition: border 2s ease-out;
-  transition: box-shadow .3s;
+  transition: box-shadow .3s, border 2s ease-out;
 }
 
 .search-container {
@@ -61,5 +60,5 @@
 }
 
 .search-results a li:hover {
-  color: rgb(33, 206, 153);
+  color: #21ce99;
 }
