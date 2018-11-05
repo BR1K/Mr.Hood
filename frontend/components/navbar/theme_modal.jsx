@@ -4,7 +4,7 @@ class ThemeModal extends React.Component {
 
   constructor(props) {
     super(props);
-    this.themes = this.themes.bind(this);
+    // this.themes = this.themes.bind(this);
     this.toggleTheme = this.toggleTheme.bind(this);
     this.setTheme = this.setTheme.bind(this);
     this.state = {
@@ -12,28 +12,28 @@ class ThemeModal extends React.Component {
       currentTheme: 'Dark',
       themes: {
         Light: {
-          'background-color': 'white',
+          'background-color': '#fff',
           'color': 'black',
           'shadow': '0 0 30px rgba(0,0,0,0.1)',
-          'border': '1px solid #eee',
+          'border': '1px solid #f4f4f5',
           'row-hover': '#eee',
           'trade-input': '#eee',
-          'trade-input-hover': '1px solid #171718',
+          'trade-input-hover': '1px solid #cbcbcd',
           'theme-background': '#1b1b1d',
           'theme-color': 'white',
-          'theme-row-hover': '#161617',
+          'tag-background': '#e6f9f3',
         },
         Dark: {
           'background-color': '#1b1b1d',
-          'color': 'white',
+          'color': '#fff',
           'shadow': '0 0 4px 1px rgba(0,0,0,.01), 0 3px 24px rgba(0,0,0,0.6)',
           'border': '1px solid #0e0d0d',
           'row-hover': '#161617',
           'trade-input': '#171718',
           'trade-input-hover': '1px solid #8c8c87',
-          'theme-background': 'white',
+          'theme-background': '#fff',
           'theme-color': 'black',
-          'theme-row-hover': '#eee',
+          'tag-background': '#182b27',
         },
       },
     };
@@ -49,19 +49,19 @@ class ThemeModal extends React.Component {
     }
   }
 
-  themes() {
-    let theme;
-    if (this.state.currentTheme === 'Light') {
-      theme = 'Dark';
-    } else {
-      theme = 'Light';
-    }
-    return (
-      <div className="themes">
-        <div className="theme" onClick={() => this.toggleTheme(theme)}>{theme} Theme</div>
-      </div>
-    )
-  }
+  // themes() {
+  //   let theme;
+  //   if (this.state.currentTheme === 'Light') {
+  //     theme = 'Dark';
+  //   } else {
+  //     theme = 'Light';
+  //   }
+  //   return (
+  //     <div className="themes">
+  //       <div className="theme" onClick={() => this.toggleTheme(theme)}>{theme} Theme</div>
+  //     </div>
+  //   )
+  // }
 
   setTheme() {
     let theme = this.state.themes[this.state.currentTheme];
@@ -79,10 +79,16 @@ class ThemeModal extends React.Component {
   }
 
   render() {
+    let theme;
+    if (this.state.currentTheme === 'Dark') {
+      theme = 'Light';
+    } else {
+      theme = 'Dark';
+    }
+
     return (
-      <h3 className="navbar-link theme-modal">
+      <h3 className="navbar-link theme-modal" onClick={() => this.toggleTheme(theme)}>
         Theme
-        {this.themes()}
       </h3>
     )
   }
