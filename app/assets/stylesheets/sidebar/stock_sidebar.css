@@ -17,7 +17,6 @@
   -moz-transition: box-shadow 2s ease-out;
   -o-transition: box-shadow 2s ease-out;
   transition: box-shadow 2s ease-out;
-
 }
 
 .trade-buy-sell {
@@ -50,6 +49,10 @@
   padding: 7px;
   text-align: right;
   transition: border .3s;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
 
 .trade-input:hover {
