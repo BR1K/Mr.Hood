@@ -1,53 +1,3 @@
-.search-container {
-  width: 50%;
-  margin-left: 10%;
-}
-
-.navbar-container {
-  padding-top: 8px;
-  display: flex;
-  min-width: 100%;
-  position: fixed;
-  z-index: 5;
-  background-color: inherit;
-}
-
-.navbar-left {
-  margin-left: 2%;
-}
-
-.navbar-link {
-  padding: 15px;
-  font-size: 13.5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.navbar-link:hover {
-  color: rgb(33, 206, 153);
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.navbar-middle {
-  width: 70%;
-}
-
-.greeting-page-navbar-login {
-  margin: auto;
-  padding-right: 25px;
-}
-
-.greeting-page-navbar-signup {
-  margin: auto;
-  padding-left: 25px;
-  padding-right: 10px;
-}
-
 .search-bar {
   color: inherit;
   background-color: inherit;
@@ -62,6 +12,12 @@
   -moz-transition: border 2s ease-out;
   -o-transition: border 2s ease-out;
   transition: border 2s ease-out;
+}
+
+.search-container {
+  width: 50%;
+  margin-left: 10%;
+  align-self: center;
 }
 
 .search-bar:hover {
@@ -106,14 +62,4 @@
 
 .search-results a li:hover {
   color: rgb(33, 206, 153);
-}
-
-.logo-image {
-  width: 55px;
-  height: 55px;
-  margin-top: -5px;
-}
-
-.mrhood-button {
-  text-decoration: none;
 }
