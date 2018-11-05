@@ -83,7 +83,7 @@
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-property: border-color;
-  transition-timing-function: ease;
+  transition-timing-function: ease-out;
   outline-style: none;
 }
 
