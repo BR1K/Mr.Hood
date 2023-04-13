@@ -110,7 +110,7 @@ The live news feed is made possible by [News API](https://newsapi.org/), and cha
   - News API
 
 
-## Coming Soon
+## Potential Future Features
 - Users will have the ability to search by company name as well. I'd also like to add a preview of each result company's current stock price.
 - A profile page which will include detailed trade history, as well as the ability to update user information such as username, password, and buying power.
 - A dashboard chart that updates with every trade action. The current dashboard chart is generated using seed data.
